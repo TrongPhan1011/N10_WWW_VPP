@@ -29,15 +29,26 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 
-//                .antMatchers("/customer/showForm*").hasAnyRole("MANAGER", "ADMIN")
-//                .antMatchers("/customer/save*").hasAnyRole("MANAGER", "ADMIN")
+        		.antMatchers("/resources/assets/fontIcon/fontawesome-free-5.15.4/css/**").permitAll()
+        		.antMatchers("/resources/assets/fontIcon/fontawesome-free-5.15.4/**").permitAll()
+        		.antMatchers("/resources/assets/img/Slider/**").permitAll()
+        		.antMatchers("/resources/assets/img/**").permitAll()
+        		.antMatchers("/resources/assets/img/Slider/**").permitAll()
+        		.antMatchers("/resources/assets/**").permitAll()
+        		.antMatchers("/resources/css/admin/**").permitAll()
+        		.antMatchers("/resources/css/**").permitAll()
+        		.antMatchers("/resources/css/lib/**").permitAll()
+        		.antMatchers("/resources/js/**").permitAll()
+        		.antMatchers("/resources/**").permitAll()
+        		.antMatchers("/").permitAll()
+        		
+        		
 //                .antMatchers("/customer/delete").hasRole("ADMIN")
 //        
                 //** matches zero or more 'directories' in a path
 //                .antMatchers("/customer/**").hasRole("EMPLOYEE")
 //                .antMatchers("/registry/**").permitAll()
-                .antMatchers("/resources/**").permitAll()
-                .antMatchers("/").permitAll()
+                
                 .and()
                 .formLogin()
                 .loginPage("/login")

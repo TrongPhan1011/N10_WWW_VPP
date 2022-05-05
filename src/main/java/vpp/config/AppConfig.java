@@ -44,6 +44,7 @@ public class AppConfig implements WebMvcConfigurer {
 		viewResolver.setSuffix(".jsp");
 		return viewResolver;
 	}
+	
 	private int getIntProperty(String propName) {
 
 		String propVal = env.getProperty(propName);
