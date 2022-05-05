@@ -1,0 +1,46 @@
+* {
+    color: #535768;
+}
+
+html {
+    /* overflow-y: hidden; */
+
+}
+
+.vpp-admin-menu {}
+
+span {
+    font-weight: 700;
+}
+
+p {
+
+    margin: 0;
+}
+
+.don-cho-duyet {
+    background-color: #FFF2D3;
+}
+
+.don-cho-duyet h2 {
+    color: rgb(253, 185, 188);
+    font-weight: 700;
+}
+
+.don-da-duyet {
+    background-color: #C1FFE1;
+}
+
+.don-da-duyet h2 {
+    color: #00BA61;
+    font-weight: 700;
+}
+
+.don-da-ban {
+    background-color: #E0FBFF;
+}
+
+.don-da-ban h2 {
+    color: #01C4E1;
+    font-weight: 700;
+}

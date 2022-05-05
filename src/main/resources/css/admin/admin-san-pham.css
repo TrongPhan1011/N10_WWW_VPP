@@ -1,0 +1,21 @@
+.vpp-text-blue{
+    color: #00C4E1;
+}
+.vpp-bd-color-blue{
+    border-color: #00C4E1;
+}
+
+.vpp-text-red{
+    color: #FF0000;
+}
+.vpp-bd-color-red{
+    border-color: #FF0000;
+}
+
+.vpp-bd-right {
+    border-right: 1px solid rgb(253, 185, 188);
+}
+.vpp-bd-bottom {
+    border-bottom: 1px solid rgb(253, 185, 188);
+}
+
