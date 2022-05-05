@@ -1,24 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <!DOCTYPE html>
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta charset="ISO-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quan ly</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../../css/lib/hover.css">
-    <link rel="stylesheet" href="../../assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
-    <link rel="stylesheet" href="../../assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
+    <link rel="stylesheet" href="../../resources/css/lib/hover.css">
+    <link rel="stylesheet" href="../../resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
+    <link rel="stylesheet" href="../../resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
 
-    <link rel="stylesheet" href="../../css/general.css">
-    <link rel="stylesheet" href="../../css/admin/admin.css">
-    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../resources/css/general.css">
+    <link rel="stylesheet" href="../../resources/css/admin/admin.css">
+    <link rel="stylesheet" href="../../resources/css/index.css">
 
 </head>
 
