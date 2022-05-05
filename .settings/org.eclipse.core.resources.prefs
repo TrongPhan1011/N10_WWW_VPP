@@ -1,2 +1,8 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 encoding//src/main/webapp/WEB-INF/view/taikhoan_customer.jsp=UTF-8
+=======
+encoding//src/main/webapp/WEB-INF/view/index.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/view/lien-he.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/view/sanpham.jsp=UTF-8
+>>>>>>> 6fbd6035bcbc60793550a47bca4be02cfe5c854c
