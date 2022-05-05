@@ -61,7 +61,6 @@ public class AppConfig implements WebMvcConfigurer {
 		try {
 			myDataSource.setDriverClass("com.mysql.jdbc.Driver");
 		} catch (PropertyVetoException e) {
-			// TODO Auto-generated catch block
 			throw new  RuntimeException(e);
 		}
 		logger.info("jdbc.url = "+ env.getProperty("jdbc.url"));
@@ -105,9 +104,7 @@ public class AppConfig implements WebMvcConfigurer {
 		}
 
 
-		logger.info(">>> security.jdbc.url=" + env.getProperty("security.jdbc.url"));
-		logger.info(">>> security.jdbc.user=" + env.getProperty("security.jdbc.user"));
-
+		
 		// set database connection props
 		securityDataSource.setJdbcUrl(env.getProperty("security.jdbc.url"));
 		securityDataSource.setUser(env.getProperty("security.jdbc.user"));

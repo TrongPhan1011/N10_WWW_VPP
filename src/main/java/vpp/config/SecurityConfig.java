@@ -29,13 +29,13 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 
-                .antMatchers("/customer/showForm*").hasAnyRole("MANAGER", "ADMIN")
-                .antMatchers("/customer/save*").hasAnyRole("MANAGER", "ADMIN")
-                .antMatchers("/customer/delete").hasRole("ADMIN")
-        
+//                .antMatchers("/customer/showForm*").hasAnyRole("MANAGER", "ADMIN")
+//                .antMatchers("/customer/save*").hasAnyRole("MANAGER", "ADMIN")
+//                .antMatchers("/customer/delete").hasRole("ADMIN")
+//        
                 //** matches zero or more 'directories' in a path
-                .antMatchers("/customer/**").hasRole("EMPLOYEE")
-                .antMatchers("/registry/**").permitAll()
+//                .antMatchers("/customer/**").hasRole("EMPLOYEE")
+//                .antMatchers("/registry/**").permitAll()
                 .antMatchers("/resources/**").permitAll()
                 .antMatchers("/").permitAll()
                 .and()
