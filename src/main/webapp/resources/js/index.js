@@ -3,9 +3,13 @@ var sanPhamApi = 'http://localhost:3000/sanPham';
 var numFormat = Intl.NumberFormat();
 
 function startApp(){
-    getDSSanPham(renderSanPhamNoiBat )
+    getDSSanPham(renderSanPhamNoiBat);
+   
 }
 startApp();
+
+
+
 
 function getDSSanPham(callback){
     fetch(sanPhamApi)

@@ -7,21 +7,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import tp.entity.Customer;
-import tp.service.CustomerService;
+
 
 @Controller
 public class LoginController {
-	@Autowired
-	 private CustomerService customerService;
+//	@Autowired
+//	 private CustomerService customerService;
 
-	@GetMapping("/home")
+	@GetMapping("/")
 	    public String showHomePage() {
-	        return "home";
+	        return "index";
 	    }
 	 @GetMapping("/login")
 	    public String showLogin() {
-	        return "myForm";
+	        return "login";
 	    }
 	 
 	 @GetMapping("/access-denied")
@@ -31,12 +30,12 @@ public class LoginController {
 
 	    }
 	 
-	 @GetMapping("/")
-		public String listCustomer(Model model) {
-		 	
-			List<Customer> ls = customerService.getAllCustomer();
-			model.addAttribute("Customers",ls);
-			return "list-customers";
-		}
+//	 @GetMapping("/")
+//		public String listCustomer(Model model) {
+//		 	
+//			List<Customer> ls = customerService.getAllCustomer();
+//			model.addAttribute("Customers",ls);
+//			return "list-customers";
+//		}
 	 
 }

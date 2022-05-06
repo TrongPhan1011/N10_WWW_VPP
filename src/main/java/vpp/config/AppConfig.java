@@ -44,6 +44,13 @@ public class AppConfig implements WebMvcConfigurer {
 		viewResolver.setSuffix(".jsp");
 		return viewResolver;
 	}
+	@Bean
+	public ViewResolver viewResolverAdmin() {
+		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+		viewResolver.setPrefix("/WEB-INF/view/admin/");
+		viewResolver.setSuffix(".jsp");
+		return viewResolver;
+	}
 	
 	private int getIntProperty(String propName) {
 
