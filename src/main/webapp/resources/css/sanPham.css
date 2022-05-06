@@ -1,0 +1,17 @@
+.sp {
+    border: 1px solid rgba(0,0,0,.125)
+}
+.sp:hover {
+    border: rgba(57, 210, 247) solid 1px;
+}
+.sp-img {
+    position: relative;
+    padding: 5px;
+    
+    
+}
+.sp-img img {
+   height: 150px;
+    
+    
+}

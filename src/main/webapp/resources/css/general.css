@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif, Arial, Helvetica, sans-serif;
+
+}
+
+/* background */
+.vpp-bg-header {
+    background-color: #f4f0ea3d;
+}
+
+.vpp-bg-pink {
+    background-color: rgba(253, 185, 188, 0.1);
+}
+
+.vpp-bg-light {
+    background-color: #FFFFFE;
+}
+
+.vpp-bg-btn {
+    background-color: rgb(253, 185, 188);
+}
+
+.vpp-bg-dark {
+    background-color: rgb(83, 87, 104);
+}
+
+.vpp-bg-light-dark {
+    background-color: #F3F3F3;
+}
+
+
+
+
+
+/* link */
+.vpp-link {
+    color: #535768;
+    text-decoration: none;
+}
+
+.vpp-link:hover {
+    color: #FDB9BC;
+}
+
+/* text */
+.vpp-text-dark {
+    color: #535768;
+}
+
+.vpp-text-pink {
+    color: rgb(253, 185, 188);
+}
+
+.vpp-text-decoration {
+    text-decoration: underline !important;
+}
+
+/* border */
+.vpp-bd-radius {
+    border-radius: 10px;
+    border-color: rgba(255, 255, 255, 0);
+    
+}
+
+.vpp-bd-1 {
+    border: 1px solid rgb(253, 185, 188);
+}
+
+.vpp-bd-btn {
+    border-radius: 10px;
+    border: 1px solid rgb(253, 185, 188);
+    box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.2),
+        3px -3px 5px rgba(255, 255, 255, 1);
+}
+
+.vpp-bd-ad-btn {
+    border: 1px solid rgb(253, 185, 188);
+    box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.2),
+        3px -3px 5px rgba(255, 255, 255, 1);
+}
+
+.vpp-bd-circle {
+    border-radius: 50%;
+    text-decoration: none;
+    border: 3px solid rgb(253, 185, 188);
+    box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.2),
+        3px -3px 5px rgba(255, 255, 255, 1);
+}
+
+.vpp-bd-link {
+    border-bottom: rgba(253, 185, 188, 0) solid 3px;
+}
+
+.vpp-bd-link:hover {
+    border-bottom: rgba(253, 185, 188, 1) solid 3px;
+}
+
+.vpp-bd-hover-pink {
+
+    border-radius: 10px;
+}
+
+.vpp-bd-hover-pink:hover {
+    border-color: #FDB9BC;
+    background-color: rgba(253, 185, 188, 0.1);
+}
+
+.vpp-bd-radius-top {
+    border-radius: 10px 10px 0 0;
+}
+
+/* button */
+.vpp-btn {
+    color: #535768;
+    background-color: #FFFFFE;
+    border-radius: 10px;
+    border: 1px solid rgb(253, 185, 188);
+    box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.2),
+        3px -5px 5px rgba(255, 255, 255, 1);
+
+}
+
+.vpp-btn:hover {
+    color: #FFFFFE;
+
+
+}
+
+.vpp-btn-hover:hover {
+    color: #FFFFFE;
+
+}
+
+.vpp-btn-danhan {
+    color: #535768;
+}
+
+.vpp-btn-huydon {
+    color: #ff0000;
+    background-color: #FFFFFE;
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 10px;
+}
+
+/* dropdown */
+.vpp-dropdown:hover .dropdown-menu {
+    display: block;
+
+}
+
+.vpp-line-pink {
+
+    height: 3px;
+    width: 200px;
+    background-color: #FDB9BC;
+
+}
+
+/* San pham */
+.img-sp {
+    width: 100%;
+    height: 10vw;
+    padding: 5px;
+
+}
+
+.menudanhmuc>li>a {
+    text-decoration: none;
+    color: #535768;
+}
+
+
+/* Thanh chuyen trang*/
+.pagin {
+    color: #535768;
+    background-color: #FFFFFE;
+    border: 1px solid rgb(253, 185, 188);
+
+
+}
+
+.pagin-active {
+    color: #535768;
+    background-color: rgb(253, 185, 188);
+    border: 1px solid rgb(253, 185, 188);
+
+
+}
+
+
+
+
+
+/* Animation */
+@keyframes fade {
+    from {
+        opacity: 0;
+        /* transform: translateY(90%); */
+    }
+
+    to {
+        opacity: 1;
+        /* transform: translateY(0); */
+    }
+}
