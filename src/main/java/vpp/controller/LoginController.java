@@ -14,10 +14,7 @@ public class LoginController {
 //	@Autowired
 //	 private CustomerService customerService;
 
-	@GetMapping("/")
-	    public String showHomePage() {
-	        return "index";
-	    }
+	
 	 @GetMapping("/login")
 	    public String showLogin() {
 	        return "login";
@@ -30,12 +27,11 @@ public class LoginController {
 
 	    }
 	 
-//	 @GetMapping("/")
-//		public String listCustomer(Model model) {
-//		 	
-//			List<Customer> ls = customerService.getAllCustomer();
-//			model.addAttribute("Customers",ls);
-//			return "list-customers";
-//		}
+//	 @GetMapping("/admin")
+//	 public String loadAdmin() {
+//		 return "admin/admin";
+//	 }
+	 
+
 	 
 }
