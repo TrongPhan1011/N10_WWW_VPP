@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import vpp.user.VPPUser;
 
 @Controller
-@RequestMapping("/register")
+@RequestMapping("/dangky")
 public class RegistrationController {
 	@Autowired
 	private UserDetailsManager userDetailsManager;
@@ -40,10 +40,10 @@ public class RegistrationController {
 		
 	}
 	
-	@GetMapping("/registration")
-	public String showLoginPage(Model model) {
+	@GetMapping("/")
+	public String showRegisterPage(Model model) {
 		model.addAttribute("vppUser", new VPPUser() );
-		return "registry-form";
+		return "dang-ky";
 	}
 	
 	@PostMapping("/processRegistration")
@@ -56,16 +56,7 @@ public class RegistrationController {
 		logger.info("Processing registration form for: " + userName);
 		logger.info("Processing registration form for pass: " + vppUser.getPassword());
 		
-		// form validation
-		if (theBindingResult.hasErrors()) {
-
-			theModel.addAttribute("cusUser", new VPPUser());
-			theModel.addAttribute("registrationError", "User name/password can not be empty.");
-
-			logger.warning("User name/password can not be empty.");
-			
-			return "registry-form";	
-		}
+		
 		
 		boolean userExists = doesUserExist(userName);
 		
@@ -75,7 +66,7 @@ public class RegistrationController {
 
 			logger.warning("User name already exists.");
 			
-			return "registry-form";			
+			return "dang-ky";			
 		}
 		
 		
@@ -91,7 +82,7 @@ public class RegistrationController {
 		
         logger.info("Successfully created user: " + userName);
         
-        return "registration-confirmation";		
+        return "login";		
 		
 
 	}

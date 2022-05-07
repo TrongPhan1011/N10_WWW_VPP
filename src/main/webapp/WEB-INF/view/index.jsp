@@ -24,7 +24,7 @@
             <div class="row p-3  vpp-bg-header  d-flex align-items-center"
                 style="border-bottom: 1px solid rgb(253, 185, 188);">
 
-                <a href="./index.html" class="col-2 text-center">
+                <a href="${pageContext.request.contextPath}/" class="col-2 text-center">
 
                     <img src="./resources/assets/img/Logo.png" alt="logo" width="100">
                 </a>
@@ -42,8 +42,8 @@
                             <i class="fas fa-user-circle fs-1 vpp-bd-circle "></i>
                         </div>
                         <div class="col-9 ps-0">
-                            <a href="#" class="fw-bold vpp-link vpp-text-dark hvr-underline-from-left">Đăng nhập</a><br>
-                            <a href="#" class="vpp-link vpp-text-dark hvr-underline-from-left"> Đăng ký</a>
+                            <a href="${pageContext.request.contextPath}/login" class="fw-bold vpp-link vpp-text-dark hvr-underline-from-left">Đăng nhập</a><br>
+                            <a href="${pageContext.request.contextPath}/dangky/" class="vpp-link vpp-text-dark hvr-underline-from-left"> Đăng ký</a>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
 
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link vpp-link fs-5 hvr-underline-from-center" href="./index.html">Trang
+                                <a class="nav-link vpp-link fs-5 hvr-underline-from-center" href="${pageContext.request.contextPath}/">Trang
                                     chủ</a>
                             </li>
                             <li class="nav-item vpp-dropdown ">
@@ -153,8 +153,6 @@
             <div class="slider row m-0">
                 <div class="col-8 ">
                     <div id="slide" class="carousel scale" data-bs-ride="carousel">
-
-
 
                         <div class="carousel-inner vpp-bd-btn">
                             <div class="carousel-item vpp-bg-header ">
