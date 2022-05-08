@@ -33,43 +33,64 @@
                         <div class="row vpp-dangnhap  d-flex justify-content-center ">
                             <div class="col-6 vpp-bd-btn p-4" style="background-color: #fff;">
 
+                                <div class="d-flex justify-content-center w-100">
+                                    <a href="${pageContext.request.contextPath}/" class="col-2 text-center">
 
+                                        <img src="./resources/assets/img/Logo.png" alt="logo" width="100">
+                                    </a>
+
+                                </div>
                                 <h2 style="font-style: bold; text-align: center;">Đăng nhập</h2>
 
+                                <c:if test="${param.error != null}">
+                                    <i class="text-danger">Tên đăng nhập hoặc mật khẩu không đúng</i>
+                                </c:if>
                                 <form:form action="${pageContext.request.contextPath}/authenticateTheUser">
-                                    <label for="id-dangnhap-email">Email:</label>
-                                    <input name="username" type="text" class="form-control vpp-bd-btn mt-1 mb-4"
-                                        placeholder="Nhập email" id="id-dangnhap-email" />
+                                    <div>
+                                        <label for="id-dangnhap-email" class="form-label">Email:</label>
+                                        <input name="username" type="text" class="form-control vpp-bd-btn mt-1 mb-4"
+                                            placeholder="Nhập email" id="id-dangnhap-email" required />
+                                        <div class=" invalid-feedback text-danger">* Email không được trống và phải có
+                                            dạng xxx@gmail.com</div>
 
-                                    <label for="id-dangnhap-matkhau">Mật khẩu:</label>
-                                    <input name="password" type="password" class="form-control vpp-bd-btn mt-1 mb-4"
-                                        placeholder="Nhập mật khẩu" id="id-dangnhap-matkhau" />
-                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-                                
-                                <div class="row mb-4">
-                                    <div class=" col-8"></div>
-                                    <div class="col-4">
-                                        <a href="#" class="vpp-link vpp-text-dark hvr-underline-from-left"
-                                            style="font-style: italic;">Quên mật khẩu?</a>
                                     </div>
-                                </div>
-                                <div class="row m-0">
-                                    <button type="submit" class="btn vpp-btn  fs-5  hvr-shutter-out-horizontal">
-                                        Đăng nhập
-                                    </button>
-                                </div>
+                                    <div>
+                                        <label for="id-dangnhap-matkhau" class="form-label">Mật khẩu:</label>
+                                        <input name="password" type="password" class="form-control vpp-bd-btn mt-1 mb-4"
+                                            placeholder="Nhập mật khẩu" id="id-dangnhap-matkhau" required />
+                                        <div class="invalid-feedback text-danger">* Mật khẩu không đúng</div>
+                                    </div>
 
-                            </form:form>
+                                    <div class="row mb-4">
+                                        <div class=" col-8"></div>
+                                        <div class="col-4">
+                                            <a href="#" class="vpp-link vpp-text-dark hvr-underline-from-left"
+                                                style="font-style: italic;">Quên mật khẩu?</a>
+                                        </div>
+                                    </div>
+                                    <div class="row m-0">
+                                        <button id="id-btn-dangnhap" type="submit"
+                                            class="btn vpp-btn  fs-5  hvr-shutter-out-horizontal">
+                                            Đăng nhập
+                                        </button>
+                                    </div>
+
+
+
+                                </form:form>
 
                                 <div class="m-0 text-center mt-4">
                                     <p class="d-inline">Bạn chưa có tài khoản?</p>
-                                    <a href="${pageContext.request.contextPath}/dangky/" class="vpp-link vpp-text-dark vpp-text-decoration">Tạo tài khoản</a>
+                                    <a href="${pageContext.request.contextPath}/dangky/"
+                                        class="vpp-link vpp-text-dark vpp-text-decoration">Tạo tài khoản</a>
                                 </div>
 
                             </div>
                         </div>
                     </div>
 
+
+                    <script src="./resources/js/dangNhap.js"></script>
                 </body>
 
                 </html>
