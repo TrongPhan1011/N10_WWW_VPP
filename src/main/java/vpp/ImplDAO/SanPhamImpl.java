@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import vpp.dao.SanPhamDAO;
-import vpp.entity.LoaiSP;
 import vpp.entity.SanPham;
 
 @Repository
@@ -50,6 +49,14 @@ public class SanPhamImpl implements SanPhamDAO {
 
 		List<SanPham> ls = session.createNativeQuery("SELECT sanPham.* FROM sanPham  join loaiSP  on sanPham.idLoai = loaiSP.id where tenLoai = '"+tenLoai+"'",SanPham.class).getResultList();
 		return ls;
+	}
+	
+	@Override
+	public List<SanPham> getSanPhamTheoGioHang(int id) {
+		Session session = sessionFactory.getCurrentSession();
+		List<SanPham> sanPhams = session.createNativeQuery("SELECT sanPham.* FROM sanpham  join ctgiohang  on sanPham.id = ctgiohang.idSP where idGioHang = '"+id+"'",SanPham.class).getResultList();
+		
+		return sanPhams;
 	}
 
 }

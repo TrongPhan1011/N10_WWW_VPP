@@ -1,5 +1,7 @@
 package vpp.dao;
 
-public interface CTGioHangDAO {
+import vpp.entity.CTGioHang;
 
+public interface CTGioHangDAO {
+	public  CTGioHang getCtGioHang(int id);
 }

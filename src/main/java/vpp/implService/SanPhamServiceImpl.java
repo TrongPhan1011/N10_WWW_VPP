@@ -40,5 +40,9 @@ public class SanPhamServiceImpl implements SanPhamService {
 		return sanPhamDAO.getSanPhamTheoID(id);
 	}
 	
-	
+	@Override
+	@Transactional
+	public List<SanPham> getSanPhamTheoGioHang(int id) {
+		return sanPhamDAO.getSanPhamTheoGioHang(id);
+	}
 }

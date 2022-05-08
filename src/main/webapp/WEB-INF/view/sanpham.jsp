@@ -302,7 +302,7 @@
                                                 <h5>${tempKhachHang.tenSP}</h5>
                                             </a>
                                             <p class="card-text text-danger fs-5 fw-bold">${tempKhachHang.giaBan}</p>
-                                            <a href="#" class="btn vpp-btn vpp-bd-btn hvr-shutter-out-horizontal">Xem chi
+                                            <a href="${chitietUrl}" class="btn vpp-btn vpp-bd-btn hvr-shutter-out-horizontal">Xem chi
                                                 tiết</a>
                                         </div>
                                     </div>

@@ -9,4 +9,5 @@ public interface KhachHangService {
 	public KhachHang getKhachHangTheoID(int id);
 	public void themHoacCapNhatKhachHang(KhachHang khachHang);
 	public void xoaKhachHang(int id);
+	public KhachHang getKhachHangTheoEmail(String email);
 }

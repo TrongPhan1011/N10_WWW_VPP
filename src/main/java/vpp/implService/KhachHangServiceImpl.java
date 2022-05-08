@@ -41,5 +41,11 @@ public class KhachHangServiceImpl implements KhachHangService {
 		
 	}
 	
+	@Override
+	@Transactional
+	public KhachHang getKhachHangTheoEmail(String email) {
+		return khachHangDAO.getKhachHangTheoEmail(email);
+	}
+	
 	
 }

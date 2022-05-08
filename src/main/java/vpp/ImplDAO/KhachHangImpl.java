@@ -48,6 +48,13 @@ public class KhachHangImpl implements KhachHangDAO {
 		theQuery.executeUpdate();
 
 	}
+	
+	@Override
+	public KhachHang getKhachHangTheoEmail(String email) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		KhachHang khachHang=currentSession.get(KhachHang.class, email);
+		return khachHang;
+	}
 
 
 }
