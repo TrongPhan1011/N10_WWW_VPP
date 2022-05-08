@@ -17,7 +17,7 @@ public class SanPhamController {
 	@Autowired
 	private SanPhamService sanPhamService;
 	
-	@RequestMapping("/list")
+	@RequestMapping("/")
 	public String getTatCaSanPham(Model theModel) {
 		List<SanPham> sanPhams=sanPhamService.getTatCaSanPham();
 		theModel.addAttribute("dsSanPham", sanPhams);

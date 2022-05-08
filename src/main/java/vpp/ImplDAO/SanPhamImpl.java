@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import vpp.dao.SanPhamDAO;
+import vpp.entity.LoaiSP;
 import vpp.entity.SanPham;
 
 @Repository
@@ -24,7 +25,7 @@ public class SanPhamImpl implements SanPhamDAO {
 
 		return sanPhams;
 	}
-	
+
 	public SanPham getSanPhamTheoID(int id) {
 		Session currentSession = sessionFactory.getCurrentSession();
 		SanPham tempSanPham = currentSession.get(SanPham.class, id);
@@ -32,6 +33,23 @@ public class SanPhamImpl implements SanPhamDAO {
 		
 		
 	}
-	
-	
+
+	@Override
+	public List<SanPham> getSPGiamDanTheoDaBan() {
+		Session session = sessionFactory.getCurrentSession();
+
+
+		List<SanPham> ls = session.createNativeQuery("select * from sanPham order by soLuongBan desc",SanPham.class).getResultList();
+		return ls;
+	}
+
+	@Override
+	public List<SanPham> getSPTheoLoai(String tenLoai) {
+		Session session = sessionFactory.getCurrentSession();
+		
+
+		List<SanPham> ls = session.createNativeQuery("SELECT sanPham.* FROM sanPham  join loaiSP  on sanPham.idLoai = loaiSP.id where tenLoai = '"+tenLoai+"'",SanPham.class).getResultList();
+		return ls;
+	}
+
 }
