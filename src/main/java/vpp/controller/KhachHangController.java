@@ -34,7 +34,7 @@ public class KhachHangController {
 	@RequestMapping("/xoaKhachHang")
 	public String xoaKhachHang(@RequestParam("khachHangId") int theId) {
 		khachHangService.xoaKhachHang(theId);
-		return "admin/admin-khach-hang";
+		return "redirect:/khachhang/";
 
 	}
 

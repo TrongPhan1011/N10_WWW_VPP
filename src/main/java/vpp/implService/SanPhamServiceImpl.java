@@ -20,6 +20,19 @@ public class SanPhamServiceImpl implements SanPhamService {
 	public List<SanPham> getTatCaSanPham() {
 		return sanPhamDAO.getTatCaSanPham();
 	}
+
+	@Override
+	@Transactional
+	public List<SanPham> getSPGiamDanTheoDaBan() {
+		
+		return sanPhamDAO.getSPGiamDanTheoDaBan();
+	}
+
+	@Override
+	@Transactional
+	public List<SanPham> getSPTheoLoai(String tenLoai) {
+		return sanPhamDAO.getSPTheoLoai(tenLoai);
+	}
 	
 	
 }
