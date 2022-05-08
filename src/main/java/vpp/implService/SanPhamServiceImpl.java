@@ -34,5 +34,11 @@ public class SanPhamServiceImpl implements SanPhamService {
 		return sanPhamDAO.getSPTheoLoai(tenLoai);
 	}
 	
+	@Override
+	@Transactional
+	public SanPham getSanPhamTheoID(int id) {
+		return sanPhamDAO.getSanPhamTheoID(id);
+	}
+	
 	
 }

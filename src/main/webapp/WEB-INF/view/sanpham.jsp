@@ -287,20 +287,25 @@
                     <div class=" mt-4 text-center  ">
                     <div class="row">
                     	<c:forEach var="tempKhachHang" items="${dsSanPham}">
-                              
-                                <div class="col-3 mt-4 pt-0 p-2 d-flex justify-content-around block-sanpham">
+                              	        <c:url var="chitietUrl" value="/chitietsanpham/">
+                                        	<c:param name="idSP" value="${tempKhachHang.id}" />
+                                        </c:url>
+                              	
+                              	
+                                <div class="col-3 pt-0 p-2 d-flex justify-content-around block-sanpham">
                                     <div class="card pb-2 vpp-bd-hover-pink vpp-bd-btn hvr-grow-shadow" style="width:90%;">
                                         <div class="img-sp">
                                             <img class="card-img-top vpp-bd-radius-top"
                                                 src="../resources/assets/img/Slider/slide4.jpg" alt="Card image"
                                                 style="width:100%; height: 9vw;">
                                         </div>
+
                                         <div class="card-body p-0">
-                                            <a href="#" class="card-title vpp-link">
+                                            <a href="${chitietUrl}" class="card-title vpp-link">
                                                 <h5>${tempKhachHang.tenSP}</h5>
                                             </a>
                                             <p class="card-text text-danger fs-5 fw-bold">${tempKhachHang.giaBan}</p>
-                                            <a href="#" class="btn vpp-btn vpp-bd-btn hvr-shutter-out-horizontal">Xem chi
+                                            <a href="${chitietUrl}" class="btn vpp-btn vpp-bd-btn hvr-shutter-out-horizontal">Xem chi
                                                 tiết</a>
                                         </div>
                                     </div>

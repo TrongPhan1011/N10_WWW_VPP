@@ -29,4 +29,6 @@ public class SanPhamController {
 		theModel.addAttribute("dsNSX", listNSX);
 		return "sanpham";
 	}
+	
+	
 }

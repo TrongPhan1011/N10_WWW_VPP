@@ -25,7 +25,15 @@ public class SanPhamImpl implements SanPhamDAO {
 
 		return sanPhams;
 	}
-	
+
+	public SanPham getSanPhamTheoID(int id) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		SanPham tempSanPham = currentSession.get(SanPham.class, id);
+		return tempSanPham;
+		
+		
+	}
+
 	@Override
 	public List<SanPham> getSPGiamDanTheoDaBan() {
 		Session session = sessionFactory.getCurrentSession();
@@ -43,6 +51,5 @@ public class SanPhamImpl implements SanPhamDAO {
 		List<SanPham> ls = session.createNativeQuery("SELECT sanPham.* FROM sanPham  join loaiSP  on sanPham.idLoai = loaiSP.id where tenLoai = '"+tenLoai+"'",SanPham.class).getResultList();
 		return ls;
 	}
-
 
 }
