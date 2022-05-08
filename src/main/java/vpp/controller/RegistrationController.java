@@ -53,8 +53,9 @@ public class RegistrationController {
 		
 		String userName = vppUser.getUserName();
 		
+		
 		logger.info("Processing registration form for: " + userName);
-		logger.info("Processing registration form for pass: " + vppUser.getPassword());
+//		logger.info("Processing registration form for pass: " + vppUser.getPassword());
 		
 		
 		
@@ -70,13 +71,13 @@ public class RegistrationController {
 		}
 		
 		
-		String encodedPassword = passwordEncoder.encode(vppUser.getPassword());
-
-        encodedPassword = "{bcrypt}" + encodedPassword;
+//		String encodedPassword = passwordEncoder.encode(vppUser.getPassword());
+//
+//        encodedPassword = "{bcrypt}" + encodedPassword;
                  
         List<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList("ROLE_CUSTOMER");
 
-        User tempUser = new User(userName, encodedPassword, authorities);
+        User tempUser = new User(userName, vppUser.getPassword(), authorities);
 
         userDetailsManager.createUser(tempUser);		
 		
