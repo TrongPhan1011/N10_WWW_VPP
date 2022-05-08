@@ -260,7 +260,10 @@
 
                                 <div class="fw-bold">Nhà sản xuất:</div>
                                 <select name="namSX" id="namSX" class="form-select mb-3">
-                                    <option value="0">abc</option>
+                                <c:forEach var="tempNSX" items="${dsNSX}">
+                                	 <option value="${tempNSX.tenNSX }">${tempNSX.tenNSX }</option>
+                                </c:forEach>
+                                   
                                 </select>
                             </div>
                         </div>
@@ -285,7 +288,7 @@
                     <div class="row">
                     	<c:forEach var="tempKhachHang" items="${dsSanPham}">
                               
-                                <div class="col-3 pt-0 p-2 d-flex justify-content-around block-sanpham">
+                                <div class="col-3 mt-4 pt-0 p-2 d-flex justify-content-around block-sanpham">
                                     <div class="card pb-2 vpp-bd-hover-pink vpp-bd-btn hvr-grow-shadow" style="width:90%;">
                                         <div class="img-sp">
                                             <img class="card-img-top vpp-bd-radius-top"

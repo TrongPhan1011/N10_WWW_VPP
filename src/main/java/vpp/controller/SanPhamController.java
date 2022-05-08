@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import vpp.entity.NSX;
 import vpp.entity.SanPham;
+import vpp.service.NSXService;
 import vpp.service.SanPhamService;
 
 @Controller
@@ -16,11 +18,15 @@ public class SanPhamController {
 	
 	@Autowired
 	private SanPhamService sanPhamService;
+	@Autowired
+	private NSXService nsxService;
 	
-	@RequestMapping("/list")
+	@RequestMapping("/")
 	public String getTatCaSanPham(Model theModel) {
 		List<SanPham> sanPhams=sanPhamService.getTatCaSanPham();
+		List<NSX> listNSX=nsxService.getTatCaNSX();
 		theModel.addAttribute("dsSanPham", sanPhams);
+		theModel.addAttribute("dsNSX", listNSX);
 		return "sanpham";
 	}
 }
