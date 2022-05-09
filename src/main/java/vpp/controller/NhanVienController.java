@@ -25,13 +25,13 @@ import vpp.entity.NhanVien;
 import vpp.service.NhanVienService;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/admin/nhanvien")
 public class NhanVienController {
 	@Autowired
 	private UserDetailsManager userDetailsManager;
 	@Autowired
 	private NhanVienService nhanVienService;
-	private Model model;
+	
 
 	@GetMapping("/")
 	public String getAllnhanvien(Model model) {
@@ -41,7 +41,7 @@ public class NhanVienController {
 	}
 
 	@PostMapping("/saveNV")
-	public String saveNV(@Valid @ModelAttribute("nhanvien") NhanVien nhanVien) {
+	public String saveNV(@Valid @ModelAttribute("nhanvien") NhanVien nhanVien,Model model) {
 		List<NhanVien> nhanViens = nhanVienService.getAllNV();
 		String gioitinh = null;
 		String chucvu = null;
@@ -94,15 +94,19 @@ public class NhanVienController {
 			nhanVienService.saveNV(thongtinNV);
 			System.out.println(check);
 		}
-			return "admin/admin-nhanvien";
+	
+		model.addAttribute("dsNV", nhanViens);
+		return "redirect:/admin/nhanvien/";
 
 		
 	}
 
 	@GetMapping("/delete")
-	public String deleteNV(@RequestParam("nhanvienID") int id) {
+	public String deleteNV(@RequestParam("nhanvienID") int id,Model model) {
 		nhanVienService.deleteNV(id);
-		return "admin/admin-nhanvien";
+		List<NhanVien> nhanViens3 = nhanVienService.getAllNV();
+		model.addAttribute("dsNV", nhanViens3);
+		return "redirect:/admin/nhanvien/";
 	}
 
 }

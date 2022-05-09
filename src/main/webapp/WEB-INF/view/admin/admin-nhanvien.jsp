@@ -32,7 +32,7 @@
             <div class="col-4">
 
                 <a href="./admin.html">
-                    <img src="../../assets/img/Logo.png" alt="logo" width="100">
+                    <img src="../../resources/assets/img/Logo.png" alt="logo" width="100">
 
                 </a>
 
@@ -136,8 +136,8 @@
                                             </div>
                                       
                                             <div class="modal-body">
-                                            <c:url var="saveUrl" value="/admin/saveNV" />
-                                                <form:form action="${saveUrl}" modelAttribute="nhanvien" method="POST"   >
+                                            <c:url var="saveUrl" value="/admin/nhanvien/saveNV" />
+                                                <form:form action="${saveUrl}" modelAttribute="nhanvien" method="POST" cssClass="needs-validation"  name="myform"    >
                                                
                                                 <div class="row m-0 ">
                                                             <div class="col-6 pr-3 ps-3 pe-5 vpp-bd-right">
@@ -209,32 +209,12 @@
 
 
                                                             </div>
-                                                            <div class="col-6 pe-2 ps-5">
-                                                                <label for="id-admin-file">Chọn ảnh (Tối đa 4
-                                                                    ảnh):</label>
-                                                                <input type="file" id="id-admin-file"
-                                                                    class="form-control  vpp-bd-btn" required>
-                                                                <div class="invalid-feedback">
-                                                                    Vui lòng chọn hình ảnh
-                                                                </div>
+                                                            <div class="col-6 pe-2 ps-5" ">
+                                                              
+                                                               
+                                                                
 
-                                                                <div
-                                                                    class="d-flex justify-content-between mt-3 p-2 pb-4 vpp-bd-bottom">
-                                                                    <img src="../../assets/img/Slider/slide1.png"
-                                                                        alt="img1" class="vpp-bd-1 " width="23%"
-                                                                        height="50vh">
-                                                                    <img src="../../assets/img/Slider/slide1.png"
-                                                                        alt="img1" class="vpp-bd-1 " width="23%"
-                                                                        height="50vh">
-                                                                    <img src="../../assets/img/Slider/slide1.png"
-                                                                        alt="img1" class="vpp-bd-1 " width="23%"
-                                                                        height="50vh">
-                                                                    <img src="../../assets/img/Slider/slide1.png"
-                                                                        alt="img1" class="vpp-bd-1" width="23%"
-                                                                        height="50vh">
-
-
-                                                                </div>
+                                                                
 
 
 
@@ -299,24 +279,21 @@
                                                     <td class="">${nhanvien.sdt }</td>
                                                     <td>${nhanvien.diaChi }</td>
                                                     <td>
-                                                    <c:url var="deleteLink" value="/admin/delete">
+                                                    <c:url var="deleteLink" value="/admin/nhanvien/delete">
                                         <c:param name="nhanvienID" value="${nhanvien.id}" />
                                 </c:url>
-                                <c:url var="updateLink" value="/admin/showFormForUpdate">
+                                <c:url var="updateLink" value="/admin/nhanvien/showFormForUpdate">
                                         <c:param name="nhanvienID" value="${nhanvien.id}" />
                                 </c:url>
                                                         <div class="row m-0 d-flex justify-content-center">
-                                                            <div class="col-3 p-0 ms-1 me-1 ">
-                                                                <button type="button" class="btn bg-white vpp-bd-1 form-control hvr-grow" title="Chi tiết sản phẩm"><i class="fas fa-info fs-5 vpp-text-pink "></i></button>                                                            
-
-                                                            </div>
-                                                            <div class="col-3 p-0 me-1">
-                                                                <button  id="btnupdate" type="button" class=" col-2 btn hvr-shutter-out-horizontal vpp-btn don-da-duyet"
+                                                    
+                                                            <div class="col-4 p-0 me-1">
+                                                                <button  id="btnupdate" type="button" class=" btn bg-white vpp-bd-1 form-control hvr-grow vpp-bd-color-red"
                                                                 data-bs-toggle="modal" data-bs-target="#myModal" title="Chi tiết sản phẩm"><i class="fas fa-pencil-alt fs-5 vpp-text-blue"></i></button>                                                            
 
                                                             </div>
-                                                            <div class="col-3 p-0 me-1 ">
-                                                                <button onclick="window.location.href='${deleteLink}'" type="button" class="btn bg-white vpp-bd-1 form-control hvr-grow vpp-bd-color-red" title="Chi tiết sản phẩm"><i class="fas fa-times fs-5  vpp-text-red"  ></i></button>                                                            
+                                                            <div class="col-4 p-0 me-1 ">
+                                                                <button onclick=" if (!(confirm('Bạn muốn xóa nhân viên này?'))) return false; else window.location.href='${deleteLink}';" type="button" class="btn bg-white vpp-bd-1 form-control hvr-grow vpp-bd-color-red" title="Chi tiết sản phẩm"><i class="fas fa-times fs-5  vpp-text-red"  ></i></button>                                                            
 
                                                             </div>
                                                         </div>
@@ -394,6 +371,9 @@
                 
             });
        
+    </script>
+    <script src="../../resources/js/admin-nhanvienJS.js">
+
     </script>
 
 </body>
