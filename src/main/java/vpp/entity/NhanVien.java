@@ -146,9 +146,19 @@ public class NhanVien implements Serializable {
 	
 	public NhanVien() {
 	}
+	public NhanVien( String tenNV2, String gioitinh2, Date ngaySinh2, String diaChi2,String chucvu2) {
+		this.tenNV = tenNV2;
+		
+		this.gioiTinh = gioitinh2;
+		this.ngaySinh = ngaySinh2;
+		this.diaChi = diaChi2;
+		this.chucVu = chucvu2;
+		
+		
+	}
 	@Override
 	public String toString() {
-		return "NhanVien [id=" + id + ", tenNV=" + tenNV + ", email=" + email + ", sdt=" + sdt + ", gioiTinh="
+		 return "NhanVien [id=" + id + ", tenNV=" + tenNV + ", email=" + email + ", sdt=" + sdt + ", gioiTinh="
 				+ gioiTinh + ", ngaySinh=" + ngaySinh + ", diaChi=" + diaChi + ", urlAnh=" + urlAnh + ", chucVu="
 				+ chucVu + ", ngayDangKy=" + ngayDangKy + ", trangThai=" + trangThai + "]";
 	}

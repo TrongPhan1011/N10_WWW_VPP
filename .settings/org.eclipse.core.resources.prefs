@@ -2,6 +2,8 @@
 <<<<<<<=HEAD
 >>>>>>>=4ff0c7ed7fedba933e6fd759d27d4a1d7c145614
 eclipse.preferences.version=1
+encoding//src/main/java/vpp/ImplDAO/NhanVienImpl.java=UTF-8
+encoding//src/main/java/vpp/controller/NhanVienController.java=UTF-8
 encoding//src/main/webapp/WEB-INF/view/index.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/lien-he.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/login.jsp=UTF-8
