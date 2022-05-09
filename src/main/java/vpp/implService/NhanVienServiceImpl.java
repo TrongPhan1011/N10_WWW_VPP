@@ -52,6 +52,13 @@ public class NhanVienServiceImpl implements NhanVienService {
 		nhanVienDAO.updateNV(nhanVien, id,emailcu);
 		
 	}
+
+	@Override
+	@Transactional
+	public NhanVien getNVEmail(String email) {
+		// TODO Auto-generated method stub
+		return nhanVienDAO.getNVEmail(email);
+	}
 	
 	
 }

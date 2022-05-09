@@ -81,8 +81,10 @@
                                         <c:choose>
                                             <c:when test="${pageContext.request.userPrincipal.name != null}">
                                                 <div class="col-3 pe-0 d-flex align-items-center  vpp-text-pink">
-                                                    <a href="${pageContext.request.contextPath}/chiTietTaiKhoan" class="vpp-text-pink">
+                                                    <a href="${pageContext.request.contextPath}/admin/chiTietTaiKhoan/" class="vpp-text-pink" >
                                                         <i class="fas fa-user-circle fs-1 vpp-bd-circle "></i>
+                                                       <input type="hidden"  name="emailloggin"  value="<security:authentication
+						property="principal.username" />">
                                                     </a> 
                                                         
                                                 </div>

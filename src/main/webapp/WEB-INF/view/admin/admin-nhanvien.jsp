@@ -156,7 +156,7 @@
                                                                     <label for="id-admin-email">Email:</label>
                                                                     <input name="email" type="email" id="id-admin-email"
                                                                         class="form-control  vpp-bd-btn mt-1 mb-3"
-                                                                        placeholder="Nhập email" name="email" required>
+                                                                        placeholder="Nhập email"  required>
                                                                     <div class="invalid-feedback">
                                                                         Vui lòng điền email
                                                                     </div>
@@ -211,12 +211,6 @@
                                                             </div>
                                                             <div class="col-6 pe-2 ps-5" ">
                                                               
-                                                               
-                                                                
-
-                                                                
-
-
 
                                                                 <div class="row m-0 mt-4 d-flex justify-content-center">
                                                                     <div class="col-12 p-0 ">

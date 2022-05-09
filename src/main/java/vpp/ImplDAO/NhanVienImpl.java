@@ -76,6 +76,16 @@ public class NhanVienImpl implements NhanVienDAO {
 		return nv;
 	}
 
+	@Override
+	public NhanVien getNVEmail(String email) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		// now retrieve/read from database using the primary key
+		Query<NhanVien> theQuery = currentSession.createNativeQuery("select *from vpp_web.NhanVien where  email='"+email+"'",
+				NhanVien.class);
+	NhanVien nhanvien =  theQuery.getSingleResult();
+		return nhanvien;
+	}
+
 	
 
 }
