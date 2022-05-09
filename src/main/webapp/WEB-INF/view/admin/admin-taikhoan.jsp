@@ -228,6 +228,21 @@
                                                                     </div>
                                                         </div>
                                                     </div>
+                                                     <div class="row mt-3 ">
+                                                        <div class="col-4">
+                                                            <label class="form-label" for="id-admin-pass">
+                                                                Mật khẩu mới:
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-6 ">
+                                                            <form:input type="text" path=""  id="id-admin-pass"
+                                                                class="form-control vpp-bd-1" />
+                                                                        <div class="invalid-feedback">
+                                                                        Vui lòng điền email
+                                                                       
+                                                                    </div>
+                                                        </div>
+                                                    </div>
 
 
 
