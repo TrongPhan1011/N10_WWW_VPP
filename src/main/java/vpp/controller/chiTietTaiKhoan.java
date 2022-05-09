@@ -33,7 +33,7 @@ public class chiTietTaiKhoan {
 		String gioiString=null;
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-		NhanVien nhanVien = nhanVienService.getNVEmail("Letuantai15f@gmail.com");
+		NhanVien nhanVien = nhanVienService.getNVEmail(authentication.getName());
 		if(nhanVien.getGioiTinh().equals("Nữ")) {
 			gioiString="1";
 		}
