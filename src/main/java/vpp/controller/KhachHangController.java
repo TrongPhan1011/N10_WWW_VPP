@@ -39,17 +39,18 @@ public class KhachHangController {
 	}
 
 	@GetMapping("/capNhatKhachHang")
-	public String showFormForUpdate(@RequestParam("khachHangId") int theId, Model theModel) {
+	public String showFormForUpdate(@RequestParam("khachHangId") int theId,@ModelAttribute("khachHang") Model theModel) {
 		KhachHang khachHang = khachHangService.getKhachHangTheoID(theId);	
-		theModel.addAttribute("customer", khachHang);		
+		theModel.addAttribute("khachHang", khachHang);
+		khachHangService.themHoacCapNhatKhachHang(khachHang);
 		return "redirect:/khachhang/";    
 	}
 
-	@RequestMapping("/themHoacCapNhatKhachHang")
-	public String themHoacCapNhatKhachHang(@ModelAttribute("khachHang") KhachHang khachHang) {
-		khachHangService.themHoacCapNhatKhachHang(khachHang);
-		return "redirect:/khachhang/";
-	}
+//	@RequestMapping("/themHoacCapNhatKhachHang")
+//	public String themHoacCapNhatKhachHang(@ModelAttribute("khachHang") KhachHang khachHang) {
+//		khachHangService.themHoacCapNhatKhachHang(khachHang);
+//		return "redirect:/khachhang/";
+//	}
 
 
 }

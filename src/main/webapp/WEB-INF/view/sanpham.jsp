@@ -19,6 +19,33 @@
 </head>
 
 <body>
+		<c:url var="urlGiayIn" value="/sanpham/loaisanpham">
+               <c:param name="tenLoai" value="Giấy in"></c:param>
+         </c:url>
+         <c:url var="urlButViet" value="/sanpham/loaisanpham">
+               <c:param name="tenLoai" value="Bút viết"></c:param>
+         </c:url>
+         <c:url var="urlVoSo" value="/sanpham/loaisanpham">
+               <c:param name="tenLoai" value="Vỡ, sổ"></c:param>
+         </c:url>
+         <c:url var="urlMayTinh" value="/sanpham/loaisanpham">
+               <c:param name="tenLoai" value="Máy tính cầm tay"></c:param>
+         </c:url>
+         <c:url var="urlKepGiay" value="/sanpham/loaisanpham">
+               <c:param name="tenLoai" value="Kẹp giấy"></c:param>
+         </c:url>
+         <c:url var="urlBaoThu" value="/sanpham/loaisanpham">
+               <c:param name="tenLoai" value="Bao thư"></c:param>
+         </c:url>
+         <c:url var="urlBangDinh" value="/sanpham/loaisanpham">
+               <c:param name="tenLoai" value="Keo, băng dính"></c:param>
+         </c:url>
+         <c:url var="urlCompa" value="/sanpham/loaisanpham">
+               <c:param name="tenLoai" value="Kéo, compa"></c:param>
+         </c:url>
+         <c:url var="urlKhac" value="/sanpham/loaisanpham">
+               <c:param name="tenLoai" value="Khác"></c:param>
+         </c:url>
     <div class="container-fluid ">
         <div id="header">
             <div class="row p-3  vpp-bg-header  d-flex align-items-center"
@@ -145,8 +172,9 @@
                 </nav>
             </div>
         </div>
+        
         <div class="container">
-
+			 
             <div class="row">
                 <div class="col-3">
                     <div class="row">
@@ -157,23 +185,23 @@
                     </div>
                     <div class="row col-8">
                         <ul class="list-group menudanhmuc">
-                            <li class="list-group-item"><a class="vpp-link" href="#"><i class="fas fa-toilet-paper"></i>
+                            <li class="list-group-item"><a class="vpp-link" href="${urlGiayIn}"><i class="fas fa-toilet-paper"></i>
                                     Giấy in</a></li>
-                            <li class="list-group-item"><a href="#" class="vpp-link"><i class="fas fa-pen"></i> Bút
+                            <li class="list-group-item"><a href="${urlButViet }" class="vpp-link"><i class="fas fa-pen"></i> Bút
                                     viết</a></li>
-                            <li class="list-group-item"><a href="#" class="vpp-link"><i class="fas fa-book"></i> Vở,
+                            <li class="list-group-item"><a href="${urlVoSo }" class="vpp-link"><i class="fas fa-book"></i> Vở,
                                     sổ</a></li>
-                            <li class="list-group-item"><a href="#" class="vpp-link"><i class="fas fa-calculator"></i>
+                            <li class="list-group-item"><a href="${urlMayTinh }" class="vpp-link"><i class="fas fa-calculator"></i>
                                     Máy tính cầm tay</a></li>
-                            <li class="list-group-item"><a href="#" class="vpp-link"><i class="fas fa-paperclip"></i>
+                            <li class="list-group-item"><a href="${urlKepGiay }" class="vpp-link"><i class="fas fa-paperclip"></i>
                                     Kẹp giấy</a></li>
-                            <li class="list-group-item"><a href="#" class="vpp-link"><i class="fas fa-envelope"></i> Bao
+                            <li class="list-group-item"><a href="${urlBaoThu }" class="vpp-link"><i class="fas fa-envelope"></i> Bao
                                     thư</a></li>
-                            <li class="list-group-item"><a href="#" class="vpp-link"><i class="fas fa-tape"></i> Keo,
+                            <li class="list-group-item"><a href="${urlBangDinh }" class="vpp-link"><i class="fas fa-tape"></i> Keo,
                                     băng dính</a></li>
-                            <li class="list-group-item"><a href="#" class="vpp-link"><i class="fas fa-cut"></i> Kéo,
+                            <li class="list-group-item"><a href="${urlCompa }" class="vpp-link"><i class="fas fa-cut"></i> Kéo,
                                     compa</a></li>
-                            <li class="list-group-item"><a href="#" class="vpp-link"><i class="fas fa-plus-circle"></i>
+                            <li class="list-group-item"><a href="${urlKhac }" class="vpp-link"><i class="fas fa-plus-circle"></i>
                                     Các mặt hàng khác</a></li>
 
                         </ul>
@@ -277,10 +305,10 @@
                         <h4>Sản phẩm</h4>
                         </p>
                         <h6 class="">Sắp xếp:
-                            <a class="vpp-link vpp-text-decoration me-3" href="#">Tên A_Z</a>
-                            <a class="vpp-link vpp-text-decoration me-3" href="#">Giá tăng dần</a>
-                            <a class="vpp-link vpp-text-decoration me-3" href="#">Giá giảm dần</a>
-                            <a class="vpp-link vpp-text-decoration me-3" href="#">Hàng mới</a>
+                            <a class="vpp-link vpp-text-decoration me-3" href="${pageContext.request.contextPath}/sanpham/sapxeptheoten">Tên A_Z</a>
+                            <a class="vpp-link vpp-text-decoration me-3" href="${pageContext.request.contextPath}/sanpham/sapxeptheogiatangdan">Giá tăng dần</a>
+                            <a class="vpp-link vpp-text-decoration me-3" href="${pageContext.request.contextPath}/sanpham/sapxeptheogiagiamdan">Giá giảm dần</a>
+                           
                         </h6>
 
                     </div>
@@ -292,7 +320,7 @@
                                         </c:url>
                               	
                               	
-                                <div class="col-3 pt-0 p-2 d-flex justify-content-around block-sanpham">
+                                <div class="col-3 mt-4 pt-0 p-2 d-flex justify-content-around block-sanpham">
                                     <div class="card pb-2 vpp-bd-hover-pink vpp-bd-btn hvr-grow-shadow" style="width:90%;">
                                         <div class="img-sp">
                                             <img class="card-img-top vpp-bd-radius-top"

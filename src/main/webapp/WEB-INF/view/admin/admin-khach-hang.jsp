@@ -8,8 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quản lý</title>
 <link
@@ -123,10 +122,7 @@
 							<div class="col-12 p-0">
 								<div class="row m-0 d-flex justify-content-between">
 									<h4 class="col-4 p-0">Danh sách khách hàng</h4>
-									<button type="button"
-										class=" col-2 btn hvr-shutter-out-horizontal vpp-btn don-da-duyet"
-										data-bs-toggle="modal" data-bs-target="#myModal">Thêm
-									</button>
+									
 									<div class="modal fade " id="myModal">
 										<div class="modal-dialog modal-lg ">
 											<div class="modal-content vpp-bd-1">
@@ -141,7 +137,7 @@
 												</div>
 
 												<div class="modal-body">
-													<form:form action="themHoacCapNhatKhachHang"
+													<form:form action="capNhatKhachHang"
 														modelAttribute="khachHang" method="POST"
 														class="">
 														<form:hidden path="id" />
@@ -196,7 +192,7 @@
 																	name="admin-diaChi" placeholder="Địa chỉ" />
 																</textarea>
 
-
+																
 																<div class="row m-0 mt-4 d-flex justify-content-center">
 																	<div class="col-12 p-0 ">
 																		<button type="submit"
@@ -223,109 +219,7 @@
 											</div>
 										</div>
 									</div>
-									
-									<!-- Modal update -->
-									
-									<div class="modal fade " id="myModalUpdate">
-										<div class="modal-dialog modal-lg ">
-											<div class="modal-content vpp-bd-1">
-
-												<!-- Modal Header -->
-												<div class="modal-header">
-													<div class="w-100 d-flex justify-content-center ">
-														<h4>Thông tin khách hàng</h4>
-													</div>
-													<button type="button" class="btn-close"
-														data-bs-dismiss="modal"></button>
-												</div>
-
-												<div class="modal-body">
-													<form:form action="themHoacCapNhatKhachHang"
-														modelAttribute="khachHang" method="POST"
-														class="">
-														<form:hidden path="id" />
-														<div class="row m-0 ">
-
-															<div class="col-6 pr-3 ps-3 pe-5 vpp-bd-right">
-																<form:label for="id-admin-TenKH" path="tenKH">Tên khách hàng: </form:label>
-																<form:input type="text" id="id-admin-TenKH" path="tenKH"
-																	class="form-control  vpp-bd-btn mt-1 mb-3 is-invalid"
-																	placeholder="Nhập tên khách hàng"
-																	aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" />
-
-
-																<form:label for="id-admin-emailKH" path="email">Email</form:label>
-																<form:input type="text" id="id-admin-emailKH"
-																	path="email" class="form-control  vpp-bd-btn mt-1 mb-3"
-																	placeholder="Nhập email khách hàng" />
-
-																<form:label for="id-admin-gioiTinhKH" path="gioiTinh">Giới tính</form:label>
-																<form:select name="admin-NSX" id="id-admin-gioiTinhKH"
-																	path="gioiTinh"
-																	class="form-control form-select vpp-bd-btn mt-1 mb-3">
-																	<form:option value="0">Nam</form:option>
-																	<form:option value="1">Nữ</form:option>
-
-
-																</form:select>
-
-																<form:label for="id-admin-ngaySinhKH" path="ngaySinh">Ngày sinh</form:label>
-																<form:input type="date" id="id-admin-ngaySinhKH"
-																	path="ngaySinh"
-																	class="form-control vpp-bd-btn mt-1 mb-3" min="1000"
-																	value="1000" />
-
-																<form:label for="id-admin-ngayThamGia"
-																	path="ngayThamGia">Ngày tham gia</form:label>
-																<form:input type="date" id="id-admin-ngayThamGia"
-																	path="ngayThamGia"
-																	class="form-control vpp-bd-btn mt-1 mb-3" min="1000"
-																	value="1000" />
-
-															</div>
-															<div class="col-6 pe-2 ps-5">
-																<label for="id-admin-SĐTKH">SĐT</label>
-																<form:input type="text" id="id-admin-SĐTKH" path="sdt"
-																	class="form-control  vpp-bd-btn mt-1 mb-3"
-																	placeholder="Số điện thoại" />
-
-																<label for="id-admin-diaChiKH">Địa chỉ</label>
-																<form:textarea class="form-control vpp-bd-btn"
-																	path="diaChi" id="id-admin-diaChiKH"
-																	name="admin-diaChi" placeholder="Địa chỉ" />
-																</textarea>
-
-
-																<div class="row m-0 mt-4 d-flex justify-content-center">
-																	<div class="col-12 p-0 ">
-																		<button type="submit"
-																			onclick="window.location.href='capNhatKhachHang';"
-																			class="btn vpp-btn hvr-shutter-out-horizontal vpp-btn don-da-duyet form-control">Lưu
-																			thông tin</button>
-																	</div>
-																</div>
-																<div class="row m-0 mt-4 d-flex justify-content-center">
-																	<div class="col-12 p-0 ">
-																		<button type="button"
-																			class="btn vpp-btn hvr-shutter-out-horizontal vpp-btn  form-control"
-																			data-bs-dismiss="modal">Huỷ</button>
-																	</div>
-																</div>
-
-															</div>
-														</div>
-													</form:form>
-												</div>
-
-
-
-											</div>
-										</div>
-									</div>
-									
-									
-									
-									
+			
 								</div>
 
 								<div class="row m-0 mt-4">
@@ -341,8 +235,6 @@
 													<th>Giới tính</th>
 													<th>Ngày sinh</th>
 													<th>Địa chỉ</th>
-													<th>Trạng thái</th>
-													<th>Ngày tham gia</th>
 													<th>Chức năng</th>
 
 												</tr>
@@ -362,10 +254,8 @@
 														<td>${tempKH.email }</td>
 														<td>${tempKH.sdt }</td>
 														<td>${tempKH.gioiTinh }</td>
-														<td class="">${tempKH.ngaySinh }</td>
+														<td>${tempKH.ngaySinh }</td>
 														<td>${tempKH.diaChi }</td>
-														<td>${tempKH.trangThai }</td>
-														<td>${tempKH.ngayThamGia }</td>
 
 														<td>
 															<div class="row m-0 d-flex justify-content-center">
@@ -378,9 +268,9 @@
 
 																</div>
 																<div class="col-3 p-0 me-1">
-																	<button type="button" data-bs-toggle="modal" data-bs-target="#myModalUpdate"
+																	<button type="button" data-bs-toggle="modal" data-bs-target="#myModal"
 																		class="btn bg-white vpp-bd-1 form-control hvr-grow vpp-bd-color-blue"
-																		title="Cập nhật khách hàng">
+																		title="Cập nhật khách hàng" id="btnupdate">
 																		<i class="fas fa-pencil-alt fs-5 vpp-text-blue"></i>
 																	</button>
 
@@ -424,7 +314,34 @@
 				</div>
 			</div>
 		</div>
-
+		
 		<script src="../resources/js/admin-khachhang.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+
+            $('#btnupdate ').click(function () {
+                var id =$(this).closest('tr').find('td').eq(0).text();
+                var ten =$(this).closest('tr').find('td').eq(1).text();
+                var email =$(this).closest('tr').find('td').eq(2).text();
+                var sdt =$(this).closest('tr').find('td').eq(3).text();
+                var gioitinh =$(this).closest('tr').find('td').eq(4).text();
+                var ngaysinh =$(this).closest('tr').find('td').eq(5).text();
+                var diachi =$(this).closest('tr').find('td').eq(6).text();
+                
+                alert(id);
+                $('form[name="id"]').val(id);
+                $('input[name="tenKH"]').val(ten);
+                $('input[name="email"]').val(email);
+                if(gioitinh=="Nam")
+                	$('select[name="gioiTinh"]').val(0);
+                else
+                	$('select[name="gioiTinh"]').val(1);
+                $('input[name="ngaySinh"]').val(ngaysinh);
+                $('input[name="sdt"]').val(sdt);
+                $('textarea[name="diaChi"]').val(diachi);
+                        
+            });
+       
+    </script>
 </body>
 </html>
