@@ -2,6 +2,7 @@ package vpp.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,7 +33,7 @@ public class NhanVien implements Serializable {
 	private String diaChi;
 	private String urlAnh;
 	private String chucVu;
-	private Date ngayDangKy;
+	private LocalDate ngayDangKy;
 	private String trangThai;
 	public int getId() {
 		return id;
@@ -88,10 +89,10 @@ public class NhanVien implements Serializable {
 	public void setChucVu(String chucVu) {
 		this.chucVu = chucVu;
 	}
-	public Date getNgayDangKy() {
+	public LocalDate getNgayDangKy() {
 		return ngayDangKy;
 	}
-	public void setNgayDangKy(Date ngayDangKy) {
+	public void setNgayDangKy(LocalDate ngayDangKy) {
 		this.ngayDangKy = ngayDangKy;
 	}
 	public String getTrangThai() {
@@ -101,7 +102,7 @@ public class NhanVien implements Serializable {
 		this.trangThai = trangThai;
 	}
 	public NhanVien(int id, String tenNV, String email, String sdt, String gioiTinh, Date ngaySinh, String diaChi,
-			String urlAnh, String chucVu, Date ngayDangKy, String trangThai) {
+			String urlAnh, String chucVu, LocalDate localDate, String trangThai) {
 		super();
 		this.id = id;
 		this.tenNV = tenNV;
@@ -112,11 +113,11 @@ public class NhanVien implements Serializable {
 		this.diaChi = diaChi;
 		this.urlAnh = urlAnh;
 		this.chucVu = chucVu;
-		this.ngayDangKy = ngayDangKy;
+		this.ngayDangKy = localDate;
 		this.trangThai = trangThai;
 	}
 	public NhanVien(String tenNV, String email, String sdt, String gioiTinh, Date ngaySinh, String diaChi,
-			String urlAnh, String chucVu, Date ngayDangKy, String trangThai) {
+			String urlAnh, String chucVu, LocalDate ngayDangKy, String trangThai) {
 		super();
 		this.tenNV = tenNV;
 		this.email = email;
@@ -130,7 +131,7 @@ public class NhanVien implements Serializable {
 		this.trangThai = trangThai;
 	}
 	public NhanVien(String tenNV, String email, String sdt, String gioiTinh, Date ngaySinh, String diaChi,
-			String chucVu, Date ngayDangKy, String trangThai) {
+			String chucVu, LocalDate ngayDangKy, String trangThai) {
 		super();
 		this.tenNV = tenNV;
 		this.email = email;

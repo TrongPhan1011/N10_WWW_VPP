@@ -21,7 +21,7 @@ public class NhanVienImpl implements NhanVienDAO {
 	@Override
 	public List<NhanVien> getAllNV() {
 		Session currentSession = sessionFactory.getCurrentSession();
-		Query<NhanVien> theQuery = currentSession.createQuery("from NhanVien where  trangThai='Đang làm việc'",
+		Query<NhanVien> theQuery = currentSession.createQuery("from NhanVien",
 				NhanVien.class);
 		List<NhanVien> nhanvien = theQuery.getResultList();
 
