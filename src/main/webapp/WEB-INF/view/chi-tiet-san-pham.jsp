@@ -15,17 +15,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link rel="stylesheet" href="/resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
-    <link rel="stylesheet" href="/resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
+    <link rel="stylesheet" href="../resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
+    <link rel="stylesheet" href="../resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
 
-    <link rel="stylesheet" href="/resources/css/general.css">
-    <link rel="stylesheet" href="/resources/css/index.css">
-    <link rel="stylesheet" href="/resources/css/chi-tiet-sp.css">
+    <link rel="stylesheet" href="../resources/css/general.css">
+    <link rel="stylesheet" href="../resources/css/index.css">
+    <link rel="stylesheet" href="../resources/css/chi-tiet-sp.css">
 </head>
 
 <body>
+
     <div class="container-fluid vpp-bg-pink">
         <div id="header">
+        		
             <div class="row p-3  vpp-bg-header  d-flex align-items-center"
                 style="border-bottom: 1px solid rgb(253, 185, 188);">
                 <a href="#" class="col-2 text-center">
@@ -212,11 +214,12 @@
 
                     </div>
                     <div class="col-6">
-
-                        <h4>Áo thun</h4>
-                        <h3 class="text-danger fw-bold mt-3"> 10 tỷ đ</h3>
-                        <p class="text-justify LT-heigh-120">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Voluptatem facere quia necessitatibus debitis et quam itaque iste autem quaerat reiciendis.
+						
+						
+                        <h4>${tempKhachHang.tenSP}</h4>
+                        <h3 class="text-danger fw-bold mt-3">${tempKhachHang.giaBan } đ</h3>
+                        <p class="text-justify LT-heigh-120">
+                        	
                         </p>
                         <div class="col-3 ">
                             <h5>Số lượng:</h5>
@@ -245,15 +248,7 @@
                             <span class="vpp-line-pink"></span>
                         </div>
                         <div id="moTa" class="row mt-4 mb-5">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam eligendi voluptatem, nam
-                            praesentium asperiores mollitia sed laboriosam fuga ducimus laborum, adipisci consectetur ab
-                            minima? Quia id laborum veniam ipsam laboriosam?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptates quas, laboriosam
-                            eius repellendus nostrum laudantium rerum totam numquam. Ratione illum amet autem quis
-                            voluptas deleniti, maxime nostrum officiis rem.
-                            Accusantium quam maxime similique nostrum fuga distinctio, deserunt vero, maiores unde sit
-                            blanditiis iure corporis molestias quas, soluta sequi aliquam qui sint laborum doloremque
-                            quia repudiandae tempore eaque minus. Veritatis.
+	                            ${tempKhachHang.moTaSP }
 
                         </div>
 
@@ -266,10 +261,31 @@
                             <span class="vpp-line-pink"></span>
                         </div>
                         <div id="chiTietSanPham" class="row mt-4 mb-5">
-                            <form action="" class="justify-content-center">
-
-
-                            </form>
+                            <table class="table table-striped table-hover ">
+                                <tbody id="tblBody">
+                                    <tr>
+                                        <td>Tên sản phẩm:</td>
+                                        <td>${tempKhachHang.tenSP}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ngày sản xuất:</td>
+                                        <td>${tempKhachHang.ngaySX }</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trạng thái:</td>
+                                        <td>${tempKhachHang.trangThai }</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chất liệu:</td>
+                                        <td>${tempKhachHang.chatLieu }</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nhà sản xuất:</td>
+                                        <td>dasdas</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
 
                         </div>
 

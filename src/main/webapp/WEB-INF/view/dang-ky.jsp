@@ -14,13 +14,23 @@
     <title>Đăng ký</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/resources/css/lib/hover.css">
-    <link rel="stylesheet" href="/resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
-    <link rel="stylesheet" href="/resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="../resources/css/lib/hover.css">
+    <link rel="stylesheet" href="../resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
+    <link rel="stylesheet" href="../resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
 
-    <link rel="stylesheet" href="/resources/css/dangKy.css">
-    <link rel="stylesheet" href="/resources/css/general.css">
-    <link rel="stylesheet" href="/resources/css/index.css">
+    <link rel="stylesheet" href="../resources/css/dangKy.css">
+    <link rel="stylesheet" href="../resources/css/general.css">
+    <link rel="stylesheet" href="../resources/css/index.css">
+=======
+    <link rel="stylesheet" href="./resources/css/lib/hover.css">
+    <link rel="stylesheet" href="./resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
+    <link rel="stylesheet" href="./resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
+
+    <link rel="stylesheet" href="./resources/css/dangKy.css">
+    <link rel="stylesheet" href="./resources/css/general.css">
+    <link rel="stylesheet" href="./resources/css/index.css">
+>>>>>>> e18787f30f5fbadd56bc75b226c966608f439b01
 </head>
 <body>
     <div class="container-fluid ">
