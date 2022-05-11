@@ -46,14 +46,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
         		.antMatchers("/admin/khachhang/**").hasAnyRole("ADMIN")
         		
         		.antMatchers("/**").permitAll()
-        		
-        		
-//                .antMatchers("/customer/delete").hasRole("ADMIN")
-//        
-                //** matches zero or more 'directories' in a path
-//                .antMatchers("/customer/**").hasRole("EMPLOYEE")
-//                .antMatchers("/registry/**").permitAll()
-                
+
                 .and()
                 .formLogin()
                 .loginPage("/login")
