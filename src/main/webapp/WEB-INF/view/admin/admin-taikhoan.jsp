@@ -5,7 +5,7 @@
 
 <%@ taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,14 +19,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../../css/lib/hover.css">
-    <link rel="stylesheet" href="../../assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
-    <link rel="stylesheet" href="../../assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
+    <link rel="stylesheet" href="../../resources/css/lib/hover.css">
+    <link rel="stylesheet" href="../../resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
+    <link rel="stylesheet" href="././resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
 
-    <link rel="stylesheet" href="../../css/general.css">
-    <link rel="stylesheet" href="../../css/admin/admin.css">
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../css/admin/admin-don-hang.css">
+    <link rel="stylesheet" href="../../resources/css/general.css">
+    <link rel="stylesheet" href="../../resources/css/admin/admin.css">
+    <link rel="stylesheet" href="../../resources/css/index.css">
+    <link rel="stylesheet" href="../../resources/css/admin/admin-don-hang.css">
 
 </head>
 
@@ -36,7 +36,7 @@
             <div class="col-4">
 
                 <a href="./admin.html">
-                    <img src="../../assets/img/Logo.png" alt="logo" width="100">
+                    <img src="../../resources/assets/img/Logo.png" alt="logo" width="100">
 
                 </a>
 
@@ -92,7 +92,9 @@
 
                 <div class="col-10 p-0">
                     <div class=" ps-2 vpp-bg-light-dark ">
-                        <a href="#" class="vpp-link">Đơn hàng</a>
+                        <a href="#" class="vpp-link">Chi tiết tài khoản</a> : <security:authentication
+						property="principal.username" />
+						
                     </div>
                     <div class="container mt-3">
                         <!-- Nav tabs -->
@@ -104,13 +106,16 @@
                                 <div class="row" id="id-admin">
                                     <div class="col-2 text-center">
                                         <div class="vpp-bd-radius" id="avt_admin">
-                                            <img src="../../assets/img/thanhtoan1.png" width="75%" height="200px">
+                                            <img src="../../resources/assets/img/thanhtoan1.png" width="75%" height="200px">
                                         </div>
                                         <br>
                                         <input type="button" class=" btn vpp-btn" value="Chọn hình">
                                     </div>
                                     <div class="col-9">
-                                        <form action="#">
+                                    <c:url var="updateLink" value="/admin/chiTietTaiKhoan/update">
+                                        
+                                </c:url>
+                                        <form:form action="${ updateLink}" modelAttribute="thongtinNV" method="POST" cssClass="needs-validation"  name="myform">
                                             <h4 class="vpp-text-dark">Thông tin nhân viên:</h4>
                                             <div class="row">
 
@@ -122,41 +127,51 @@
                                                             </label>
                                                         </div>
                                                         <div class="col-6 ">
-                                                            <input type="text" id="id-admin-manv" name="manhanvien"
-                                                                class="form-control vpp-bd-1">
+                                                            <form:input type="text" path="id" id="id-admin-manv" name="manhanvien"
+                                                                class="form-control vpp-bd-1" disabled="true"/>
                                                         </div>
                                                     </div>
                                                     <div class="row mt-3 ">
                                                         <div class="col-4">
-                                                            <label class="form-label" for="id-admin-ten">
+                                                            <label class="form-label" for="id-admin-TenNV">
                                                                 Họ tên:
                                                             </label>
                                                         </div>
                                                         <div class="col-6 ">
-                                                            <input type="text" id="id-admin-ten"
-                                                                class="form-control vpp-bd-1">
+                                                            <form:input type="text"  path="tenNV" id="id-admin-TenNV"
+                                                                class="form-control vpp-bd-1"/>
+                                                                <div class="invalid-feedback">
+                                                                        Vui lòng điền tên nhân viên. Tên nhân viên không
+                                                                        có ký tự đặt biệt và số
+                                                                    </div>
                                                         </div>
                                                     </div>
                                                     <div class="row mt-3 ">
                                                         <div class="col-4">
-                                                            <label class="form-label" for="id-admin-sdt">
+                                                            <label class="form-label" for="id-admin-SĐT">
                                                                 SĐT:
                                                             </label>
                                                         </div>
                                                         <div class="col-6 ">
-                                                            <input type="text" id="id-admin-sdt"
-                                                                class="form-control vpp-bd-1">
+                                                            <form:input type="text" path="sdt" id="id-admin-SĐT"
+                                                                class="form-control vpp-bd-1"/>
+                                                                <div class="invalid-feedback">
+                                                                        Vui lòng nhập số điện thoại. Số điện thoại gồm 10 ký tự số
+                                                                    </div>
                                                         </div>
                                                     </div>
                                                     <div class="row mt-3 ">
                                                         <div class="col-4">
-                                                            <label class="form-label" for="id-admin-ngaysinh">
+                                                            <label class="form-label" for="id-admin-ngaySinh">
                                                                 Ngày sinh:
                                                             </label>
                                                         </div>
                                                         <div class="col-6 ">
-                                                            <input type="text" id="id-admin-ngaysinh"
-                                                                class="form-control vpp-bd-1">
+                                                            <form:input type="date" path="ngaySinh" id="id-admin-ngaySinh"
+                                                                class="form-control vpp-bd-1" />
+                                                                 <div class="invalid-feedback">
+                                                                        Vui lòng chọn ngày sinh. Từ 18 tuổi trở lên
+                                                                    </div>
                                                         </div>
                                                     </div>
                                                     <div class="row mt-3 ">
@@ -166,8 +181,8 @@
                                                             </label>
                                                         </div>
                                                         <div class="col-6 ">
-                                                            <input type="text" id="id-admin-diachi"
-                                                                class="form-control vpp-bd-1">
+                                                            <form:input type="text" path="diaChi" id="id-admin-diachi"
+                                                                class="form-control vpp-bd-1"/>
                                                         </div>
                                                     </div>
 
@@ -175,13 +190,13 @@
                                                 <div class="col-6">
                                                     <div class="row  ">
                                                         <div class="col-4">
-                                                            <label class="form-label" for="d-admin-chucvu">
+                                                            <label class="form-label" for="id-admin-chucvu">
                                                                 Chức vụ:
                                                             </label>
                                                         </div>
                                                         <div class="col-6 ">
-                                                            <input type="text" id="id-admin-chucvu"
-                                                                class="form-control vpp-bd-1">
+                                                            <form:input type="text" path="chucVu" id="id-admin-chucvu"
+                                                                class="form-control vpp-bd-1" disabled="true"/>
                                                         </div>
                                                     </div>
                                                     <div class="row mt-3 ">
@@ -191,11 +206,11 @@
                                                             </label>
                                                         </div>
                                                         <div class="col-6 ">
-                                                            <select id="id-admin-gioitinh"
+                                                            <form:select id="id-admin-gioitinh" path="gioiTinh"
                                                                 class="form-control form-select vpp-bd-1">
-                                                                <option value="0">Nam</option>
-                                                                <option value="1">Nữ</option>
-                                                            </select>
+                                                                <form:option value="0">Nam</form:option>
+                                                                <form:option value="1">Nữ</form:option>
+                                                            </form:select>
                                                         </div>
                                                     </div>
                                                     <div class="row mt-3 ">
@@ -205,16 +220,56 @@
                                                             </label>
                                                         </div>
                                                         <div class="col-6 ">
-                                                            <input type="email" id="id-admin-email"
-                                                                class="form-control vpp-bd-1">
+                                                            <form:input type="email" path="email" id="id-admin-email"
+                                                                class="form-control vpp-bd-1" />
+                                                                        <div class="invalid-feedback">
+                                                                        Vui lòng điền email
+                                                                       
+                                                                    </div>
+                                                        </div>
+                                                    </div>
+                                                     <div class="row mt-3 ">
+                                                        <div class="col-4">
+                                                            <label class="form-label" for="id-admin-pass">
+                                                                Mật khẩu mới:
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-6 ">
+                                                            <form:input type="text" path=""  id="id-admin-pass"
+                                                                class="form-control vpp-bd-1" />
+                                                                        <div class="invalid-feedback">
+                                                                        Vui lòng điền email
+                                                                       
+                                                                    </div>
                                                         </div>
                                                     </div>
 
 
 
                                                 </div>
+                                                <div class="col-12 pe-2 ps-5" ">
+                                                              
+
+                                                                <div class="row m-0 mt-4 d-flex justify-content-center">
+                                                                    <div class="col-4 pt-3 pr-3 pl-3 ">
+                                                                        <button type="submit"
+                                                                            class="btn vpp-btn hvr-shutter-out-horizontal vpp-btn don-da-duyet form-control"
+                                                                            id="btnluuthongtin">Lưu thông tin</button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row m-0 mt-4 d-flex justify-content-center">
+                                                                    <div class="col-4 pb-3 ">
+                                                                        <button type="button"
+                                                                            class="btn vpp-btn hvr-shutter-out-horizontal vpp-btn  form-control"
+                                                                            data-bs-dismiss="modal">Huỷ</button>
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                            </div>
                                             </div>
-                                        </form>
+                                        </form:form>
 
                                     </div>
 
@@ -227,20 +282,7 @@
 
 
                             </table>
-                            <div class="row mt-4">
-                                <div class="col-12  d-flex justify-content-center">
-                                    <div class="d-flex justify-content-center">
-                                        <a href="#" class="btn vpp-btn fs-5 mb-4 mr-3  " style="width: 10vw;">Hủy bỏ
-                                        </a>
-                                    </div>
-                                    <div class="d-flex justify-content-center">
-                                        <a href="#" class="btn vpp-btn fs-5 mb-4  bg-info " style="width: 10vw;">Lưu
-                                        </a>
-                                    </div>
-                                </div>
 
-
-                            </div>
                         </div>
                         <div id="menu1" class="container tab-pane fade"><br>
                             <h3>Danh sách đơn hàng đang chờ nhận hàng</h3>
@@ -292,7 +334,9 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+ <script src="../../resources/js/admin-nhanvienJS.js">
 
+    </script>
 
 </body>
 

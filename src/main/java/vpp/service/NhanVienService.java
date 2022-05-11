@@ -10,5 +10,6 @@ public interface NhanVienService {
 	public void deleteNV(int id);
 	public NhanVien getNVId(int id);
 	public void updateNV(NhanVien nhanVien,int id,String emailcu);
+	public NhanVien getNVEmail(String email);
 
 }

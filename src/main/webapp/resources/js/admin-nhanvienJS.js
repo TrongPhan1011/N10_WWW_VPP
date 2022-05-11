@@ -109,3 +109,27 @@ diachi.onblur = validateDiachi;
 var email=document.getElementById('id-admin-email')
 email.onblur=validatEemail;
 
+//fillter input
+$(document).ready(function() {
+  $('#myInput').on('keyup', function(event) {
+    event.preventDefault();
+    /* Act on the event */
+    var tukhoa = $(this).val().toLowerCase();
+    $('#myTable tr').filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(tukhoa)>-1);
+    });
+
+  });
+});
+//filler trang thai
+function getselect(){
+	var trangthai2 = document.getElementById('select-Trang-Thai');
+	var giatri = trangthai2.options[trangthai2.selectedIndex].text;
+
+$('#myTable tr').filter(function() {
+      $(this).toggle($(this).text().indexOf(giatri)>-1);
+    });
+};
+
+
+

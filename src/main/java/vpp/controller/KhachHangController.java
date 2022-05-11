@@ -1,6 +1,9 @@
 package vpp.controller;
 
 import java.io.UnsupportedEncodingException;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +18,7 @@ import vpp.entity.KhachHang;
 import vpp.service.KhachHangService;
 
 @Controller
-@RequestMapping("admin/khachhang")
+@RequestMapping("/admin/khachhang")
 public class KhachHangController {
 
 	@Autowired
@@ -26,6 +29,15 @@ public class KhachHangController {
 		List<KhachHang> khachHangs=khachHangService.getTatCaKhachHang();
 		KhachHang khachHang=new KhachHang();
 		theModel.addAttribute("khachHang", khachHang);
+//		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy ");
+//		for(int i=0;i<khachHangs.size();i++) {
+//		try {
+//			Date newDate=(Date) formatter.parse(khachHangs.get(i).getNgaySinh().toString());
+//			khachHangs.get(i).setNgaySinh(newDate);
+//		} catch (ParseException e) {
+//			e.printStackTrace();
+//		}
+//		}
 		theModel.addAttribute("dsKhachHang", khachHangs);
 		return "admin/admin-khach-hang";
 
@@ -34,7 +46,7 @@ public class KhachHangController {
 	@RequestMapping("/xoakhachhang")
 	public String xoaKhachHang(@RequestParam("khachHangId") int theId) {
 		khachHangService.xoaKhachHang(theId);
-		return "redirect:admin/khachhang/";
+		return "redirect:/admin/khachhang/";
 
 	}
 
@@ -42,7 +54,7 @@ public class KhachHangController {
 	public String showFormForUpdate(@ModelAttribute("khachHang") KhachHang khachHang) {
 		convertUTF8(khachHang);
 		khachHangService.themHoacCapNhatKhachHang(khachHang);
-		return "redirect:admin/khachhang/";    
+		return "redirect:/admin/khachhang/";    
 	}
 
 //	@RequestMapping("/themHoacCapNhatKhachHang")

@@ -21,7 +21,7 @@ public class NhanVienImpl implements NhanVienDAO {
 	@Override
 	public List<NhanVien> getAllNV() {
 		Session currentSession = sessionFactory.getCurrentSession();
-		Query<NhanVien> theQuery = currentSession.createQuery("from NhanVien where  trangThai='Đang làm việc'",
+		Query<NhanVien> theQuery = currentSession.createQuery("from NhanVien",
 				NhanVien.class);
 		List<NhanVien> nhanvien = theQuery.getResultList();
 
@@ -74,6 +74,16 @@ public class NhanVienImpl implements NhanVienDAO {
 		// now retrieve/read from database using the primary key
 		NhanVien nv = currentSession.get(NhanVien.class, id);
 		return nv;
+	}
+
+	@Override
+	public NhanVien getNVEmail(String email) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		// now retrieve/read from database using the primary key
+		Query<NhanVien> theQuery = currentSession.createNativeQuery("select *from vpp_web.NhanVien where  email='"+email+"'",
+				NhanVien.class);
+	NhanVien nhanvien =  theQuery.getSingleResult();
+		return nhanvien;
 	}
 
 	

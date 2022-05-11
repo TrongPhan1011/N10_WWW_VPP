@@ -145,7 +145,7 @@
 														<div class="row m-0 ">
 
 															<div class="col-6 pr-3 ps-3 pe-5 vpp-bd-right">
-																<form:label for="id-admin-TenKH" path="tenKH">Tên khách hàng: </form:label>
+																<label for="id-admin-TenKH" >Tên khách hàng: </label>
 																<input type="text" id="id-admin-TenKH" name="tenKH"
 																	class="form-control vpp-bd-btn mt-1 mb-3"
 																	placeholder="Nhập tên khách hàng" required />
@@ -153,7 +153,7 @@
                                                                         Tên khách hàng không có ký tự đặt biệt và số
                                                                     </div>
 
-																<form:label for="id-admin-emailKH" path="email">Email</form:label>
+																<label for="id-admin-emailKH" >Email</label>
 																<input type="text" id="id-admin-emailKH"
 																	name="email" class="form-control  vpp-bd-btn mt-1 mb-3"
 																	placeholder="Nhập email khách hàng" required/>
@@ -161,7 +161,7 @@
                                                                         Email có dạng abc@xyz
                                                                     </div>
 
-																<form:label for="id-admin-gioiTinhKH" path="gioiTinh">Giới tính</form:label>
+																<label for="id-admin-gioiTinhKH">Giới tính</label>
 																<select id="id-admin-gioiTinhKH"
 																	name="gioiTinh"
 																	class="form-control form-select vpp-bd-btn mt-1 mb-3">
@@ -171,18 +171,18 @@
 
 																</select>
 
-																<form:label for="id-admin-ngaySinhKH" path="ngaySinh">Ngày sinh</form:label>
+																<label for="id-admin-ngaySinhKH">Ngày sinh</label>
 																<input type="date" id="id-admin-ngaySinhKH"
 																	name="ngaySinh"
-																	class="form-control vpp-bd-btn mt-1 mb-3" min="1000"
-																	value="1000" required/>
+																	class="form-control vpp-bd-btn mt-1 mb-3" 
+																 required/>
 
-																<form:label for="id-admin-ngayThamGia"
-																	path="ngayThamGia">Ngày tham gia</form:label>
+																<label for="id-admin-ngayThamGia"
+																	>Ngày tham gia</label>
 																<input type="date" id="id-admin-ngayThamGia"
 																	name="ngayThamGia"
-																	class="form-control vpp-bd-btn mt-1 mb-3" min="1000"
-																	value="1000" required/>
+																	class="form-control vpp-bd-btn mt-1 mb-3"
+																	 required/>
 
 															</div>
 															<div class="col-6 pe-2 ps-5">
