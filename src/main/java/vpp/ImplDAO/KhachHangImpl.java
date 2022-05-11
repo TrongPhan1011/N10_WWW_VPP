@@ -44,7 +44,7 @@ public class KhachHangImpl implements KhachHangDAO {
 	@Override
 	public void xoaKhachHang(int id) {
 		Session currentSession = sessionFactory.getCurrentSession();
-		Query theQuery = currentSession.createQuery("delete from KhachHang where id= "+ id +"");
+		Query theQuery = currentSession.createQuery("delete from KhachHang where id= '"+ id +"'");
 		theQuery.executeUpdate();
 
 	}
@@ -52,7 +52,7 @@ public class KhachHangImpl implements KhachHangDAO {
 	@Override
 	public KhachHang getKhachHangTheoEmail(String email) {
 		Session currentSession = sessionFactory.getCurrentSession();
-		KhachHang khachHang=currentSession.get(KhachHang.class, email);
+		KhachHang khachHang=currentSession.createNativeQuery("select * from khachhang where email = '"+ email +"'", KhachHang.class).getSingleResult();
 		return khachHang;
 	}
 

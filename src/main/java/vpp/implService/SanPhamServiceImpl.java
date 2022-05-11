@@ -45,4 +45,11 @@ public class SanPhamServiceImpl implements SanPhamService {
 	public List<SanPham> getSanPhamTheoGioHang(int id) {
 		return sanPhamDAO.getSanPhamTheoGioHang(id);
 	}
+
+	@Override
+	@Transactional
+	public List<SanPham> getSanPhamTimKiem(String tenSP) {
+		return sanPhamDAO.getSanPhamTimKiem(tenSP);
+	}
+	
 }

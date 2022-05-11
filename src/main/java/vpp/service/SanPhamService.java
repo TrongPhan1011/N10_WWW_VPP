@@ -10,4 +10,5 @@ public interface SanPhamService {
 	public List<SanPham> getSPGiamDanTheoDaBan();
 	public List<SanPham> getSPTheoLoai(String tenLoai);
 	public List<SanPham> getSanPhamTheoGioHang(int id);
+	public List<SanPham> getSanPhamTimKiem(String tenSP);
 }

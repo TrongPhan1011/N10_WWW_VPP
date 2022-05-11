@@ -22,7 +22,7 @@
                     <link rel="stylesheet" href="./resources/css/index.css">
                 </head>
 
-                <body>
+                <body>            
                     <c:url var="urlLoaiSP1" value="/sanpham/">
                         <c:param name="loaiSP" value="1"></c:param>
                     </c:url>
@@ -68,41 +68,42 @@
                                     <img src="./resources/assets/img/Logo.png" alt="logo" width="100">
                                 </a>
                                 <div class="col-6 d-flex justify-content-center h-75">
-                                    <div class="input-group w-75 vpp-bd-btn ">
-                                        <input type="text" class="form-control vpp-bd-radius "
+									<form action="${pageContext.request.contextPath}/timkiem/">
+									 <div class="input-group w-75 vpp-bd-btn ">
+                                        <input type="text" name="tenSP" class="form-control vpp-bd-radius "
                                             placeholder="Nhập sản phẩm cần tìm">
                                         <button type="button"
                                             class="input-group-text vpp-text-dark vpp-bg-btn vpp-bd-radius vpp-btn-hover hvr-bounce-to-right "><i
                                                 class="fas fa-search"></i>Tìm</button>
-                                    </div>
+                                    	</div>
+									</form>
                                 </div>
                                 <div class="col-2">
                                     <div class="row">
                                         <c:choose>
                                             <c:when test="${pageContext.request.userPrincipal.name != null}">
                                                 <div class="col-3 pe-0 d-flex align-items-center  vpp-text-pink">
-                                                    <a href="${pageContext.request.contextPath}/chiTietTaiKhoan" class="vpp-text-pink">
+                                                    <a href="${pageContext.request.contextPath}/chiTietTaiKhoan"
+                                                        class="vpp-text-pink">
                                                         <i class="fas fa-user-circle fs-1 vpp-bd-circle "></i>
-                                                    </a> 
-                                                        
+                                                    </a>
+
                                                 </div>
                                             </c:when>
                                         </c:choose>
-                                        
+
                                         <div class="col-9 ps-0  ">
                                             <c:choose>
                                                 <c:when test="${pageContext.request.userPrincipal.name != null}">
 
 
-                                                    <form:form  action="${pageContext.request.contextPath}/logout"
+                                                    <form:form action="${pageContext.request.contextPath}/logout"
                                                         method="POST">
-                                                        <input type="submit"
-                                                            class="btn  btn-danger"
-                                                            value="Đăng xuất">
+                                                        <input type="submit" class="btn  btn-danger" value="Đăng xuất">
                                                     </form:form>
-                                                   
-                                                    
-                                                    
+
+
+
                                                 </c:when>
                                                 <c:otherwise>
                                                     <a href="${pageContext.request.contextPath}/login"
@@ -111,7 +112,7 @@
                                                     <a href="${pageContext.request.contextPath}/dangky/"
                                                         class="vpp-link vpp-text-dark hvr-underline-from-left"> Đăng
                                                         ký</a>
-                                                        
+
 
                                                 </c:otherwise>
                                             </c:choose>
@@ -161,14 +162,14 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        
+
                                                         <a class="dropdown-item hvr-underline-from-left hvr-icon-float "
                                                             href="${urlLoaiSP2}">
                                                             <i class="fas fa-pen-alt me-2 hvr-icon"></i> Bút viết
                                                         </a>
                                                     </li>
                                                     <li>
-                                                       
+
                                                         <a class="dropdown-item hvr-underline-from-left hvr-icon-float"
                                                             href="${urlLoaiSP3}">
                                                             <i class="fas fa-book me-2 hvr-icon"></i>Sách, sách tham
@@ -176,14 +177,14 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        
+
                                                         <a class="dropdown-item hvr-underline-from-left hvr-icon-float"
                                                             href="${urlLoaiSP4}">
                                                             <i class="fas fa-calculator me-2 hvr-icon"></i> Máy tính
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        
+
                                                         <a class="dropdown-item hvr-underline-from-left hvr-icon-float"
                                                             href="${urlLoaiSP5}">
                                                             <i class="fas fa-paperclip me-2 hvr-icon"></i> Kẹp giấy các
@@ -191,21 +192,21 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                       
+
                                                         <a class="dropdown-item hvr-underline-from-left hvr-icon-float"
                                                             href="${urlLoaiSP6}">
                                                             <i class="fas fa-envelope me-2 hvr-icon"></i> Bao thư
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        
+
                                                         <a class="dropdown-item hvr-underline-from-left hvr-icon-float"
                                                             href="${urlLoaiSP7}">
                                                             <i class="fas fa-tape me-2 hvr-icon"></i> Keo, băng keo
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        
+
                                                         <a class="dropdown-item hvr-underline-from-left hvr-icon-float"
                                                             href="${urlLoaiSP8}">
                                                             <i class="fas fa-drafting-compass me-2 hvr-icon"></i> Đồ
@@ -213,21 +214,21 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                       
+
                                                         <a class="dropdown-item hvr-underline-from-left hvr-icon-float"
                                                             href="${urlLoaiSP9}">
                                                             <i class="fas fa-book-open me-2 hvr-icon"></i>Vở - Sổ
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        
+
                                                         <a class="dropdown-item hvr-underline-from-left hvr-icon-float"
                                                             href="${urlLoaiSP10}">
                                                             <i class="fas fa-gift me-2 hvr-icon"></i> Quà lưu niệm
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        
+
                                                         <a class="dropdown-item hvr-underline-from-left hvr-icon-float"
                                                             href="${urlLoaiSP11}">
                                                             <i class="fas fa-plus-circle me-2 hvr-icon"></i> Các loại
@@ -437,7 +438,7 @@
                                         <div class="d-flex justify-content-around mt-2 mb-2">
                                             <span class="vpp-line-pink"></span>
                                         </div>
-                                        <div  class="row mt-4 mb-5">
+                                        <div class="row mt-4 mb-5">
 
                                             <c:forEach var="spNoiBac" items="${dsSPNoiBac}">
                                                 <div class="col-3 pt-0 p-2 d-flex justify-content-around block-sanpham">
@@ -445,8 +446,8 @@
                                                         style="width:80%;">
                                                         <div class="img-sp">
                                                             <img class="card-img-top vpp-bd-radius-top"
-                                                                src="./resources/assets/img/sp-${spNoiBac.id}/1" alt="Card image"
-                                                                style="width:100%; height: 9vw;">
+                                                                src="./resources/assets/img/sp-${spNoiBac.id}/1"
+                                                                alt="Card image" style="width:100%; height: 9vw;">
                                                         </div>
                                                         <div class="card-body p-0">
                                                             <c:url var="urlSPNoiBac" value="/chiTietSanPham/">
@@ -455,7 +456,8 @@
                                                             <a href="${urlSPNoiBac}" class="card-title vpp-link">
                                                                 <h5>${spNoiBac.tenSP}</h5>
                                                             </a>
-                                                            <p class="card-text text-danger fs-5 fw-bold">${spNoiBac.giaBan}</p>
+                                                            <p class="card-text text-danger fs-5 fw-bold">
+                                                                ${spNoiBac.giaBan}</p>
                                                             <a href="${urlSPNoiBac}"
                                                                 class="btn vpp-btn vpp-bd-btn hvr-shutter-out-horizontal">Xem
                                                                 chi
@@ -477,15 +479,15 @@
                                             <span class="vpp-line-pink"></span>
                                         </div>
                                         <div class="row mt-4 ">
-                                            
+
                                             <c:forEach var="sp" items="${dsGiayIn}">
                                                 <div class="col-3 pt-0 p-2 d-flex justify-content-around block-sanpham">
                                                     <div class="card pb-2 vpp-bd-hover-pink vpp-bd-btn hvr-grow-shadow"
                                                         style="width:80%;">
                                                         <div class="img-sp">
                                                             <img class="card-img-top vpp-bd-radius-top"
-                                                                src="./resources/assets/img/sp-${sp.id}/1" alt="Card image"
-                                                                style="width:100%; height: 9vw;">
+                                                                src="./resources/assets/img/sp-${sp.id}/1"
+                                                                alt="Card image" style="width:100%; height: 9vw;">
                                                         </div>
                                                         <div class="card-body p-0">
                                                             <c:url var="urlSP" value="/chiTietSanPham/">
@@ -494,7 +496,8 @@
                                                             <a href="${urlSP}" class="card-title vpp-link">
                                                                 <h5>${sp.tenSP}</h5>
                                                             </a>
-                                                            <p class="card-text text-danger fs-5 fw-bold">${sp.giaBan}</p>
+                                                            <p class="card-text text-danger fs-5 fw-bold">${sp.giaBan}
+                                                            </p>
                                                             <a href="${urlSP}"
                                                                 class="btn vpp-btn vpp-bd-btn hvr-shutter-out-horizontal">Xem
                                                                 chi
@@ -505,7 +508,7 @@
 
 
                                             </c:forEach>
-                                            
+
                                         </div>
 
                                     </div>
@@ -522,8 +525,8 @@
                                                         style="width:80%;">
                                                         <div class="img-sp">
                                                             <img class="card-img-top vpp-bd-radius-top"
-                                                                src="./resources/assets/img/sp-${sp.id}/1.png" alt="Card image"
-                                                                style="width:100%; height: 9vw;">
+                                                                src="./resources/assets/img/sp-${sp.id}/1.png"
+                                                                alt="Card image" style="width:100%; height: 9vw;">
                                                         </div>
                                                         <div class="card-body p-0">
                                                             <c:url var="urlSP" value="/chiTietSanPham/">
@@ -532,7 +535,8 @@
                                                             <a href="${urlSP}" class="card-title vpp-link">
                                                                 <h5>${sp.tenSP}</h5>
                                                             </a>
-                                                            <p class="card-text text-danger fs-5 fw-bold">${sp.giaBan}</p>
+                                                            <p class="card-text text-danger fs-5 fw-bold">${sp.giaBan}
+                                                            </p>
                                                             <a href="${urlSP}"
                                                                 class="btn vpp-btn vpp-bd-btn hvr-shutter-out-horizontal">Xem
                                                                 chi
@@ -552,7 +556,8 @@
                                     </div>
 
                                     <div class="d-flex justify-content-center">
-                                        <a href="${pageContext.request.contextPath}/sanpham/" class="btn vpp-btn fs-5  hvr-shutter-out-horizontal "
+                                        <a href="${pageContext.request.contextPath}/sanpham/"
+                                            class="btn vpp-btn fs-5  hvr-shutter-out-horizontal "
                                             style="width: 15vw;">Toàn
                                             bộ
                                             sản phẩm</a>
@@ -596,7 +601,8 @@
 
                                         <div class=" vpp-text-dark mt-3">
 
-                                            <a href="${pageContext.request.contextPath}/gioithieu" class=" d-block vpp-link mb-2 vpp-text-decoration">Giới
+                                            <a href="${pageContext.request.contextPath}/gioithieu"
+                                                class=" d-block vpp-link mb-2 vpp-text-decoration">Giới
                                                 thiệu</a>
                                             <a href="#" class="d-block mb-2 vpp-link vpp-text-decoration">Chính sách đổi
                                                 trả</a>
@@ -604,7 +610,8 @@
                                                 dịch vụ</a>
                                             <a href="#" class="d-block mb-2 vpp-link vpp-text-decoration">Chính sách bảo
                                                 mật</a>
-                                            <a href="${pageContext.request.contextPath}/lienhe" class="d-block mb-2 vpp-link vpp-text-decoration">Liên hệ</a>
+                                            <a href="${pageContext.request.contextPath}/lienhe"
+                                                class="d-block mb-2 vpp-link vpp-text-decoration">Liên hệ</a>
 
 
                                         </div>
@@ -621,7 +628,8 @@
                                         </div>
 
                                         <div class=" vpp-text-dark mt-3">
-                                            <a href="${pageContext.request.contextPath}/sanpham" class=" d-block vpp-link mb-2 vpp-text-decoration">Tất cả sản
+                                            <a href="${pageContext.request.contextPath}/sanpham"
+                                                class=" d-block vpp-link mb-2 vpp-text-decoration">Tất cả sản
                                                 phẩm</a>
                                             <a href="#" class="d-block mb-2 vpp-link vpp-text-decoration">Khuyến mãi</a>
                                         </div>

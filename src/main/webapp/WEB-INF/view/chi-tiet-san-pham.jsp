@@ -24,10 +24,7 @@
                 </head>
 
                 <body>
-
                     <div class="container-fluid vpp-bg-pink">
-                        <input type="hidden" modelAttribute="emailUserLogin"
-                            value="${pageContext.request.userPrincipal.name}">
                         <div id="header">
                             <div class="row p-3  vpp-bg-header  d-flex align-items-center"
                                 style="border-bottom: 1px solid rgb(253, 185, 188);">
@@ -80,6 +77,19 @@
                                                         class="vpp-link vpp-text-dark hvr-underline-from-left"> Đăng
                                                         ký</a>
 
+                        </div>
+                        <button type="button" class="btn col-4   mt-4 border-warning btn-danger">Mua ngay</button>
+                        <button type="button" class="btn col-4  btn-success mt-4">Thêm vào giỏ</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" mt-4 text-center">
+                        <h4 class="text-center vpp-text-dark">Mô tả</h4>
+                        <div class="d-flex justify-content-around mt-2 mb-2">
+                            <span class="vpp-line-pink"></span>
+                        </div>
+                        <div id="moTa" class="row mt-4 mb-5">
+	                            ${tempKhachHang.moTaSP }
 
                                                 </c:otherwise>
                                             </c:choose>

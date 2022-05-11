@@ -19,15 +19,15 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<link rel="stylesheet" href="/resources/css/lib/hover.css">
+<link rel="stylesheet" href="../resources/css/lib/hover.css">
 
 <link rel="stylesheet"
-	href="/resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
+	href="../resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
 <link rel="stylesheet"
-	href="/resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
+	href="../resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
 
-<link rel="stylesheet" href="/resources/css/general.css">
-<link rel="stylesheet" href="/resources/css/index.css">
+<link rel="stylesheet" href="../resources/css/general.css">
+<link rel="stylesheet" href="../resources/css/index.css">
 </head>
 
 <body>
@@ -204,29 +204,34 @@
 						<div class="row">
 							<div class=" mt-4 text-center">
 								<div class="row mt-4 ">
-									<div
-										class="col-3 pt-0 p-2 d-flex justify-content-around block-sanpham">
-										<div
-											class="card pb-2 vpp-bd-hover-pink vpp-bd-btn hvr-grow-shadow"
-											style="width: 90%;">
-											<div class="img-sp">
-												<img class="card-img-top vpp-bd-radius-top"
-													src="../assets/img/Slider/slide4.jpg" alt="Card image"
-													style="width: 100%; height: 9vw;">
-											</div>
-											<div class="card-body p-0">
-												<a href="#" class="card-title vpp-link">
-													<h5>Đồ lưu niệm</h5>
-												</a>
-												<p class="card-text text-danger fs-5 fw-bold">10,000,000đ</p>
-												<a href="#"
-													class="btn vpp-btn vpp-bd-btn hvr-shutter-out-horizontal">Xem
-													chi tiết</a>
-											</div>
-										</div>
-									</div>
+                    	<c:forEach var="tempKhachHang" items="${dsSanPham}">
+                              	        <c:url var="chitietUrl" value="/chitietsanpham/">
+                                        	<c:param name="idSP" value="${tempKhachHang.id}" />
+                                        </c:url>
+                              	
+                              	
+                                <div class="col-3 pt-0 p-2 d-flex justify-content-around block-sanpham">
+                                    <div class="card pb-2 vpp-bd-hover-pink vpp-bd-btn hvr-grow-shadow" style="width:90%;">
+                                        <div class="img-sp">
+                                            <img class="card-img-top vpp-bd-radius-top"
+                                                src="../resources/assets/img/Slider/slide4.jpg" alt="Card image"
+                                                style="width:100%; height: 9vw;">
+                                        </div>
 
-									<div
+                                        <div class="card-body p-0">
+                                            <a href="${chitietUrl}" class="card-title vpp-link">
+                                                <h5>${tempKhachHang.tenSP}</h5>
+                                            </a>
+                                            <p class="card-text text-danger fs-5 fw-bold">${tempKhachHang.giaBan}</p>
+                                            <a href="${chitietUrl}" class="btn vpp-btn vpp-bd-btn hvr-shutter-out-horizontal">Xem chi
+                                                tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                             
+                        </c:forEach>
+
+<!-- 									<div
 										class="col-3 pt-0 p-2 d-flex justify-content-around block-sanpham">
 										<div
 											class="card pb-2 vpp-bd-hover-pink vpp-bd-btn hvr-grow-shadow"
@@ -386,7 +391,7 @@
 													chi tiết</a>
 											</div>
 										</div>
-									</div>
+									</div> -->
 								</div>
 							</div>
 

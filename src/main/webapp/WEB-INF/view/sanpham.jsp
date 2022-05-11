@@ -260,7 +260,10 @@
 
                                 <div class="fw-bold">Nhà sản xuất:</div>
                                 <select name="namSX" id="namSX" class="form-select mb-3">
-                                    <option value="0">abc</option>
+                                <c:forEach var="tempNSX" items="${dsNSX}">
+                                	 <option value="${tempNSX.tenNSX }">${tempNSX.tenNSX }</option>
+                                </c:forEach>
+                                   
                                 </select>
                             </div>
                         </div>

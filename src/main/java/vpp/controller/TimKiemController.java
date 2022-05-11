@@ -6,29 +6,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import vpp.entity.NSX;
 import vpp.entity.SanPham;
-import vpp.service.NSXService;
 import vpp.service.SanPhamService;
 
 @Controller
-@RequestMapping("/sanpham")
-public class SanPhamController {
+@RequestMapping("/timkiem")
+public class TimKiemController {
 	
 	@Autowired
 	private SanPhamService sanPhamService;
-	@Autowired
-	private NSXService nsxService;
 	
 	@RequestMapping("/")
-	public String getTatCaSanPham(Model theModel) {
-		List<SanPham> sanPhams=sanPhamService.getTatCaSanPham();
-		List<NSX> listNSX=nsxService.getTatCaNSX();
+	public String timKiemSanPham(Model theModel, @RequestParam("tenSP") String tenSP) {
+
+		List<SanPham> sanPhams = sanPhamService.getSanPhamTimKiem(tenSP);
 		theModel.addAttribute("dsSanPham", sanPhams);
-		theModel.addAttribute("dsNSX", listNSX);
-		return "sanpham";
+		return "timkiem";
 	}
-	
 	
 }

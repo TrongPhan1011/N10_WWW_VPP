@@ -58,5 +58,13 @@ public class SanPhamImpl implements SanPhamDAO {
 		
 		return sanPhams;
 	}
+	
+	@Override
+	public List<SanPham> getSanPhamTimKiem(String tenSP){
+		Session session = sessionFactory.getCurrentSession();
+		List<SanPham> sanPhams = session.createNativeQuery("select * from sanpham where tenSP like '%"+tenSP+"%'",SanPham.class).getResultList();
+		return sanPhams;
+	
+	}
 
 }
