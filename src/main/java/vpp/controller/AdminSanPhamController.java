@@ -104,6 +104,8 @@ public class AdminSanPhamController {
 				sanpham.setId(id);
 			}
 			
+		System.out.println( AdminSanPhamController.class.getResourceAsStream("/resources"));
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
