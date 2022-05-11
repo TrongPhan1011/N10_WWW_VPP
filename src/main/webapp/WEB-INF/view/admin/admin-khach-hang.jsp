@@ -5,11 +5,12 @@
 <%@ taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quản lý</title>
 <link
@@ -17,16 +18,16 @@
 	rel="stylesheet">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="../resources/css/lib/hover.css">
+<link rel="stylesheet" href="../../resources/css/lib/hover.css">
 <link rel="stylesheet"
-	href="../resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
+	href="../../resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
 <link rel="stylesheet"
-	href="../resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
+	href="../../resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
 
-<link rel="stylesheet" href="../resources/css/general.css">
-<link rel="stylesheet" href="../resources/css/admin/admin.css">
-<link rel="stylesheet" href="../resources/css/index.css">
-<link rel="stylesheet" href="../resources/css/admin/admin-san-pham.css">
+<link rel="stylesheet" href="../../resources/css/general.css">
+<link rel="stylesheet" href="../../resources/css/admin/admin.css">
+<link rel="stylesheet" href="../../resources/css/index.css">
+<link rel="stylesheet" href="../../resources/css/admin/admin-san-pham.css">
 
 </head>
 
@@ -36,7 +37,7 @@
 			<div class="col-4">
 
 				<a href="./admin.html"> <img
-					src="../resources/assets/img/Logo.png" alt="logo" width="100">
+					src="../../resources/assets/img/Logo.png" alt="logo" width="100">
 
 				</a>
 
@@ -123,10 +124,7 @@
 							<div class="col-12 p-0">
 								<div class="row m-0 d-flex justify-content-between">
 									<h4 class="col-4 p-0">Danh sách khách hàng</h4>
-									<button type="button"
-										class=" col-2 btn hvr-shutter-out-horizontal vpp-btn don-da-duyet"
-										data-bs-toggle="modal" data-bs-target="#myModal">Thêm
-									</button>
+
 									<div class="modal fade " id="myModal">
 										<div class="modal-dialog modal-lg ">
 											<div class="modal-content vpp-bd-1">
@@ -141,66 +139,73 @@
 												</div>
 
 												<div class="modal-body">
-													<form:form action="themHoacCapNhatKhachHang"
-														modelAttribute="khachHang" method="POST"
-														class="">
-														<form:hidden path="id" />
+													<form:form action="capnhatkhachhang"
+														modelAttribute="khachHang" method="POST" class="needs-validation">
+														<form:input type="hidden" path="id" />
 														<div class="row m-0 ">
 
 															<div class="col-6 pr-3 ps-3 pe-5 vpp-bd-right">
-																<form:label for="id-admin-TenKH" path="tenKH">Tên khách hàng: </form:label>
-																<form:input type="text" id="id-admin-TenKH" path="tenKH"
-																	class="form-control  vpp-bd-btn mt-1 mb-3 is-invalid"
-																	placeholder="Nhập tên khách hàng"
-																	aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" />
+																<label for="id-admin-TenKH" >Tên khách hàng: </label>
+																<input type="text" id="id-admin-TenKH" name="tenKH"
+																	class="form-control vpp-bd-btn mt-1 mb-3"
+																	placeholder="Nhập tên khách hàng" required />
+																<div class="invalid-feedback">
+                                                                        Tên khách hàng không có ký tự đặt biệt và số
+                                                                    </div>
 
+																<label for="id-admin-emailKH" >Email</label>
+																<input type="text" id="id-admin-emailKH"
+																	name="email" class="form-control  vpp-bd-btn mt-1 mb-3"
+																	placeholder="Nhập email khách hàng" required/>
+																	<div class="invalid-feedback">
+                                                                        Email có dạng abc@xyz
+                                                                    </div>
 
-																<form:label for="id-admin-emailKH" path="email">Email</form:label>
-																<form:input type="text" id="id-admin-emailKH"
-																	path="email" class="form-control  vpp-bd-btn mt-1 mb-3"
-																	placeholder="Nhập email khách hàng" />
-
-																<form:label for="id-admin-gioiTinhKH" path="gioiTinh">Giới tính</form:label>
-																<form:select name="admin-NSX" id="id-admin-gioiTinhKH"
-																	path="gioiTinh"
+																<label for="id-admin-gioiTinhKH">Giới tính</label>
+																<select id="id-admin-gioiTinhKH"
+																	name="gioiTinh"
 																	class="form-control form-select vpp-bd-btn mt-1 mb-3">
-																	<form:option value="0">Nam</form:option>
-																	<form:option value="1">Nữ</form:option>
+																	<option value="0">Nam</option>
+																	<option value="1">Nữ</option>
 
 
-																</form:select>
+																</select>
 
-																<form:label for="id-admin-ngaySinhKH" path="ngaySinh">Ngày sinh</form:label>
-																<form:input type="date" id="id-admin-ngaySinhKH"
-																	path="ngaySinh"
-																	class="form-control vpp-bd-btn mt-1 mb-3" min="1000"
-																	value="1000" />
+																<label for="id-admin-ngaySinhKH">Ngày sinh</label>
+																<input type="date" id="id-admin-ngaySinhKH"
+																	name="ngaySinh"
+																	class="form-control vpp-bd-btn mt-1 mb-3" 
+																 required/>
 
-																<form:label for="id-admin-ngayThamGia"
-																	path="ngayThamGia">Ngày tham gia</form:label>
-																<form:input type="date" id="id-admin-ngayThamGia"
-																	path="ngayThamGia"
-																	class="form-control vpp-bd-btn mt-1 mb-3" min="1000"
-																	value="1000" />
+																<label for="id-admin-ngayThamGia"
+																	>Ngày tham gia</label>
+																<input type="date" id="id-admin-ngayThamGia"
+																	name="ngayThamGia"
+																	class="form-control vpp-bd-btn mt-1 mb-3"
+																	 required/>
 
 															</div>
 															<div class="col-6 pe-2 ps-5">
 																<label for="id-admin-SĐTKH">SĐT</label>
-																<form:input type="text" id="id-admin-SĐTKH" path="sdt"
+																<input type="text" id="id-admin-SĐTKH" name="sdt"
 																	class="form-control  vpp-bd-btn mt-1 mb-3"
-																	placeholder="Số điện thoại" />
+																	placeholder="Số điện thoại" required/>
+																	 <div class="invalid-feedback">
+                                                                        Số điện thoại gồm 10 ký tự số
+                                                                    </div>
 
 																<label for="id-admin-diaChiKH">Địa chỉ</label>
-																<form:textarea class="form-control vpp-bd-btn"
-																	path="diaChi" id="id-admin-diaChiKH"
-																	name="admin-diaChi" placeholder="Địa chỉ" />
+																<textarea class="form-control vpp-bd-btn"
+																	name="diaChi" id="id-admin-diaChiKH"
+																 placeholder="Địa chỉ" required>
 																</textarea>
-
+																 <div class="invalid-feedback">
+                                                                        Vui lòng điền địa chỉ
+                                                                    </div>
 
 																<div class="row m-0 mt-4 d-flex justify-content-center">
 																	<div class="col-12 p-0 ">
 																		<button type="submit"
-																			onclick="window.location.href='themHoacCapNhatKhachHang';"
 																			class="btn vpp-btn hvr-shutter-out-horizontal vpp-btn don-da-duyet form-control">Lưu
 																			thông tin</button>
 																	</div>
@@ -223,109 +228,7 @@
 											</div>
 										</div>
 									</div>
-									
-									<!-- Modal update -->
-									
-									<div class="modal fade " id="myModalUpdate">
-										<div class="modal-dialog modal-lg ">
-											<div class="modal-content vpp-bd-1">
 
-												<!-- Modal Header -->
-												<div class="modal-header">
-													<div class="w-100 d-flex justify-content-center ">
-														<h4>Thông tin khách hàng</h4>
-													</div>
-													<button type="button" class="btn-close"
-														data-bs-dismiss="modal"></button>
-												</div>
-
-												<div class="modal-body">
-													<form:form action="themHoacCapNhatKhachHang"
-														modelAttribute="khachHang" method="POST"
-														class="">
-														<form:hidden path="id" />
-														<div class="row m-0 ">
-
-															<div class="col-6 pr-3 ps-3 pe-5 vpp-bd-right">
-																<form:label for="id-admin-TenKH" path="tenKH">Tên khách hàng: </form:label>
-																<form:input type="text" id="id-admin-TenKH" path="tenKH"
-																	class="form-control  vpp-bd-btn mt-1 mb-3 is-invalid"
-																	placeholder="Nhập tên khách hàng"
-																	aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" />
-
-
-																<form:label for="id-admin-emailKH" path="email">Email</form:label>
-																<form:input type="text" id="id-admin-emailKH"
-																	path="email" class="form-control  vpp-bd-btn mt-1 mb-3"
-																	placeholder="Nhập email khách hàng" />
-
-																<form:label for="id-admin-gioiTinhKH" path="gioiTinh">Giới tính</form:label>
-																<form:select name="admin-NSX" id="id-admin-gioiTinhKH"
-																	path="gioiTinh"
-																	class="form-control form-select vpp-bd-btn mt-1 mb-3">
-																	<form:option value="0">Nam</form:option>
-																	<form:option value="1">Nữ</form:option>
-
-
-																</form:select>
-
-																<form:label for="id-admin-ngaySinhKH" path="ngaySinh">Ngày sinh</form:label>
-																<form:input type="date" id="id-admin-ngaySinhKH"
-																	path="ngaySinh"
-																	class="form-control vpp-bd-btn mt-1 mb-3" min="1000"
-																	value="1000" />
-
-																<form:label for="id-admin-ngayThamGia"
-																	path="ngayThamGia">Ngày tham gia</form:label>
-																<form:input type="date" id="id-admin-ngayThamGia"
-																	path="ngayThamGia"
-																	class="form-control vpp-bd-btn mt-1 mb-3" min="1000"
-																	value="1000" />
-
-															</div>
-															<div class="col-6 pe-2 ps-5">
-																<label for="id-admin-SĐTKH">SĐT</label>
-																<form:input type="text" id="id-admin-SĐTKH" path="sdt"
-																	class="form-control  vpp-bd-btn mt-1 mb-3"
-																	placeholder="Số điện thoại" />
-
-																<label for="id-admin-diaChiKH">Địa chỉ</label>
-																<form:textarea class="form-control vpp-bd-btn"
-																	path="diaChi" id="id-admin-diaChiKH"
-																	name="admin-diaChi" placeholder="Địa chỉ" />
-																</textarea>
-
-
-																<div class="row m-0 mt-4 d-flex justify-content-center">
-																	<div class="col-12 p-0 ">
-																		<button type="submit"
-																			onclick="window.location.href='capNhatKhachHang';"
-																			class="btn vpp-btn hvr-shutter-out-horizontal vpp-btn don-da-duyet form-control">Lưu
-																			thông tin</button>
-																	</div>
-																</div>
-																<div class="row m-0 mt-4 d-flex justify-content-center">
-																	<div class="col-12 p-0 ">
-																		<button type="button"
-																			class="btn vpp-btn hvr-shutter-out-horizontal vpp-btn  form-control"
-																			data-bs-dismiss="modal">Huỷ</button>
-																	</div>
-																</div>
-
-															</div>
-														</div>
-													</form:form>
-												</div>
-
-
-
-											</div>
-										</div>
-									</div>
-									
-									
-									
-									
 								</div>
 
 								<div class="row m-0 mt-4">
@@ -341,19 +244,17 @@
 													<th>Giới tính</th>
 													<th>Ngày sinh</th>
 													<th>Địa chỉ</th>
-													<th>Trạng thái</th>
-													<th>Ngày tham gia</th>
 													<th>Chức năng</th>
 
 												</tr>
 											</thead>
 											<tbody>
 												<c:forEach var="tempKH" items="${dsKhachHang}">
-													<c:url var="updateLink" value="/khachhang/capNhatKhachHang">
+													<c:url var="updateLink" value="/khachhang/capnhatkhachhang">
 														<c:param name="khachHangId" value="${tempKH.id}" />
 													</c:url>
-													
-													<c:url var="deleteLink" value="/khachhang/xoaKhachHang">
+
+													<c:url var="deleteLink" value="/khachhang/xoakhachhang">
 														<c:param name="khachHangId" value="${tempKH.id}" />
 													</c:url>
 													<tr>
@@ -362,10 +263,8 @@
 														<td>${tempKH.email }</td>
 														<td>${tempKH.sdt }</td>
 														<td>${tempKH.gioiTinh }</td>
-														<td class="">${tempKH.ngaySinh }</td>
+														<td>${tempKH.ngaySinh }</td>
 														<td>${tempKH.diaChi }</td>
-														<td>${tempKH.trangThai }</td>
-														<td>${tempKH.ngayThamGia }</td>
 
 														<td>
 															<div class="row m-0 d-flex justify-content-center">
@@ -378,20 +277,28 @@
 
 																</div>
 																<div class="col-3 p-0 me-1">
-																	<button type="button" data-bs-toggle="modal" data-bs-target="#myModalUpdate"
+																	<button type="button" data-bs-toggle="modal"
+																		data-bs-target="#myModal"
 																		class="btn bg-white vpp-bd-1 form-control hvr-grow vpp-bd-color-blue"
-																		title="Cập nhật khách hàng">
+																		title="Cập nhật khách hàng" id="btnupdate">
 																		<i class="fas fa-pencil-alt fs-5 vpp-text-blue"></i>
 																	</button>
 
 																</div>
+
+																
+
+
 																<div class="col-3 p-0 me-1 ">
+																<security:authorize access="hasRole('ADMIN')">
 																	<button type="button"
 																		class="btn bg-white vpp-bd-1 form-control hvr-grow vpp-bd-color-red"
-																		title="Xóa khách hàng" onclick=" if (!(confirm('Bạn có chắc muốn xóa khách hàng này không?'))) return false;
+																		title="Xóa khách hàng"
+																		onclick=" if (!(confirm('Bạn có chắc muốn xóa khách hàng này không?'))) return false;
 																		 window.location.href='${deleteLink}';">
 																		<i class="fas fa-times fs-5  vpp-text-red"></i>
 																	</button>
+																</security:authorize>
 
 																</div>
 															</div>
@@ -425,6 +332,33 @@
 			</div>
 		</div>
 
-		<script src="../resources/js/admin-khachhang.js"></script>
+		<script src="../../resources/js/admin-khachhang.js"></script>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script>
+
+            $('#btnupdate ').click(function () {
+                var id =$(this).closest('tr').find('td').eq(0).text();
+                var ten =$(this).closest('tr').find('td').eq(1).text();
+                var email =$(this).closest('tr').find('td').eq(2).text();
+                var sdt =$(this).closest('tr').find('td').eq(3).text();
+                var gioitinh =$(this).closest('tr').find('td').eq(4).text();
+                var ngaysinh =$(this).closest('tr').find('td').eq(5).text();
+                var diachi =$(this).closest('tr').find('td').eq(6).text();
+                
+                $('input[name="id"]').val(id);
+                $('input[name="tenKH"]').val(ten);
+                $('input[name="email"]').val(email);
+                if(gioitinh=="Nam")
+                	$('select[name="gioiTinh"]').val(0);
+                else
+                	$('select[name="gioiTinh"]').val(1);
+                $('input[name="ngaySinh"]').val(ngaysinh);
+                $('input[name="sdt"]').val(sdt);
+                $('textarea[name="diaChi"]').val(diachi);
+                        
+            });
+       
+    </script>
 </body>
 </html>

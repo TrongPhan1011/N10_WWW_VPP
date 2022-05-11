@@ -88,6 +88,12 @@
                                                         <i class="fas fa-user-circle fs-1 vpp-bd-circle "></i>
                                                     </a>
 
+                                                    <a href="${pageContext.request.contextPath}/admin/chiTietTaiKhoan" class="vpp-text-pink" >
+                                                        <i class="fas fa-user-circle fs-1 vpp-bd-circle "></i>
+                                                       <input type="hidden"  name="emailloggin"  value="<security:authentication
+						property="principal.username" />">
+                                                    </a> 
+
                                                 </div>
                                             </c:when>
                                         </c:choose>
@@ -252,7 +258,7 @@
                                             <security:authorize access="hasAnyRole('EMPLOYEE','ADMIN')">
                                                 <li class="nav-item">
                                                     <a class="nav-link vpp-link fs-5 hvr-underline-from-center"
-                                                        href="${pageContext.request.contextPath}/admin">Quản lý</a>
+                                                        href="${pageContext.request.contextPath}/admin/nhanvien/">Quản lý</a>
                                                 </li>
 
                                             </security:authorize>

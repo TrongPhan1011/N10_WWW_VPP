@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <%@ taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
@@ -158,10 +158,13 @@
             </div>
             <p></p>
         </div>
+         <c:url var="updateLink" value="/admin/chiTietTaiKhoan/update">
+          </c:url>
         <div class="container vpp-bd-btn ps-5 pe-5 mb-4">
+         <form:form action="${ updateLink}" modelAttribute="thongtinNV" method="POST" cssClass="needs-validation"  name="myform">
             <div class="row text-center mt-4"><h3>Thông tin khách hàng</h3></div>
             <p></p>
-            <form action="#" method="#" class="text-start">
+           
                 <div class="row m-0">
                   <div class="col-6 pe-5">
                     <div class="row">
@@ -169,7 +172,7 @@
                             <label for="name" class="form-label ">Tên đăng nhập: </label>
                         </div>
                         <div class="col-8">
-                            <input type="text" class=" form-control vpp-bd-btn" placeholder="Tên đăng nhập" name="name">
+                            <input type="text" class=" form-control vpp-bd-btn" placeholder="Tên đăng nhập" name="email">
                         </div>
                        
                         
@@ -181,7 +184,7 @@
                             <label for="password" class="form-label ">Mật khẩu: </label>
                         </div>
                         <div class="col-8">
-                            <input type="password" class=" form-control vpp-bd-btn" placeholder="Mật khẩu" name="password">
+                            <input type="password" class=" form-control vpp-bd-btn" placeholder="Mật khẩu" name="trangThai">
                             <a href="#">Thay đổi mật khẩu</a>
                         </div>
                     </div>
@@ -196,7 +199,7 @@
                               <label for="hoten" class="form-label">Họ tên: </label>
                           </div>
                           <div class="col-8">
-                              <input type="text" class=" form-control vpp-bd-btn" placeholder="Họ tên khách hàng" name="hoten">
+                              <input type="text" class=" form-control vpp-bd-btn" placeholder="Họ tên khách hàng" name="tenKH">
                           </div>
                          
                           
@@ -208,7 +211,7 @@
                               <label for="gioitinh" class="form-label ">Giới tính: </label>
                           </div>
                           <div class="col-8">
-                             <select name="gioitinh " id="" class="form-select vpp-bd-btn">
+                             <select name="gioiTinh" id="" class="form-select vpp-bd-btn">
                                 <option value="nam">Nam</option>
                                 <option value="nu">Nữ</option>
                              </select>
@@ -251,7 +254,7 @@
                               <label for="ngaysinh" class="form-label ">Ngày sinh: </label>
                           </div>
                           <div class="col-8">
-                              <input type="date" class=" form-control vpp-bd-btn" placeholder="Ngày sinh" name="ngaysinh">
+                              <input type="date" class=" form-control vpp-bd-btn" placeholder="Ngày sinh" name="ngaySinh">
                           </div>
                           
                       </div>
@@ -262,7 +265,7 @@
                                 <label for="diachi" class="form-label ">Địa chỉ: </label>
                             </div>
                             <div class="col-8">
-                                <input type="text" class=" form-control vpp-bd-btn" placeholder="Địa chỉ" name="diachi">
+                                <input type="text" class=" form-control vpp-bd-btn" placeholder="Địa chỉ" name="diaChi">
                             </div>
                             
                         </div>
@@ -274,15 +277,15 @@
                   
                   <div class="row m-0 mt-4">
                       <div class="col-6 text-end">
-                        <button class="btn vpp-btn fs-5  hvr-shutter-out-horizontal ">Hủy bỏ</button>
+                        <button type="button" class="btn vpp-btn fs-5  hvr-shutter-out-horizontal">Hủy bỏ</button>
                       </div>
                       <div class="col-6 text-start vpp-bd-radius">
-                        <button class="btn fs-5  btn-info">Lưu thông tin</button>
+                        <button type="submit" class="btn fs-5  btn-info">Lưu thông tin</button>
                       </div>
                    
                   </div>
                   <p></p>
-              </form>
+              </form:form>
 
         </div>
     </div>

@@ -1,13 +1,16 @@
 package vpp.implService;
 
+
+import javax.transaction.Transactional;
+
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import vpp.dao.KhachHangDAO;
 import vpp.entity.KhachHang;
+import vpp.entity.NhanVien;
 import vpp.service.KhachHangService;
 
 @Service
@@ -38,6 +41,21 @@ public class KhachHangServiceImpl implements KhachHangService {
 	@Transactional
 	public void xoaKhachHang(int id) {
 		khachHangDAO.xoaKhachHang(id);
+
+		
+	}
+	@Override
+	@Transactional
+	public KhachHang getKHEmail(String email) {
+		// TODO Auto-generated method stub
+		return khachHangDAO.getKHEmail(email);
+	}
+
+	@Override
+	@Transactional
+	public void saveKhachHang(KhachHang khachHang) {
+		// TODO Auto-generated method stub
+		khachHangDAO.saveKhachHang(khachHang);
 		
 	}
 	

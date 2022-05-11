@@ -67,4 +67,42 @@ public class SanPhamImpl implements SanPhamDAO {
 	
 	}
 
+	@Override
+	public List<SanPham> getSPTheoNSX(String tenNSX) {
+		Session session = sessionFactory.getCurrentSession();
+
+		List<SanPham> ls = session.createNativeQuery("SELECT sanPham.* FROM sanPham  join nsx  on sanPham.idLoai = nsx.id where tenNSX = '"+ tenNSX +"'",SanPham.class).getResultList();
+		return ls;
+	}
+
+	@Override
+	public List<SanPham> getSPTheoTenTangDan() {
+		Session session = sessionFactory.getCurrentSession();
+
+		List<SanPham> ls = session.createNativeQuery("SELECT sanPham.* FROM sanPham  ORDER BY tenSP ASC" ,SanPham.class).getResultList();
+		return ls;
+	}
+
+	@Override
+	public List<SanPham> getSPTheoGiaTangDan() {
+		Session session = sessionFactory.getCurrentSession();
+
+		List<SanPham> ls = session.createNativeQuery("SELECT sanPham.* FROM sanPham  ORDER BY giaBan ASC" ,SanPham.class).getResultList();
+		return ls;
+	}
+
+	@Override
+	public List<SanPham> getSPTheoGiaGiamDan() {
+		Session session = sessionFactory.getCurrentSession();
+
+		List<SanPham> ls = session.createNativeQuery("SELECT sanPham.* FROM sanPham  ORDER BY giaBan DESC" ,SanPham.class).getResultList();
+		return ls;
+	}
+
+	@Override
+	public List<SanPham> getSPMoi() {
+		
+		return null;
+	}
+
 }

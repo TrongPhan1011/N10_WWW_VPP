@@ -33,4 +33,11 @@ public class VPPUser {
 	public VPPUser() {
 		// TODO Auto-generated constructor stub
 	}
+
+	public VPPUser(String userName, String password) {
+		super();
+		this.userName = userName;
+		this.password = password;
+	}
+	
 }
