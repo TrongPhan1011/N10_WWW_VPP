@@ -71,6 +71,8 @@ public class TaiKhoanKHController {
 		String userName = khachHang.getEmail();
 		String password = khachHang.getTrangThai();
 		
+		if(password != null) {
+		
 		String encodedPassword = passwordEncoder.encode(password);
 		encodedPassword = "{bcrypt}" + encodedPassword;
 		VPPUser vppUser = new VPPUser(userName,encodedPassword);
@@ -82,7 +84,7 @@ public class TaiKhoanKHController {
         User tempUser = new User(userName, vppUser.getPassword(), authorities);
         
         userDetailsManager.updateUser(tempUser);
-		
+		}
 		khachHang.setTrangThai("Bình thường");
 		KhachHang kh1 = converUTF8(khachHang);
 		khachHangService.updateKH(kh1);

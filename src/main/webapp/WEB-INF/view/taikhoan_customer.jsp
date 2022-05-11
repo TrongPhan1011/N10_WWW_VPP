@@ -258,7 +258,7 @@
                             <label for="name" class="form-label ">Tên đăng nhập (email): </label>
                         </div>
                         <div class="col-8">
-                            <input type="text" class=" form-control vpp-bd-btn" placeholder="Tên đăng nhập" name="email" value="${update.email}" disabled="disabled">
+                            <input type="text" class=" form-control vpp-bd-btn" placeholder="Tên đăng nhập" name="email" value="${update.email}">
                             
                         </div>
                        
