@@ -82,7 +82,7 @@ public class NhanVienImpl implements NhanVienDAO {
 		// now retrieve/read from database using the primary key
 		Query<NhanVien> theQuery = currentSession.createNativeQuery("select * from vpp_web.NhanVien where  email='"+email+"'",
 				NhanVien.class);
-	NhanVien nhanvien =  theQuery.getSingleResult();
+		NhanVien nhanvien =  theQuery.getSingleResult();
 		return nhanvien;
 	}
 

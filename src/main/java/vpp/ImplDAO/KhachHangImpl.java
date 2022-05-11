@@ -56,8 +56,15 @@ public class KhachHangImpl implements KhachHangDAO {
 
 	@Override
 	public void themHoacCapNhatKhachHang(KhachHang khachHang) {
+//		Session currentSession = sessionFactory.getCurrentSession();
+//		currentSession.saveOrUpdate(khachHang);
+		
 		Session currentSession = sessionFactory.getCurrentSession();
-		currentSession.saveOrUpdate(khachHang);
+		String sql = "UPDATE `vpp_web`.`khachhang` SET `tenKH` = '"+ khachHang.getTenKH() +"', `email` = '"+ khachHang.getEmail() +"', `sdt` = '"+ khachHang.getSdt() +"',"
+				+ " `gioiTinh` = '"+ khachHang.getGioiTinh() +"', `ngaySinh` = '"+ khachHang.getNgaySinh() +"', `diaChi` = '"+ khachHang.getDiaChi() +"' WHERE (`id` = '"+ khachHang.getId() +"')";
+		Query query = currentSession.createNativeQuery(sql);
+		
+		query.executeUpdate();
 
 	}
 

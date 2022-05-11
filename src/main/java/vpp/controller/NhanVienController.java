@@ -115,8 +115,9 @@ public class NhanVienController {
 				e.printStackTrace();
 			}
 			Date date = new Date(System.currentTimeMillis());
+			java.sql.Date date1=new java.sql.Date(System.currentTimeMillis());
 			KhachHang khachHang = new KhachHang(thongtinNV.getTenNV(), thongtinNV.getEmail(), thongtinNV.getSdt(),
-					thongtinNV.getGioiTinh(), ngaysinh, thongtinNV.getDiaChi(), "Bình thường", date);
+					thongtinNV.getGioiTinh(), thongtinNV.getNgaySinh(), thongtinNV.getDiaChi(), "Bình thường",date1);
 			khachhang.themHoacCapNhatKhachHang(khachHang);
 
 		}

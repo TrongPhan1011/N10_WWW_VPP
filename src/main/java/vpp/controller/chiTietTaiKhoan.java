@@ -50,7 +50,6 @@ public class chiTietTaiKhoan {
 	}
 
 	@PostMapping("/update")
-
 	public String update(@Valid @ModelAttribute("thongtinNV") NhanVien nhanVien, Model model,@RequestParam("matkhaumoi") String matkhaumoi) {
 		
 		String gioitinh = null;
