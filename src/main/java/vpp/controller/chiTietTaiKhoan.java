@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import vpp.entity.KhachHang;
 import vpp.entity.NhanVien;
+import vpp.service.KhachHangService;
 import vpp.service.NhanVienService;
 
 @Controller
@@ -30,24 +32,58 @@ public class chiTietTaiKhoan {
 	@Autowired
 	private NhanVienService nhanVienService;
 	
+	@Autowired
+	private KhachHangService khachHangService;
+	
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 	@GetMapping("/")
 	public String getThongTinNV(Model model) {
 		String gioiString=null;
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-		NhanVien nhanVien = nhanVienService.getNVEmail(authentication.getName());
-		if(nhanVien.getGioiTinh().equals("Nữ")) {
-			gioiString="1";
-		}
-//		NhanVien nhanViens = nhanVienService.getNVId(1);
-		NhanVien thongtinNV = new NhanVien(nhanVien.getId(), nhanVien.getTenNV(), nhanVien.getEmail(),
-				nhanVien.getSdt(), gioiString, nhanVien.getNgaySinh(), nhanVien.getDiaChi(), null, nhanVien.getChucVu(), null,
-				"Đang làm việc");
-		model.addAttribute("thongtinNV", thongtinNV);
-		return "admin/admin-taikhoan";
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//		NhanVien nhanVien = nhanVienService.getNVEmail(authentication.getName());
+		
+//		 System.out.println(authentication.getName());
+		
+//		 System.out.println(nhanVien);
+//				if(nhanVien != null){
+//			
+//						if(nhanVien.getGioiTinh().equals("Nữ")) {
+//								gioiString="1";
+//							}
+////		NhanVien nhanViens = nhanVienService.getNVId(1);
+//					NhanVien thongtinNV = new NhanVien(nhanVien.getId(), nhanVien.getTenNV(), nhanVien.getEmail(),
+//							nhanVien.getSdt(), gioiString, nhanVien.getNgaySinh(), nhanVien.getDiaChi(), null, nhanVien.getChucVu(), null,
+//							"Đang làm việc");
+//					model.addAttribute("thongtinNV", thongtinNV);
+//					 a = "admin/admin-taikhoan";
+//				}
+				 
+			KhachHang kh = khachHangService.getKHEmail(authentication.getName());
+			KhachHang thongtinKH = new KhachHang(kh.getTenKH(), kh.getEmail(), kh.getSdt(), kh.getGioiTinh(), kh.getNgaySinh(), kh.getDiaChi(), kh.getTrangThai(), null);	
+			model.addAttribute("thongtinNV", thongtinKH);
+			
+
+		return "taikhoan_customer";
 	}
+	
+//	@GetMapping("/kh")
+//	public String getThongTinKH(Model model) {
+//		String gioiString=null;
+//		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//
+//		KhachHang khachHang =khachHangService.getKHEmail(authentication.getName());
+//		
+////		NhanVien nhanViens = nhanVienService.getNVId(1);
+////		NhanVien thongtinNV = new NhanVien(nhanVien.getId(), nhanVien.getTenNV(), nhanVien.getEmail(),
+////				nhanVien.getSdt(), gioiString, nhanVien.getNgaySinh(), nhanVien.getDiaChi(), null, nhanVien.getChucVu(), null,
+////				"Đang làm việc");
+//		KhachHang thongtinKH = new KhachHang(khachHang.getId(), khachHang.getTenKH(), khachHang.getEmail(), khachHang.getSdt(), khachHang.getGioiTinh(), khachHang.getNgaySinh(), khachHang.getDiaChi(), khachHang.getTrangThai(), khachHang.getNgayThamGia());
+//		model.addAttribute("thongtinNV", thongtinKH);
+//		return "taikhoan_customer";
+//	}
+	
 
 	@PostMapping("/update")
 	public String update(@Valid @ModelAttribute("thongtinNV") NhanVien nhanVien, Model model,@RequestParam("matkhaumoi") String matkhaumoi) {
@@ -76,5 +112,7 @@ System.out.println("id1:"+nhanVien.getId());
 
 		return "redirect:/admin/chiTietTaiKhoan/";
 	}
+	
+	
 
 }

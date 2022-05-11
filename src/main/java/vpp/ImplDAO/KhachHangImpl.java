@@ -30,11 +30,11 @@ public class KhachHangImpl implements KhachHangDAO {
 	public KhachHang getKHEmail(String email) {
 		Session currentSession = sessionFactory.getCurrentSession();
 		// now retrieve/read from database using the primary key
-		Query<KhachHang> theQuery = currentSession.createNativeQuery("select * from vpp_web.KhachHang where  email='"+email+"'",
+		Query<KhachHang> theQueryKH = currentSession.createNativeQuery("select * from vpp_web.KhachHang where  email='"+email+"'",
 				KhachHang.class);
-	KhachHang khachhang =  theQuery.getSingleResult();
+		KhachHang khachhang =  theQueryKH.getSingleResult();
 		return khachhang;
-		}
+	}
 	
 	
 	public List<KhachHang> getTatCaKhachHang() {
