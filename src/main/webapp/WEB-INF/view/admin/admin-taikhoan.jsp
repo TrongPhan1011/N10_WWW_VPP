@@ -128,7 +128,7 @@
                                                         </div>
                                                         <div class="col-6 ">
                                                             <form:input type="text" path="id" id="id-admin-manv" name="manhanvien"
-                                                                class="form-control vpp-bd-1" disabled="true"/>
+                                                                class="form-control vpp-bd-1" />
                                                         </div>
                                                     </div>
                                                     <div class="row mt-3 ">
@@ -181,7 +181,7 @@
                                                             </label>
                                                         </div>
                                                         <div class="col-6 ">
-                                                            <form:input type="text" path="diaChi" id="id-admin-diachi"
+                                                            <form:input type="text" path="diaChi" id="id-admin-diaChi"
                                                                 class="form-control vpp-bd-1"/>
                                                         </div>
                                                     </div>
@@ -196,7 +196,7 @@
                                                         </div>
                                                         <div class="col-6 ">
                                                             <form:input type="text" path="chucVu" id="id-admin-chucvu"
-                                                                class="form-control vpp-bd-1" disabled="true"/>
+                                                                class="form-control vpp-bd-1" disabled="true" />
                                                         </div>
                                                     </div>
                                                     <div class="row mt-3 ">
@@ -235,10 +235,10 @@
                                                             </label>
                                                         </div>
                                                         <div class="col-6 ">
-                                                            <form:input type="text" path=""  id="id-admin-pass"
-                                                                class="form-control vpp-bd-1" />
+                                                            <input type="password" name="matkhaumoi"  id="id-admin-pass"
+                                                                class="form-control vpp-bd-1 " />
                                                                         <div class="invalid-feedback">
-                                                                        Vui lòng điền email
+                                                                        Vui lòng điền mật khẩu mới
                                                                        
                                                                     </div>
                                                         </div>

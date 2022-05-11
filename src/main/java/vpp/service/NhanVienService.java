@@ -11,5 +11,7 @@ public interface NhanVienService {
 	public NhanVien getNVId(int id);
 	public void updateNV(NhanVien nhanVien,int id,String emailcu);
 	public NhanVien getNVEmail(String email);
+	public void updatePass(int id,String pass);
+	public void updateNVadmin(NhanVien thongtinNV2, int id, String email);
 
 }

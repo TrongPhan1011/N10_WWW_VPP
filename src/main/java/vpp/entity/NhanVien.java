@@ -157,6 +157,18 @@ public class NhanVien implements Serializable {
 		
 		
 	}
+	public NhanVien(int id2, String tenNV2, String email2, String sdt2, String gioitinh2, Date ngaySinh2,
+			String diaChi2, Object object, Object object2, String string) {
+		// TODO Auto-generated constructor stub
+		this.tenNV=tenNV2;
+		this.id=id2;
+		this.email=email2;
+		this.sdt=sdt2;
+		this.gioiTinh = gioitinh2;
+		this.ngaySinh = ngaySinh2;
+		this.diaChi = diaChi2;
+		this.trangThai=string;
+	}
 	@Override
 	public String toString() {
 		 return "NhanVien [id=" + id + ", tenNV=" + tenNV + ", email=" + email + ", sdt=" + sdt + ", gioiTinh="

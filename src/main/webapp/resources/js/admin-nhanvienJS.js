@@ -81,14 +81,17 @@ function validateDiachi() {
     return true;
 
 }
+
 function validatEemail() {
+	alert(1);
     var email=document.getElementById('id-admin-email')
     var x = document.myform.email.value;
     var atposition = x.indexOf("@");
     var dotposition = x.lastIndexOf(".");
-    if (atposition < 1 || dotposition < (atposition + 2)
+   
+if (atposition < 1 || dotposition < (atposition + 2)
             || (dotposition + 2) >= x.length) {
-                email.classList.add('is-invalid');
+                email.classList.add('is-invalid'); //is-invalid
                 email.classList.remove('is-valid');
         return false;
     }
@@ -96,6 +99,7 @@ function validatEemail() {
     email.classList.remove('is-invalid');
     return true;
 }
+
 tenNV = document.getElementById("id-admin-TenNV")
 tenNV.onblur = checkten;
 
