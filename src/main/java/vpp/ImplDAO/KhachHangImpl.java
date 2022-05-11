@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import vpp.dao.KhachHangDAO;
 import vpp.entity.KhachHang;
 import vpp.entity.NhanVien;
+import vpp.user.VPPUser;
 
 @Repository
 public class KhachHangImpl implements KhachHangDAO {
@@ -67,7 +68,35 @@ public class KhachHangImpl implements KhachHangDAO {
 		query.executeUpdate();
 
 	}
+	
+	@Override
+	public void updateKH(KhachHang khachHang) {
+//		Session currentSession = sessionFactory.getCurrentSession();
+//		currentSession.saveOrUpdate(khachHang);
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		String sql = "UPDATE `vpp_web`.`khachhang` SET `tenKH` = '"+ khachHang.getTenKH() +"', `email` = '"+ khachHang.getEmail() +"', `sdt` = '"+ khachHang.getSdt() +"',"
+				+ " `gioiTinh` = '"+ khachHang.getGioiTinh() +"', `ngaySinh` = '"+ khachHang.getNgaySinh() +"', `diaChi` = '"+ khachHang.getDiaChi() +"' WHERE `id` = "+ khachHang.getId() +"";
+		Query query = currentSession.createNativeQuery(sql);
+		
+		query.executeUpdate();
 
+	}
+
+//	@Override
+//	public void updateTK(VPPUser vpp) {
+////		Session currentSession = sessionFactory.getCurrentSession();
+////		currentSession.saveOrUpdate(khachHang);
+//		KhachHang khachHang = new KhachHang();
+//		
+//		Session currentSession = sessionFactory.getCurrentSession();
+//		String sql = "UPDATE `vpp_web_security`.`users` SET `password` = '"+ khachHang.getTrangThai() +"' WHERE (`id` = '"+ vpp.getUserName() +"')";
+//		Query query = currentSession.createNativeQuery(sql);
+//		
+//		query.executeUpdate();
+//
+//	}
+	
 	@Override
 	public void xoaKhachHang(int id) {
 		Session currentSession = sessionFactory.getCurrentSession();
