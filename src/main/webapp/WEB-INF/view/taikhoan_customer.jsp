@@ -258,7 +258,9 @@
                             <label for="name" class="form-label ">Tên đăng nhập (email): </label>
                         </div>
                         <div class="col-8">
-                            <input type="text" class=" form-control vpp-bd-btn" placeholder="Tên đăng nhập" name="email" value="${update.email}">
+                            <input type="text" id="id-taikhoan-emailKH" class=" form-control vpp-bd-btn" placeholder="Tên đăng nhập" name="email" value="${update.email}" readonly>
+                            <div class=" invalid-feedback text-danger">* Email không được trống và phải có
+                                            dạng xxx@gmail.com</div>
                             
                         </div>
                        
@@ -271,8 +273,9 @@
                             <label for="password" class="form-label ">Mật khẩu: </label>
                         </div>
                         <div class="col-8">
-                            <input type="password" class=" form-control vpp-bd-btn" placeholder="Mật khẩu" name="trangThai">
+                            <input type="password" id="id-taikhoan-matkhauKH" class=" form-control vpp-bd-btn" placeholder="Mật khẩu" name="trangThai">
                             <a href="#">Thay đổi mật khẩu</a>
+                            <div class=" invalid-feedback text-danger">* Mật khẩu không được trống </div>
                         </div>
                     </div>
                   </div>
@@ -286,7 +289,9 @@
                               <label for="hoten" class="form-label">Họ tên: </label>
                           </div>
                           <div class="col-8">
-                              <input type="text" class=" form-control vpp-bd-btn" placeholder="Họ tên khách hàng" name="tenKH" value="${update.tenKH}">
+                              <input type="text" id="id-taikhoan-hotenKH" class=" form-control vpp-bd-btn" placeholder="Họ tên khách hàng" name="tenKH" value="${update.tenKH}">
+                              <div class=" invalid-feedback text-danger">* Tên không
+									được trống và chỉ nhập chữ</div>
                           </div>
                          
                           
@@ -315,7 +320,8 @@
                               <label for="sdt" class="form-label ">Số  điện thoại: </label>
                           </div>
                           <div class="col-8 mt-4">
-                              <input type="text" class=" form-control vpp-bd-btn" placeholder="Số điện thoại" name="sdt" value="${update.sdt}">
+                              <input type="text" id="id-taikhoan-sdtKH" class=" form-control vpp-bd-btn" placeholder="Số điện thoại" name="sdt" value="${update.sdt}">
+                              <div class=" invalid-feedback text-danger">* Số điện thoại không được để trống và chứa 10 số bắt đầu bằng số 0</div>
                           </div>
                          
                           
@@ -327,7 +333,8 @@
                                 <label for="diachi" class="form-label ">Địa chỉ: </label>
                             </div>
                             <div class="col-8 mt-4">
-                                <input type="text" class=" form-control vpp-bd-btn" placeholder="Địa chỉ" name="diaChi" value="${update.diaChi}">
+                                <input type="text" id="id-taikhoan-diachiKH" class=" form-control vpp-bd-btn" placeholder="Địa chỉ" name="diaChi" value="${update.diaChi}">
+                                <div class=" invalid-feedback text-danger">* Không được để trống</div>
                             </div>
                             
                         </div>
@@ -342,7 +349,8 @@
                               <label for="ngaysinh" class="form-label ">Ngày sinh: </label>
                           </div>
                           <div class="col-8 mt-4">
-                              <input type="date" class=" form-control vpp-bd-btn" placeholder="Ngày sinh" name="ngaySinh" value="${update.ngaySinh}">
+                              <input type="date" id="id-taikhoan-ngaysinhKH" class=" form-control vpp-bd-btn" placeholder="Ngày sinh" name="ngaySinh" value="${update.ngaySinh}">
+                              <div class=" invalid-feedback text-danger">* Ngày sinh chưa chọn</div>
                           </div>
                           
                       </div>
@@ -363,7 +371,7 @@
                       </div>
                       <div class="col-6 text-start vpp-bd-radius">
                       <a href="${pageContext.request.contextPath}/" class="vpp-text-pink" >
-                        <button type="submit" class="btn fs-5  btn-info">Lưu thông tin</button>
+                        <button id="id-btnluu" type="submit" class="btn fs-5  btn-info">Lưu thông tin</button>
                         </a>
                       </div>
                    
@@ -467,6 +475,7 @@
     <script src="../resources/js/index.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="../resources/js/scrollAnimation.js"></script>
+     <script src="../resources/js/taiKhoanKhachHang.js"></script> 
 </body>
 
 </html>
