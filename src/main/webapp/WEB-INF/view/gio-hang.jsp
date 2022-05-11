@@ -6,7 +6,8 @@
 <%@ taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,13 +15,15 @@
     <title>Văn phòng phẩm</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="resources/css/lib/hover.css">
-    <link rel="stylesheet" href="resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
-    <link rel="stylesheet" href="resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
+    <link rel="stylesheet" href="../css/lib/hover.css">
+    <link rel="stylesheet" href="../assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
+    <link rel="stylesheet" href="../assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
 
-    <link rel="stylesheet" href="resources/css/general.css">
-    <link rel="stylesheet" href="resources/css/index.css">
-    <link rel="stylesheet" href="resources/css/chi-tiet-sp.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/chi-tiet-sp.css">
+    <link rel="stylesheet" href="../../css/admin/admin.css">
+    <link rel="stylesheet" href="../../css/admin/admin-san-pham.css">
 </head>
 
 <body>
@@ -156,45 +159,49 @@
         </div>
         <div class="  vpp-bg-light-dark ps-2 ">
             <a href="#" class="vpp-link">Trang chủ</a>/Giỏ hàng
-        
-         </div>
+
+        </div>
         <div id="container">
             <div id="container-content" class=" p-3 ps-5 pe-5">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                             <th scope="col">Sản phẩm</th>
-                             <th scope="col" class="text-center">Số lượng</th>
-                                <th scope="col">Giá</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row"> MacBook</th>
-                                <td class="text-center d-flex justify-content-center">
-                                    <form action="#" class="w-25">
-                                        <div class="input-group ">
-                                            <button type="button" class=" btn btn-danger me-2 vpp-btn-sp ">
-                                                <i class="fas fa-minus"></i>
-                                            </button>
-                                            <input type="text" class="form-control text-center p-0" value="0">
-                                            <button type="button" class="btn btn-success ms-2 vpp-btn-sp ">
-                                                <i class="fas fa-plus"></i>
-                                            </button>
-                                        </div>
-        
-                                    </form>
-                                </td>
-                                <td>30.000.000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div id="container-content-footer"  class=" text-center p-3 ps-5 pe-5">
-                        <button type="button" class="btn col-3   mt-4 border-warning btn-danger">Mua ngay</button>
-                    </div>
-                    
-                
-                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Sản phẩm</th>
+                            <th scope="col" class="text-center">Số lượng</th>
+                            <th scope="col">Giá</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"> MacBook</th>
+                            <td class="text-center d-flex justify-content-center">
+                                <form action="#" class="w-25">
+                                    <div class="input-group ">
+                                        <button type="button" class=" btn btn-danger me-2 vpp-btn-sp ">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <input type="text" class="form-control text-center " value="0">
+                                        <button type="button" class="btn btn-success ms-2 vpp-btn-sp ">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+
+                                </form>
+                            </td>
+                            <td>30.000.000</td>
+                            <td>
+                                <button type="button" class="btn bg-white vpp-bd-1   hvr-grow vpp-bd-color-red"><i
+                                        class="fas fa-times fs-5  text-danger"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="container-content-footer" class=" text-center p-3 ps-5 pe-5">
+                    <button type="button" class="btn col-3   mt-4 border-warning btn-danger">Mua ngay</button>
+                </div>
+
+
+
             </div>
 
         </div>
@@ -290,4 +297,5 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="../js/scrollAnimation.js"></script>
 </body>
+
 </html>

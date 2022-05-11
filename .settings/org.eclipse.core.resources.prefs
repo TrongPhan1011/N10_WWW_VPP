@@ -1,6 +1,6 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
->>>>>>>=4ff0c7ed7fedba933e6fd759d27d4a1d7c145614
+>>>>>>>=ed1fb2d969dd6319e61152911d784b38cd7cfbda
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/view/dang-ky.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/index.jsp=UTF-8
@@ -8,3 +8,4 @@ encoding//src/main/webapp/WEB-INF/view/lien-he.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/login.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/sanpham.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/taikhoan_customer.jsp=UTF-8
+encoding/<project>=UTF-8

@@ -1,5 +1,7 @@
 package vpp.controller;
 
+
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -23,11 +25,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import vpp.dao.KhachHangDAO;
+import vpp.entity.KhachHang;
+import vpp.service.KhachHangService;
 import vpp.user.VPPUser;
 
 @Controller
 @RequestMapping("/dangky")
 public class RegistrationController {
+	@Autowired
+	
+	private KhachHangService khachHangService;
 	@Autowired
 	private UserDetailsManager userDetailsManager;
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -46,57 +54,112 @@ public class RegistrationController {
 		return "dang-ky";
 	}
 	
-	@PostMapping("/processRegistration")
-	public String processRegistration(@Valid @ModelAttribute("vppUser") VPPUser vppUser, 
-			BindingResult theBindingResult, 
-			Model theModel) {
-		
-		String userName = vppUser.getUserName();
-		
-		
-		logger.info("Processing registration form for: " + userName);
-//		logger.info("Processing registration form for pass: " + vppUser.getPassword());
-		
-		
-		
-		boolean userExists = doesUserExist(userName);
-		
-		if (userExists) {
-			theModel.addAttribute("vppUser", new VPPUser());
-			theModel.addAttribute("registrationError", "User name already exists.");
-
-			logger.warning("User name already exists.");
-			
-			return "dang-ky";			
-		}
-		
-		
-//		String encodedPassword = passwordEncoder.encode(vppUser.getPassword());
+//	@PostMapping("/processRegistration")
+//	public String processRegistration(@Valid @ModelAttribute("vppUser") VPPUser vppUser, 
+//			BindingResult theBindingResult, 
+//			Model theModel) {
+//		
+//		String userName = vppUser.getUserName();
+//		
+//		
+//		
+//		boolean userExists = doesUserExist(userName);
+//		
+//		if (userExists) {
+//			theModel.addAttribute("vppUser", new VPPUser());
+//			theModel.addAttribute("registrationError", "User name already exists.");
 //
-//        encodedPassword = "{bcrypt}" + encodedPassword;
-                 
-        List<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList("ROLE_CUSTOMER");
-
-        User tempUser = new User(userName, vppUser.getPassword(), authorities);
-
-        userDetailsManager.createUser(tempUser);		
-		
-        logger.info("Successfully created user: " + userName);
-        
-        return "login";		
-		
-
-	}
+//			logger.warning("User name already exists.");
+//			
+//			return "dang-ky";			
+//		}
+//		
+//		
+////		String encodedPassword = passwordEncoder.encode(vppUser.getPassword());
+////
+////        encodedPassword = "{bcrypt}" + encodedPassword;
+//                 
+//        List<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList("ROLE_CUSTOMER");
+//
+//        User tempUser = new User(userName, vppUser.getPassword(), authorities);
+//        
+//        userDetailsManager.createUser(tempUser);		
+//		
+//        logger.info("Successfully created user: " + userName);
+//        
+//        return "login";		
+//		
+//
+//	}
 		private boolean doesUserExist(String userName) {
 		
-		logger.info("Checking if user exists: " + userName);
+	
 		
 		// check the database if the user already exists
 		boolean exists = userDetailsManager.userExists(userName);
 		
-		logger.info("User: " + userName + ", exists: " + exists);
+		
 		
 		return exists;
 	}
+		
+		@PostMapping("/dangKyKH")
+		public String saveKhachHang(@ModelAttribute("vppUser") KhachHang khachHang,BindingResult theBindingResult, 
+				Model theModel) {
+			
+			String userName = khachHang.getEmail();
+			String password = khachHang.getTrangThai();
+			String encodedPassword = passwordEncoder.encode(password);
+			encodedPassword = "{bcrypt}" + encodedPassword;
+			VPPUser vppUser = new VPPUser(userName,encodedPassword);
+			
+			
+			khachHang.setTrangThai("Binh thuong");
+			long millis=System.currentTimeMillis();
+			java.sql.Date date=new java.sql.Date(millis);
+			System.out.println(date);
+			khachHang.setNgayThamGia(date);
+			
+			boolean userExists = doesUserExist(userName);
+			if (userExists) {
+				theModel.addAttribute("vppUser", new VPPUser());
+				theModel.addAttribute("registrationError", "User name already exists.");
+
+				logger.warning("User name already exists.");
+				
+				return "dang-ky";			
+			}
+			
+			 List<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList("ROLE_CUSTOMER");
+			 
+
+		
+		        User tempUser = new User(userName, vppUser.getPassword(), authorities);
+		        
+		        userDetailsManager.createUser(tempUser);
+		        
+		        KhachHang kh = converUTF8(khachHang);
+				
+		        	
+			khachHangService.saveKhachHang(khachHang);
+			return "login";
+		}
+
+		private KhachHang converUTF8(KhachHang khachHang) {
+			// TODO Auto-generated method stub
+			String ten = khachHang.getTenKH();
+			String diaChi= khachHang.getDiaChi();
+			try {
+				String tenUTF8 = new String(ten.getBytes("ISO-8859-1"), "UTF8");
+				String diaChiUTF8 = new String(diaChi.getBytes("ISO-8859-1"), "UTF8");
+				khachHang.setTenKH(tenUTF8);
+				khachHang.setDiaChi(diaChiUTF8);
+			}catch (UnsupportedEncodingException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			return khachHang;
+		}
+
 	
 }

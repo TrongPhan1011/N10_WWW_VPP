@@ -6,7 +6,7 @@
 <%@ taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +14,8 @@
     <title>Đăng ký</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
     <link rel="stylesheet" href="../resources/css/lib/hover.css">
     <link rel="stylesheet" href="../resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
     <link rel="stylesheet" href="../resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
@@ -21,6 +23,9 @@
     <link rel="stylesheet" href="../resources/css/dangKy.css">
     <link rel="stylesheet" href="../resources/css/general.css">
     <link rel="stylesheet" href="../resources/css/index.css">
+
+   
+
 </head>
 <body>
 <div class="container-fluid ">
@@ -147,7 +152,7 @@
             </div>
             <div class="row">
                 <ul class="breadcrumb p-3 ps-5 pe-5">
-                    <li><a href="..//html/index.html" class="">Trang chủ</a></li><span>></span>
+                    <li><a href="../html/index.html" class="">Trang chủ/</a></li>
                     <li>Đăng ký</li>
                 </ul>
             </div>
@@ -189,53 +194,67 @@
                     <div class="col-8">
                         <div class="col-2">
                          </div>
-                        <form:form action="${pageContext.request.contextPath}/dangky/processRegistration" modelAttribute="vppUser"
-                               class="form-horizontal">
-                            <label for="id-dangly-email">Email:</label>
-                           <form:input path="userName" class="form-control vpp-bd-radius-text mt-1 mb-4" placeholder="Nhập email" id="id-dangly-email" />
+							<form:form
+								action="${pageContext.request.contextPath}/dangky/dangKyKH"
+								modelAttribute="vppUser" class="form-horizontal">
+								<label for="id-dangly-email">Email:</label>
+								<input name="email" type="text"
+									class="form-control vpp-bd-radius-text mt-1 mb-4"
+									placeholder="Nhập email" id="id-dangly-email" />
 
-                            <label for="id-dangly-matkhau">Mật khẩu:</label>
-                            <form:password path="password"  class="form-control vpp-bd-radius-text mt-1 mb-4" placeholder="Nhập mật khẩu" id="id-dangly-matkhau"/>
-                           
-                            <label for="id-dangly-nhaplaimatkhau">Nhập lại mật khẩu:</label>
-                            <input type="password" class="form-control vpp-bd-radius-text mt-1 mb-4" placeholder="Nhập lại mật khẩu" id="id-dangly-nhaplaimatkhau"/>
-                        </form:form>
-                        
-                         <c:url var="saveUrl" value="/khachhang/saveKhachHang" />
-                         
-                        <form:form modelAttribute="khachhang" method="POST" action="${saveUrl}">
-                         
-                            <label for="id-dangly-tenkhachhang">Tên khách hàng:</label>
-                            <input type="text" class="form-control vpp-bd-radius mt-1 mb-4" placeholder="Nhập tên khách hàng" id="id-dangly-tenkhachhang"/>
-                           
-                            <label for="id-dangly-sdt">Số điện thoại:</label>
-                            <input type="text" class="form-control vpp-bd-radius-text mt-1 mb-4" placeholder="Nhập số điện thoại" id="id-dangly-sdt"/>
+								<label for="id-dangly-matkhau">Mật khẩu:</label>
+								<input name="trangThai" type="password" 
+									class="form-control vpp-bd-radius-text mt-1 mb-4"
+									placeholder="Nhập mật khẩu" id="id-dangly-matkhau" />
 
-                            <div for="id-dangly-gioitinh">Giới tính:</div>
-                            <input type="radio" class="vpp-bd-radius mt-1" id="id-dangly-nam" name="gioitinh" checked />
-                            <label for="id-dangly-nam" class="me-5">Nam</label>
-
-                            <input type="radio" class="vpp-bd-radius mt-1 ms-3" id="id-dangly-nu" name="gioitinh"/>
-                            <label for="id-dangly-nu">Nữ</label>
-
-                            <div>
-                            <label for="id-dangly-ngaysinh" class="mt-3 mb-1">Ngày sinh:</label>
-                            <input type="date" class="form-control vpp-bd-radius-text mt-1 mb-4" placeholder="Nhập ngày sinh" id="id-dangly-ngaysinh"/>
-                             </div>  
-
-                             <label for="id-dangly-diachi">Địa chỉ:</label>
-                             <input type="text" class="form-control vpp-bd-radius-text mt-1 mb-4" placeholder="Nhập địa chỉ" id="id-dangly-diachi"/>
+								<label for="id-dangly-nhaplaimatkhau">Nhập lại mật khẩu:</label>
+								<input type="password"
+									class="form-control vpp-bd-radius-text mt-1 mb-4"
+									placeholder="Nhập lại mật khẩu" id="id-dangly-nhaplaimatkhau" />
 
 
-							<a href="${pageContext.request.contextPath}/login">
-                             <button  type="submit" class="btn vpp-btn hvr-grow hvr-shutter-out-horizontal form-control">
-                                Đăng ký
-                            </button>
-                            </a>
-                            
-                          </form:form>
-                         
-                    </div>
+								<label for="id-dangly-tenkhachhang">Tên khách hàng:</label>
+								<input type="text" name="tenKH"
+									class="form-control vpp-bd-radius-text mt-1 mb-4"
+									placeholder="Nhập tên khách hàng" id="id-dangly-tenkhachhang" />
+
+								<label for="id-dangly-sdt">Số điện thoại:</label>
+								<input type="text" name="sdt"
+									class="form-control vpp-bd-radius-text mt-1 mb-4"
+									placeholder="Nhập số điện thoại" id="id-dangly-sdt" />
+
+								<label >Giới tính:</label>
+								<input type="radio" class="vpp-bd-radius mt-1"
+									id="id-dangly-nam" name="gioiTinh" value="Nam" checked />
+								<label for="id-dangly-nam" class="me-5">Nam</label>
+
+								<input type="radio" class="vpp-bd-radius mt-1 ms-3"
+									id="id-dangly-nu" name="gioiTinh"  value="" />
+								<label for="id-dangly-nu">Nữ</label>
+
+								<div>
+									<label for="id-dangly-ngaysinh" class="mt-3 mb-1">Ngày sinh:</label> 
+									<input type="date" name=ngaySinh
+										class="form-control vpp-bd-radius-text mt-1 mb-4"
+										placeholder="Nhập ngày sinh" id="id-dangly-ngaysinh" />
+								</div>
+
+								<label for="id-dangly-diachi">Địa chỉ:</label>
+								<input type="text" name="diaChi"
+									class="form-control vpp-bd-radius-text mt-1 mb-4"
+									placeholder="Nhập địa chỉ" id="id-dangly-diachi" />
+
+								<a href="${pageContext.request.contextPath}/login">
+									<button id="id-btn-dangky" type="submit" 
+										class="btn vpp-btn hvr-grow hvr-shutter-out-horizontal form-control">
+										Đăng ký</button>
+								</a>
+
+							</form:form>
+
+
+
+						</div>
                 </div>
 
                     
@@ -337,6 +356,7 @@
         </div>
         
 
-    </div>    
+    </div>   
+     <script src="../resources/js/dangKy.js"></script> 
   </body>
 </html>

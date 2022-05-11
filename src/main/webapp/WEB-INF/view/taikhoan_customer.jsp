@@ -181,7 +181,7 @@
                             <label for="password" class="form-label ">Mật khẩu: </label>
                         </div>
                         <div class="col-8">
-                            <input type="password" class=" form-control vpp-bd-btn" placeholder="Mật khẩu" name="password">
+                            <input type="password" class=" form-control vpp-bd-btn" placeholder="Mật khẩu" name="trangThai">
                             <a href="#">Thay đổi mật khẩu</a>
                         </div>
                     </div>
