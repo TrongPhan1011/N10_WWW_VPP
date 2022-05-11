@@ -25,12 +25,20 @@ public class SanPhamImpl implements SanPhamDAO {
 
 		return sanPhams;
 	}
-	
+
+	public SanPham getSanPhamTheoID(int id) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		SanPham tempSanPham = currentSession.get(SanPham.class, id);
+		return tempSanPham;
+		
+		
+	}
+
 	@Override
 	public List<SanPham> getSPGiamDanTheoDaBan() {
 		Session session = sessionFactory.getCurrentSession();
 
-
+		
 		List<SanPham> ls = session.createNativeQuery("select * from sanPham order by soLuongBan desc",SanPham.class).getResultList();
 		return ls;
 	}
@@ -44,5 +52,38 @@ public class SanPhamImpl implements SanPhamDAO {
 		return ls;
 	}
 
+	@Override
+	public void saveSanPham(SanPham sanPham) {
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(sanPham);
+		
+	}
+
+	@Override
+	public void deleteSanPham(int id) {
+		Session session = sessionFactory.getCurrentSession();
+		SanPham s = session.get(SanPham.class, id);
+		session.delete(s);
+	}
+
+	@Override
+	public SanPham getSanPhamTheoLoaiNSX(String tenSP, int idNSX, int idLoai) {
+		Session session = sessionFactory.getCurrentSession();
+
+
+		SanPham sp = session.createNativeQuery("SELECT * FROM sanPham where tenSP = '"+tenSP+"' and idLoai ="+idLoai+" and idNSX = "+idNSX+";",SanPham.class).getSingleResult();
+		
+		return sp;
+	}
+
+	@Override
+	public List<SanPham> getSPTheoTenTimKiem(String tenSP) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		
+
+		List<SanPham> ls = session.createNativeQuery("SELECT sanPham.* FROM sanPham   where tenSP like  '%"+tenSP+"%'",SanPham.class).getResultList();
+		return ls;
+	}
 
 }

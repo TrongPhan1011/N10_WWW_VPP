@@ -1,6 +1,7 @@
 package vpp.config;
 
 import java.beans.PropertyVetoException;
+import java.nio.charset.Charset;
 import java.util.Properties;
 import java.util.logging.Logger;
 
@@ -13,9 +14,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -33,6 +37,11 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 public class AppConfig implements WebMvcConfigurer {
 	@Autowired
 	private Environment env;
+	
+	@Bean
+	public StringHttpMessageConverter stringHttpMessageConverter() {
+	    return new StringHttpMessageConverter(Charset.forName("UTF-8"));
+	}
 
 	private Logger logger = Logger.getLogger(getClass().getName());
 
@@ -51,6 +60,15 @@ public class AppConfig implements WebMvcConfigurer {
 		viewResolver.setSuffix(".jsp");
 		return viewResolver;
 	}
+	
+	@Bean(name = "multipartResolver")
+    public MultipartResolver getMultipartResolver() {
+        CommonsMultipartResolver resover = new CommonsMultipartResolver();
+        // 1MB
+        resover.setMaxUploadSize(268435456);
+
+        return resover;
+    }
 	
 	private int getIntProperty(String propName) {
 

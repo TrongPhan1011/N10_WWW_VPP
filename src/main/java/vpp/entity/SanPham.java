@@ -3,7 +3,6 @@ package vpp.entity;
 import java.io.Serializable;
 import java.sql.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -36,14 +35,29 @@ public class SanPham  implements Serializable {
 	private String chatLieu;
 	private Date ngaySX;
 	private String trangThai;
+	private String urlAnhSP;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+	
+	
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idNSX")
 	private NSX nsx;
 	
-	@ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idLoai")
 	private LoaiSP loaiSP;
+
+	
+	
+	
+
+	public String getUrlAnhSP() {
+		return urlAnhSP;
+	}
+
+	public void setUrlAnhSP(String urlAnhSP) {
+		this.urlAnhSP = urlAnhSP;
+	}
 
 	public int getId() {
 		return id;
@@ -166,6 +180,28 @@ public class SanPham  implements Serializable {
 		this.nsx = nsx;
 		this.loaiSP = loaiSP;
 	}
+	
+
+	public SanPham(int id, String tenSP, Date ngayNhap, int soLuongTon, int soLuongBan, String moTaSP, double giaBan,
+			double giaGoc, String chatLieu, Date ngaySX, String trangThai, String urlAnhSP, NSX nsx, LoaiSP loaiSP) {
+		super();
+		this.id = id;
+		this.tenSP = tenSP;
+		this.ngayNhap = ngayNhap;
+		this.soLuongTon = soLuongTon;
+		this.soLuongBan = soLuongBan;
+		this.moTaSP = moTaSP;
+		this.giaBan = giaBan;
+		this.giaGoc = giaGoc;
+		this.chatLieu = chatLieu;
+		this.ngaySX = ngaySX;
+		this.trangThai = trangThai;
+		this.urlAnhSP = urlAnhSP;
+		this.nsx = nsx;
+		this.loaiSP = loaiSP;
+	}
+	
+
 
 	public SanPham(String tenSP, Date ngayNhap, int soLuongTon, int soLuongBan, String moTaSP, double giaBan,
 			double giaGoc, String chatLieu, Date ngaySX, String trangThai, NSX nsx, LoaiSP loaiSP) {

@@ -20,7 +20,7 @@ public class LoaiSPImpl implements LoaiSPDAO {
 		Session session = sessionFactory.getCurrentSession();
 		
 		
-		List<LoaiSP> ls = session.createNativeQuery("select * from loaiSP").getResultList();
+		List<LoaiSP> ls = session.createNativeQuery("select * from loaiSP",LoaiSP.class).getResultList();
 		return ls;
 	}
 	

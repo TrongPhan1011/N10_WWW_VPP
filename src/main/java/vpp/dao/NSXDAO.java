@@ -1,5 +1,9 @@
 package vpp.dao;
 
-public interface NSXDAO {
+import java.util.List;
 
+import vpp.entity.NSX;
+
+public interface NSXDAO {
+	public List<NSX> getTatCaNSX();
 }

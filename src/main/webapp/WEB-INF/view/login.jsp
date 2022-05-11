@@ -42,9 +42,9 @@
                                 </div>
                                 <h2 style="font-style: bold; text-align: center;">Đăng nhập</h2>
 
-                                <c:if test="${param.error != null}">
-                                    <i class="text-danger">Tên đăng nhập hoặc mật khẩu không đúng</i>
-                                </c:if>
+                                <!-- <c:if test="${param.error != null}">
+                                    <i class="text-danger">Tên đăng nhập hoặc mật khẩu không đungs</i>
+                                </c:if> -->
                                 <form:form action="${pageContext.request.contextPath}/authenticateTheUser">
                                     <div>
                                         <label for="id-dangnhap-email" class="form-label">Email:</label>

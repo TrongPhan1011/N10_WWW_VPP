@@ -100,6 +100,8 @@
                                                             class="btn  btn-danger"
                                                             value="Đăng xuất">
                                                     </form:form>
+
+                                                   
                                                    
                                                     
                                                     
@@ -251,7 +253,7 @@
                                             <security:authorize access="hasAnyRole('EMPLOYEE','ADMIN')">
                                                 <li class="nav-item">
                                                     <a class="nav-link vpp-link fs-5 hvr-underline-from-center"
-                                                        href="${pageContext.request.contextPath}/admin">Quản lý</a>
+                                                        href="${pageContext.request.contextPath}/admin/">Quản lý</a>
                                                 </li>
 
                                             </security:authorize>
@@ -449,7 +451,7 @@
                                                                 style="width:100%; height: 9vw;">
                                                         </div>
                                                         <div class="card-body p-0">
-                                                            <c:url var="urlSPNoiBac" value="/chiTietSanPham/">
+                                                            <c:url var="urlSPNoiBac" value="/chitietsanpham/">
                                                                 <c:param name="idSP" value="${spNoiBac.id}"></c:param>
                                                             </c:url>
                                                             <a href="${urlSPNoiBac}" class="card-title vpp-link">
@@ -488,7 +490,7 @@
                                                                 style="width:100%; height: 9vw;">
                                                         </div>
                                                         <div class="card-body p-0">
-                                                            <c:url var="urlSP" value="/chiTietSanPham/">
+                                                            <c:url var="urlSP" value="/chitietsanpham/">
                                                                 <c:param name="idSP" value="${sp.id}"></c:param>
                                                             </c:url>
                                                             <a href="${urlSP}" class="card-title vpp-link">
@@ -526,7 +528,7 @@
                                                                 style="width:100%; height: 9vw;">
                                                         </div>
                                                         <div class="card-body p-0">
-                                                            <c:url var="urlSP" value="/chiTietSanPham/">
+                                                            <c:url var="urlSP" value="/chitietsanpham/">
                                                                 <c:param name="idSP" value="${sp.id}"></c:param>
                                                             </c:url>
                                                             <a href="${urlSP}" class="card-title vpp-link">

@@ -34,5 +34,37 @@ public class SanPhamServiceImpl implements SanPhamService {
 		return sanPhamDAO.getSPTheoLoai(tenLoai);
 	}
 	
+	@Override
+	@Transactional
+	public SanPham getSanPhamTheoID(int id) {
+		return sanPhamDAO.getSanPhamTheoID(id);
+	}
+
+	@Override
+	@Transactional
+	public void saveSanPham(SanPham sanPham) {
+		sanPhamDAO.saveSanPham(sanPham);
+		
+	}
+
+	@Override
+	@Transactional
+	public void deleteSanPham(int id) {
+		sanPhamDAO.deleteSanPham(id);
+	}
+
+	@Override
+	@Transactional
+	public SanPham getSanPhamTheoLoaiNSX(String tenSP, int idNSX, int idLoai) {
+		
+		return sanPhamDAO.getSanPhamTheoLoaiNSX(tenSP, idNSX, idLoai);
+	}
+
+	@Override
+	@Transactional
+	public List<SanPham> getSPTheoTenTimKiem(String tenSP) {
+		return sanPhamDAO.getSPTheoTenTimKiem(tenSP);
+	}
+	
 	
 }
