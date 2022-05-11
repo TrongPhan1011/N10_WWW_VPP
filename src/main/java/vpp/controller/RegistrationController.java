@@ -141,7 +141,7 @@ public class RegistrationController {
 		        KhachHang kh = converUTF8(khachHang);
 				
 		        	
-			khachHangService.saveKhachHang(khachHang);
+			khachHangService.saveKhachHang(kh);
 			return "login";
 		}
 

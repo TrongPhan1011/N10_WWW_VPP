@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import vpp.dao.KhachHangDAO;
 import vpp.entity.KhachHang;
+import vpp.entity.NhanVien;
 import vpp.service.KhachHangService;
 
 @Service
@@ -42,6 +43,12 @@ public class KhachHangServiceImpl implements KhachHangService {
 		khachHangDAO.xoaKhachHang(id);
 
 		
+	}
+	@Override
+	@Transactional
+	public KhachHang getKHEmail(String email) {
+		// TODO Auto-generated method stub
+		return khachHangDAO.getKHEmail(email);
 	}
 
 	@Override

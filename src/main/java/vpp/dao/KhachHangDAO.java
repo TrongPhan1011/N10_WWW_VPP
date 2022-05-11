@@ -13,5 +13,7 @@ public interface KhachHangDAO {
 	public void themHoacCapNhatKhachHang(KhachHang khachHang);
 	public void xoaKhachHang(int id);
 	public void saveKhachHang(KhachHang thekhachHang);
+	public KhachHang getKHEmail(String email);
+	
 
 }

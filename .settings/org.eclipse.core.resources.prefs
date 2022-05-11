@@ -2,7 +2,13 @@
 <<<<<<<=HEAD
 >>>>>>>=ed1fb2d969dd6319e61152911d784b38cd7cfbda
 eclipse.preferences.version=1
+<<<<<<< HEAD
 encoding//src/main/webapp/WEB-INF/view/dang-ky.jsp=UTF-8
+=======
+encoding//src/main/java/vpp/ImplDAO/NhanVienImpl.java=UTF-8
+encoding//src/main/java/vpp/controller/NhanVienController.java=UTF-8
+encoding//src/main/java/vpp/controller/chiTietTaiKhoan.java=UTF-8
+>>>>>>> 372b031f58ae931b7fac7ade577759f453e65921
 encoding//src/main/webapp/WEB-INF/view/index.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/lien-he.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/login.jsp=UTF-8
