@@ -108,16 +108,7 @@
 							</div>
 						</div>
 
-						<div class="row m-0 mt-4">
-							<div class="col-3 p-0">
-								<select name="selectTrangThai" id="select-Trang-Thai"
-									class="form-select vpp-bd-1 vpp-bd-radius">
-									<option value="0">Đã mua hàng</option>
-									<option value="1">Chưa mua hàng</option>
-
-
-								</select>
-							</div>
+						
 
 
 						</div>
@@ -202,7 +193,7 @@
 																 placeholder="Địa chỉ" required>
 																</textarea>
 																 <div class="invalid-feedback">
-                                                                        Vui lòng điền địa chỉ
+                                                                        Vui lòng điền địa chỉ chính xác
                                                                     </div>
 
 																<div class="row m-0 mt-4 d-flex justify-content-center">
@@ -256,7 +247,7 @@
 														<c:param name="khachHangId" value="${tempKH.id}" />
 													</c:url>
 
-													<c:url var="deleteLink" value="/khachhang/xoakhachhang">
+													<c:url var="deleteLink" value="/admin/khachhang/xoakhachhang">
 														<c:param name="khachHangId" value="${tempKH.id}" />
 													</c:url>
 													<tr>
@@ -271,11 +262,7 @@
 														<td>
 															<div class="row m-0 d-flex justify-content-center">
 																<div class="col-3 p-0 ms-1 me-1 ">
-																	<button type="button"
-																		class="btn bg-white vpp-bd-1 form-control hvr-grow"
-																		title="Chi tiết khách hàng">
-																		<i class="fas fa-info fs-5 vpp-text-pink "></i>
-																	</button>
+																	
 
 																</div>
 																<div class="col-3 p-0 me-1">

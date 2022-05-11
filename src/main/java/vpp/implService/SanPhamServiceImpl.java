@@ -121,4 +121,11 @@ public class SanPhamServiceImpl implements SanPhamService {
 		return null;
 	}
 
+	@Override
+	@Transactional
+	public List<SanPham> getSPTheoLoaiID(int id) {
+		
+		return sanPhamDAO.getSPTheoLoaiID(id);
+	}
+
 }
