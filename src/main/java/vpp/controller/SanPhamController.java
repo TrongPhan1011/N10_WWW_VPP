@@ -32,8 +32,9 @@ public class SanPhamController {
 	}
 	
 	@RequestMapping("/loaisanpham")
-	public String getSanPhamTheoLoai(@RequestParam("tenLoai") String tenLoai, Model theModel) {
-		List<SanPham> sanPhams=sanPhamService.getSPTheoLoai(tenLoai);
+	public String getSanPhamTheoLoai(@RequestParam("tenLoai") int id, Model theModel) {
+		//List<SanPham> sanPhams=sanPhamService.getSPTheoLoai(tenLoai);
+		List<SanPham> sanPhams=sanPhamService.getSPTheoLoaiID(id);
 		List<NSX> listNSX=nsxService.getTatCaNSX();
 		theModel.addAttribute("dsNSX", listNSX);
 		theModel.addAttribute("dsSanPham", sanPhams);

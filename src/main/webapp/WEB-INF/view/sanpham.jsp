@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -243,23 +247,25 @@
                     </div>
                     <div class="row col-8">
                         <ul class="list-group menudanhmuc">
-                            <li class="list-group-item"><a class="vpp-link" href="${urlGiayIn}"><i class="fas fa-toilet-paper"></i>
+                            <li class="list-group-item"><a class="vpp-link" href="${urlLoaiSP1}"><i class="fas fa-toilet-paper"></i>
                                     Giấy in</a></li>
-                            <li class="list-group-item"><a href="${urlButViet }" class="vpp-link"><i class="fas fa-pen"></i> Bút
+                            <li class="list-group-item"><a href="${urlLoaiSP2 }" class="vpp-link"><i class="fas fa-pen"></i> Bút
                                     viết</a></li>
-                            <li class="list-group-item"><a href="${urlVoSo }" class="vpp-link"><i class="fas fa-book"></i> Vở,
+                            <li class="list-group-item"><a href="${urlLoaiSP9 }" class="vpp-link"><i class="fas fa-book"></i> Vở,
                                     sổ</a></li>
-                            <li class="list-group-item"><a href="${urlMayTinh }" class="vpp-link"><i class="fas fa-calculator"></i>
+                            <li class="list-group-item"><a href="${urlLoaiSP4 }" class="vpp-link"><i class="fas fa-calculator"></i>
                                     Máy tính cầm tay</a></li>
-                            <li class="list-group-item"><a href="${urlKepGiay }" class="vpp-link"><i class="fas fa-paperclip"></i>
+                            <li class="list-group-item"><a href="${urlLoaiSP5 }" class="vpp-link"><i class="fas fa-paperclip"></i>
                                     Kẹp giấy</a></li>
-                            <li class="list-group-item"><a href="${urlBaoThu }" class="vpp-link"><i class="fas fa-envelope"></i> Bao
+                            <li class="list-group-item"><a href="${urlLoaiSP6 }" class="vpp-link"><i class="fas fa-envelope"></i> Bao
                                     thư</a></li>
-                            <li class="list-group-item"><a href="${urlBangDinh }" class="vpp-link"><i class="fas fa-tape"></i> Keo,
+                            <li class="list-group-item"><a href="${urlLoaiSP7 }" class="vpp-link"><i class="fas fa-tape"></i> Keo,
                                     băng dính</a></li>
-                            <li class="list-group-item"><a href="${urlCompa }" class="vpp-link"><i class="fas fa-cut"></i> Kéo,
+                            <li class="list-group-item"><a href="${urlLoaiSP8 }" class="vpp-link"><i class="fas fa-cut"></i> Kéo,
                                     compa</a></li>
-                            <li class="list-group-item"><a href="${urlKhac }" class="vpp-link"><i class="fas fa-plus-circle"></i>
+                              <li class="list-group-item"><a href="${urlLoaiSP3 }" class="vpp-link"><i class="fas fa-book"></i> Sách
+                         </a></li>
+                            <li class="list-group-item"><a href="${urlLoaiSP11 }" class="vpp-link"><i class="fas fa-plus-circle"></i>
                                     Các mặt hàng khác</a></li>
 
                         </ul>
