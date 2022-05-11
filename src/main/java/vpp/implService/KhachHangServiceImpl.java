@@ -64,6 +64,13 @@ public class KhachHangServiceImpl implements KhachHangService {
 	public KhachHang getKhachHangTheoEmail(String email) {
 		return khachHangDAO.getKhachHangTheoEmail(email);
 	}
+
+	@Override
+	@Transactional
+	public void updateKH(KhachHang khachHang) {
+		khachHangDAO.themHoacCapNhatKhachHang(khachHang);
+		
+	}
 	
 	
 }
