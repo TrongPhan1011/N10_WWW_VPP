@@ -19,55 +19,124 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<link rel="stylesheet" href="/resources/css/lib/hover.css">
+<link rel="stylesheet" href="../resources/css/lib/hover.css">
 
 <link rel="stylesheet"
-	href="/resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
+	href="../resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
 <link rel="stylesheet"
-	href="/resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
+	href="../resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
 
-<link rel="stylesheet" href="/resources/css/general.css">
-<link rel="stylesheet" href="/resources/css/index.css">
+<link rel="stylesheet" href="../resources/css/general.css">
+<link rel="stylesheet" href="../resources/css/index.css">
 </head>
 
 <body>
+<c:url var="urlLoaiSP1" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="1"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP2" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="2"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP3" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="3"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP4" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="4"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP5" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="5"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP6" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="6"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP7" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="7"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP8" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="8"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP9" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="9"></c:param>
+	</c:url>
+	
+	<c:url var="urlLoaiSP10" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="10"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP11" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="11"></c:param>
+	</c:url>
 	<div class="container-fluid vpp-bg-pink">
 		<div id="header">
 			<div class="row p-3  vpp-bg-header  d-flex align-items-center"
 				style="border-bottom: 1px solid rgb(253, 185, 188);">
-				<a href="#" class="col-2 text-center"> <img
-					src="../assets/img/Logo.png" alt="logo" width="100">
+
+				<a href="${pageContext.request.contextPath}/"
+					class="col-2 text-center"> <img
+					src="../resources/assets/img/Logo.png" alt="logo" width="100">
 				</a>
-				<div class="col-6 d-flex justify-content-center h-75">
+
+				<form action="${pageContext.request.contextPath}/timkiem/"
+					class="col-6 d-flex justify-content-center h-75">
 					<div class="input-group w-75 vpp-bd-btn ">
-						<input type="text" class="form-control vpp-bd-radius "
+						<input type="text" name="tenSP"
+							class="form-control vpp-bd-radius "
 							placeholder="Nhập sản phẩm cần tìm">
-						<button type="button"
+						<button type="submit"
 							class="input-group-text vpp-text-dark vpp-bg-btn vpp-bd-radius vpp-btn-hover hvr-bounce-to-right ">
 							<i class="fas fa-search"></i>Tìm
 						</button>
 					</div>
-				</div>
+				</form>
+
 				<div class="col-2">
 					<div class="row">
-						<div class="col-3 pe-0 d-flex align-items-center  vpp-text-pink">
-							<i class="fas fa-user-circle fs-1 vpp-bd-circle "></i>
-						</div>
-						<div class="col-9 ps-0">
-							<a href="#"
-								class="fw-bold vpp-link vpp-text-dark hvr-underline-from-left">Đăng
-								nhập</a><br> <a href="#"
-								class="vpp-link vpp-text-dark hvr-underline-from-left"> Đăng
-								ký</a>
+						<c:choose>
+							<c:when test="${pageContext.request.userPrincipal.name != null}">
+								<div class="col-3 pe-0 d-flex align-items-center  vpp-text-pink">
+									<a href="${pageContext.request.contextPath}/chiTietTaiKhoan/"
+										class="vpp-text-pink"> <i
+										class="fas fa-user-circle fs-1 vpp-bd-circle "></i>
+									</a> <input type="hidden" name="emailloggin"
+										value="<security:authentication
+						property="principal.username" />">
+
+
+								</div>
+							</c:when>
+						</c:choose>
+
+						<div class="col-9 ps-0  ">
+							<c:choose>
+								<c:when test="${pageContext.request.userPrincipal.name != null}">
+
+
+									<form:form action="${pageContext.request.contextPath}/logout"
+										method="POST">
+										<input type="submit" class="btn  btn-danger" value="Đăng xuất">
+									</form:form>
+								</c:when>
+								<c:otherwise>
+									<a href="${pageContext.request.contextPath}/login"
+										class="fw-bold vpp-link vpp-text-dark hvr-underline-from-left">Đăng
+										nhập</a>
+									<br>
+									<a href="${pageContext.request.contextPath}/dangky/"
+										class="vpp-link vpp-text-dark hvr-underline-from-left">
+										Đăng ký</a>
+
+
+								</c:otherwise>
+							</c:choose>
+
 						</div>
 					</div>
 				</div>
 				<div class="col-2 d-flex justify-content-around">
-					<button type="button"
-						class="btn vpp-btn hvr-grow hvr-shutter-out-horizontal">
-						<i class="fas fa-shopping-cart"></i> Giỏ hàng: <span>0</span>
+					<a href="${pageContext.request.contextPath}/giohang/"
+						class="btn vpp-btn hvr-grow hvr-shutter-out-horizontal"> <i
+						class="fas fa-shopping-cart"></i> Giỏ hàng: <span>0</span>
 
-					</button>
+					</a>
 				</div>
 
 
@@ -88,76 +157,85 @@
 						<ul class="navbar-nav">
 							<li class="nav-item"><a
 								class="nav-link vpp-link fs-5 hvr-underline-from-center"
-								href="./index.html">Trang chủ</a></li>
+								href="${pageContext.request.contextPath}/">Trang chủ</a></li>
 							<li class="nav-item vpp-dropdown "><a
 								class="nav-link vpp-link fs-5 hvr-underline-from-center "
-								href="#">Sản phẩm</a>
+								href="${pageContext.request.contextPath}/sanpham/">Sản phẩm</a>
 								<ul class="dropdown-menu">
 
 									<li><a
 										class="dropdown-item hvr-underline-from-left hvr-icon-float"
-										href="#"> <i class="fas fa-file me-2 hvr-icon"></i> Giấy
-											in
+										href="${urlLoaiSP1}"> <i class="fas fa-file me-2 hvr-icon"></i>
+											Giấy in
 									</a></li>
 									<li><a
 										class="dropdown-item hvr-underline-from-left hvr-icon-float "
-										href="#"> <i class="fas fa-pen-alt me-2 hvr-icon"></i> Bút
-											viết
+										href="${urlLoaiSP2}"> <i
+											class="fas fa-pen-alt me-2 hvr-icon"></i> Bút viết
 									</a></li>
 									<li><a
 										class="dropdown-item hvr-underline-from-left hvr-icon-float"
-										href="#"> <i class="fas fa-book me-2 hvr-icon"></i>Sách,
+										href="${urlLoaiSP3}"> <i class="fas fa-book me-2 hvr-icon"></i>Sách,
 											sách tham khảo
 									</a></li>
 									<li><a
 										class="dropdown-item hvr-underline-from-left hvr-icon-float"
-										href="#"> <i class="fas fa-calculator me-2 hvr-icon"></i>
-											Máy tính
+										href="${urlLoaiSP4}"> <i
+											class="fas fa-calculator me-2 hvr-icon"></i> Máy tính
 									</a></li>
 									<li><a
 										class="dropdown-item hvr-underline-from-left hvr-icon-float"
-										href="#"> <i class="fas fa-paperclip me-2 hvr-icon"></i>
-											Kẹp giấy các loại
+										href="${urlLoaiSP5}"> <i
+											class="fas fa-paperclip me-2 hvr-icon"></i> Kẹp giấy các loại
 									</a></li>
 									<li><a
 										class="dropdown-item hvr-underline-from-left hvr-icon-float"
-										href="#"> <i class="fas fa-envelope me-2 hvr-icon"></i>
-											Bao thư
+										href="${urlLoaiSP6}"> <i
+											class="fas fa-envelope me-2 hvr-icon"></i> Bao thư
 									</a></li>
 									<li><a
 										class="dropdown-item hvr-underline-from-left hvr-icon-float"
-										href="#"> <i class="fas fa-tape me-2 hvr-icon"></i> Keo,
-											băng keo
+										href="${urlLoaiSP7}"> <i class="fas fa-tape me-2 hvr-icon"></i>
+											Keo, băng keo
 									</a></li>
 									<li><a
 										class="dropdown-item hvr-underline-from-left hvr-icon-float"
-										href="#"> <i class="fas fa-drafting-compass me-2 hvr-icon"></i>
-											Đồ dùng học sinh
+										href="${urlLoaiSP8}"> <i
+											class="fas fa-drafting-compass me-2 hvr-icon"></i> Đồ dùng
+											học sinh
 									</a></li>
 									<li><a
 										class="dropdown-item hvr-underline-from-left hvr-icon-float"
-										href="#"> <i class="fas fa-book-open me-2 hvr-icon"></i>Vở
-											- Sổ
+										href="${urlLoaiSP9}"> <i
+											class="fas fa-book-open me-2 hvr-icon"></i>Vở - Sổ
 									</a></li>
 									<li><a
 										class="dropdown-item hvr-underline-from-left hvr-icon-float"
-										href="#"> <i class="fas fa-gift me-2 hvr-icon"></i> Quà
-											lưu niệm
+										href="${urlLoaiSP10}"> <i
+											class="fas fa-gift me-2 hvr-icon"></i> Quà lưu niệm
 									</a></li>
 									<li><a
 										class="dropdown-item hvr-underline-from-left hvr-icon-float"
-										href="#"> <i class="fas fa-plus-circle me-2 hvr-icon"></i>
-											Các loại khác
+										href="${urlLoaiSP11}"> <i
+											class="fas fa-plus-circle me-2 hvr-icon"></i> Các loại khác
 									</a></li>
 
 
 								</ul></li>
 							<li class="nav-item"><a
 								class="nav-link vpp-link fs-5 hvr-underline-from-center"
-								href="#">Giới thiệu</a></li>
+								href="${pageContext.request.contextPath}/gioithieu">Giới
+									thiệu</a></li>
 							<li class="nav-item"><a
 								class="nav-link vpp-link fs-5 hvr-underline-from-center"
-								href="#">Liên hệ</a></li>
+								href="${pageContext.request.contextPath}/lienhe">Liên hệ</a></li>
+							<security:authorize access="hasAnyRole('EMPLOYEE','ADMIN')">
+								<li class="nav-item"><a
+									class="nav-link vpp-link fs-5 hvr-underline-from-center"
+									href="${pageContext.request.contextPath}/admin/">Quản
+										lý</a></li>
+
+							</security:authorize>
 
 						</ul>
 					</div>
@@ -204,29 +282,34 @@
 						<div class="row">
 							<div class=" mt-4 text-center">
 								<div class="row mt-4 ">
-									<div
-										class="col-3 pt-0 p-2 d-flex justify-content-around block-sanpham">
-										<div
-											class="card pb-2 vpp-bd-hover-pink vpp-bd-btn hvr-grow-shadow"
-											style="width: 90%;">
-											<div class="img-sp">
-												<img class="card-img-top vpp-bd-radius-top"
-													src="../assets/img/Slider/slide4.jpg" alt="Card image"
-													style="width: 100%; height: 9vw;">
-											</div>
-											<div class="card-body p-0">
-												<a href="#" class="card-title vpp-link">
-													<h5>Đồ lưu niệm</h5>
-												</a>
-												<p class="card-text text-danger fs-5 fw-bold">10,000,000đ</p>
-												<a href="#"
-													class="btn vpp-btn vpp-bd-btn hvr-shutter-out-horizontal">Xem
-													chi tiết</a>
-											</div>
-										</div>
-									</div>
+                    	<c:forEach var="tempKhachHang" items="${dsSanPham}">
+                              	        <c:url var="chitietUrl" value="/chitietsanpham/">
+                                        	<c:param name="idSP" value="${tempKhachHang.id}" />
+                                        </c:url>
+                              	
+                              	
+                                <div class="col-3 pt-0 p-2 d-flex justify-content-around block-sanpham">
+                                    <div class="card pb-2 vpp-bd-hover-pink vpp-bd-btn hvr-grow-shadow" style="width:90%;">
+                                        <div class="img-sp">
+                                            <img class="card-img-top vpp-bd-radius-top"
+                                                src="../resources/assets/img/Slider/slide4.jpg" alt="Card image"
+                                                style="width:100%; height: 9vw;">
+                                        </div>
 
-									<div
+                                        <div class="card-body p-0">
+                                            <a href="${chitietUrl}" class="card-title vpp-link">
+                                                <h5>${tempKhachHang.tenSP}</h5>
+                                            </a>
+                                            <p class="card-text text-danger fs-5 fw-bold">${tempKhachHang.giaBan}</p>
+                                            <a href="${chitietUrl}" class="btn vpp-btn vpp-bd-btn hvr-shutter-out-horizontal">Xem chi
+                                                tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                             
+                        </c:forEach>
+
+<!-- 									<div
 										class="col-3 pt-0 p-2 d-flex justify-content-around block-sanpham">
 										<div
 											class="card pb-2 vpp-bd-hover-pink vpp-bd-btn hvr-grow-shadow"
@@ -386,7 +469,7 @@
 													chi tiết</a>
 											</div>
 										</div>
-									</div>
+									</div> -->
 								</div>
 							</div>
 

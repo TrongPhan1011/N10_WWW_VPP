@@ -33,62 +33,62 @@
 <body>
     <div class="container-fluid ">
         <div id="header" class=" row p-2 ps-5 pe-5 vpp-bg-header">
-            <div class="col-4">
+                                <div class="col-4">
 
-                <a href="./admin.html">
-                    <img src="../../assets/img/Logo.png" alt="logo" width="100">
+                                    <a href="${pageContext.request.contextPath}/admin/"> <img src="../resources/assets/img/Logo.png" alt="logo"
+                                            width="100">
 
-                </a>
+                                    </a>
 
-            </div>
-            <div class="col-8 d-flex justify-content-end">
+                                </div>
+                                <div class="col-8 d-flex justify-content-end">
 
 
-                <div class="row">
-                    <div class="col-12 pe-0 ms-1 d-flex align-items-center  vpp-text-pink">
-                        <i class="fas fa-user-circle fs-1 vpp-bd-circle "></i>
+                                    <div class="row">
+                                        <div class="col-12 pe-0 ms-1 d-flex align-items-center  vpp-text-pink">
+                                            <i class="fas fa-user-circle fs-1 vpp-bd-circle "></i> <a href="${pageContext.request.contextPath}/admin/chiTietTaiKhoan/"
+                                                class="fw-bold vpp-link vpp-text-dark hvr-underline-from-left">Thông
+                                                tin</a><br>
 
-                        <a href="#" class="fw-bold vpp-link vpp-text-dark hvr-underline-from-left">Thông tin</a><br>
+                                        </div>
+                                    </div>
 
-                    </div>
-                </div>
+                                </div>
 
-            </div>
+                            </div>
+                            <div id="content ">
+                                <div class="row ">
+                                    <div class="col-2 ps-5 vpp-bg-dark vpp-admin-menu ">
+                                        <ul class="navbar-nav">
+                                            <li class="nav-item"><a
+                                                    class="nav-link text-white vpp-link fs-5 hvr-underline-from-left"
+                                                    href="${pageContext.request.contextPath}/admin/">Tổng quan</a></li>
+                                            <li class="nav-item  vpp-dropdown "><a
+                                                    class="nav-link text-white vpp-link fs-5 hvr-underline-from-left "
+                                                    href="${pageContext.request.contextPath}/admin/donhang/">Đơn hàng</a></li>
+                                            <li class="nav-item  vpp-dropdown "><a
+                                                    class="nav-link text-white vpp-link fs-5 hvr-underline-from-left "
+                                                    href="${pageContext.request.contextPath}/admin/sanpham/">Sản phẩm</a></li>
 
-        </div>
-        <div id="content ">
-            <div class="row ">
-                <div class="col-2 ps-5 vpp-bg-dark vpp-admin-menu ">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-white vpp-link fs-5 hvr-underline-from-left" href="./index.html">Đơn
-                                hàng</a>
-                        </li>
-                        <li class="nav-item  vpp-dropdown ">
-                            <a class="nav-link text-white vpp-link fs-5 hvr-underline-from-left " href="#">Đơn hàng</a>
+                                            <security:authorize access="hasAnyRole('ADMIN')">
+                                                <li class="nav-item  vpp-dropdown "><a
+                                                        class="nav-link text-white vpp-link fs-5 hvr-underline-from-left "
+                                                        href="${pageContext.request.contextPath}/admin/nhanvien/">Nhân viên</a></li>
 
-                        </li>
-                        <li class="nav-item  vpp-dropdown ">
-                            <a class="nav-link text-white vpp-link fs-5 hvr-underline-from-left " href="#">Sản phẩm</a>
+                                                <li class="nav-item  vpp-dropdown "><a
+                                                        class="nav-link text-white vpp-link fs-5 hvr-underline-from-left "
+                                                        href="${pageContext.request.contextPath}/admin/khachhang/">Khách hàng</a></li>
 
-                        </li>
-                        <li class="nav-item  vpp-dropdown ">
-                            <a class="nav-link text-white vpp-link fs-5 hvr-underline-from-left " href="#">Nhân viên</a>
+                                            </security:authorize>
+                                            <li class="nav-item"><a
+                                                    class="nav-link text-white vpp-link fs-5 hvr-underline-from-left"
+                                                    href="#">Thông báo</a></li>
+                                            <li class="nav-item"><a
+                                                    class="nav-link text-white vpp-link fs-5 hvr-underline-from-left"
+                                                    href="${pageContext.request.contextPath}">VPP Website</a></li>
 
-                        </li>
-                        <li class="nav-item  vpp-dropdown ">
-                            <a class="nav-link text-white vpp-link fs-5 hvr-underline-from-left " href="#">Khách
-                                hàng</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white vpp-link fs-5 hvr-underline-from-left" href="#">Thông báo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white vpp-link fs-5 hvr-underline-from-left" href="">Website</a>
-                        </li>
-
-                    </ul>
-                </div>
+                                        </ul>
+                                    </div>
 
                 <div class="col-10 p-0">
                     <div class=" ps-2 vpp-bg-light-dark ">

@@ -3,6 +3,7 @@ package vpp.entity;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
@@ -21,11 +22,11 @@ public class CTGioHang implements Serializable {
 	
 	
 	@Id
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idGioHang")
 	private GioHang gioHang;
 	@Id
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idSP")
 	private SanPham sp;
 	private int soLuong;

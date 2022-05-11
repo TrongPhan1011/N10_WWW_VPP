@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <%@ taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
@@ -25,143 +25,225 @@
 </head>
 
 <body>
+
+<c:url var="urlLoaiSP1" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="1"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP2" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="2"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP3" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="3"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP4" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="4"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP5" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="5"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP6" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="6"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP7" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="7"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP8" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="8"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP9" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="9"></c:param>
+	</c:url>
+	
+	<c:url var="urlLoaiSP10" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="10"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP11" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="11"></c:param>
+	</c:url>
     <div class="container-fluid ">
         <div id="header">
-            <div class="row p-3  vpp-bg-header  d-flex align-items-center"
-                style="border-bottom: 1px solid rgb(253, 185, 188);">
-                <a href="#" class="col-2 text-center">
-                    <img src="../assets/img/Logo.png" alt="logo" width="100">
-                </a>
-                <div class="col-6 d-flex justify-content-center h-75">
-                    <div class="input-group w-75 vpp-bd-btn ">
-                        <input type="text" class="form-control vpp-bd-radius " placeholder="Nhập sản phẩm cần tìm">
-                        <button type="button"
-                            class="input-group-text vpp-text-dark vpp-bg-btn vpp-bd-radius vpp-btn-hover hvr-bounce-to-right "><i
-                                class="fas fa-search"></i>Tìm</button>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="row">
-                        <div class="col-3 pe-0 d-flex align-items-center  vpp-text-pink">
-                            <i class="fas fa-user-circle fs-1 vpp-bd-circle "></i>
-                        </div>
-                        <div class="col-9 ps-0">
-                            <a href="#" class="fw-bold vpp-link vpp-text-dark hvr-underline-from-left">Đăng nhập</a><br>
-                            <a href="#" class="vpp-link vpp-text-dark hvr-underline-from-left"> Đăng ký</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2 d-flex justify-content-around">
-                    <button type="button" class="btn vpp-btn hvr-grow hvr-shutter-out-horizontal">
-                        <i class="fas fa-shopping-cart"></i>
-                        Giỏ hàng: <span>0</span>
+			<div class="row p-3  vpp-bg-header  d-flex align-items-center"
+				style="border-bottom: 1px solid rgb(253, 185, 188);">
 
-                    </button>
-                </div>
+				<a href="${pageContext.request.contextPath}/"
+					class="col-2 text-center"> <img
+					src="../resources/assets/img/Logo.png" alt="logo" width="100">
+				</a>
 
+				<form action="${pageContext.request.contextPath}/timkiem/"
+					class="col-6 d-flex justify-content-center h-75">
+					<div class="input-group w-75 vpp-bd-btn ">
+						<input type="text" name="tenSP"
+							class="form-control vpp-bd-radius "
+							placeholder="Nhập sản phẩm cần tìm">
+						<button type="submit"
+							class="input-group-text vpp-text-dark vpp-bg-btn vpp-bd-radius vpp-btn-hover hvr-bounce-to-right ">
+							<i class="fas fa-search"></i>Tìm
+						</button>
+					</div>
+				</form>
 
-
-            </div>
-            <div class="row vpp-bg-header " style="box-shadow: 0px 1px 5px rgba(0, 0, 0,0.2);">
-                <nav class="navbar navbar-expand-sm p-0">
-                    <button class="navbar-toggler vpp-bd-btn m-2 hvr-grow" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapsibleNavbar">
-                        <i class="fas fa-bars vpp-text-pink"></i>
-                    </button>
-
-                    <div class="collapse navbar-collapse justify-content-center " id="collapsibleNavbar">
-
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link vpp-link fs-5 hvr-underline-from-center" href="./index.html">Trang
-                                    chủ</a>
-                            </li>
-                            <li class="nav-item vpp-dropdown ">
-                                <a class="nav-link vpp-link fs-5 hvr-underline-from-center " href="#">Sản phẩm</a>
-                                <ul class="dropdown-menu">
-
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-file me-2 hvr-icon"></i> Giấy in
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float " href="#">
-                                            <i class="fas fa-pen-alt me-2 hvr-icon"></i> Bút viết
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-book me-2 hvr-icon"></i>Sách, sách tham khảo
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-calculator me-2 hvr-icon"></i> Máy tính
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-paperclip me-2 hvr-icon"></i> Kẹp giấy các loại
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-envelope me-2 hvr-icon"></i> Bao thư
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-tape me-2 hvr-icon"></i> Keo, băng keo
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-drafting-compass me-2 hvr-icon"></i> Đồ dùng học sinh
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-book-open me-2 hvr-icon"></i>Vở - Sổ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-gift me-2 hvr-icon"></i> Quà lưu niệm
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-plus-circle me-2 hvr-icon"></i> Các loại khác
-                                        </a>
-                                    </li>
+				<div class="col-2">
+					<div class="row">
+						<c:choose>
+							<c:when test="${pageContext.request.userPrincipal.name != null}">
+								<div class="col-3 pe-0 d-flex align-items-center  vpp-text-pink">
+									<a href="${pageContext.request.contextPath}/chiTietTaiKhoan/"
+										class="vpp-text-pink"> <i
+										class="fas fa-user-circle fs-1 vpp-bd-circle "></i>
+									</a> <input type="hidden" name="emailloggin"
+										value="<security:authentication
+						property="principal.username" />">
 
 
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link vpp-link fs-5 hvr-underline-from-center" href="#">Giới thiệu</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link vpp-link fs-5 hvr-underline-from-center" href="#">Liên hệ</a>
-                            </li>
+								</div>
+							</c:when>
+						</c:choose>
 
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class=" row vpp-bg-light-dark ">
-                <div class="col-12">
-                    <a href="#" class="vpp-link">Tài khoản</a>
-                </div>
-                
-            </div>
-            <p></p>
-        </div>
+						<div class="col-9 ps-0  ">
+							<c:choose>
+								<c:when test="${pageContext.request.userPrincipal.name != null}">
+
+
+									<form:form action="${pageContext.request.contextPath}/logout"
+										method="POST">
+										<input type="submit" class="btn  btn-danger" value="Đăng xuất">
+									</form:form>
+								</c:when>
+								<c:otherwise>
+									<a href="${pageContext.request.contextPath}/login"
+										class="fw-bold vpp-link vpp-text-dark hvr-underline-from-left">Đăng
+										nhập</a>
+									<br>
+									<a href="${pageContext.request.contextPath}/dangky/"
+										class="vpp-link vpp-text-dark hvr-underline-from-left">
+										Đăng ký</a>
+
+
+								</c:otherwise>
+							</c:choose>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-2 d-flex justify-content-around">
+					<a href="${pageContext.request.contextPath}/giohang/"
+						class="btn vpp-btn hvr-grow hvr-shutter-out-horizontal"> <i
+						class="fas fa-shopping-cart"></i> Giỏ hàng: <span>0</span>
+
+					</a>
+				</div>
+
+
+
+			</div>
+			<div class="row vpp-bg-header "
+				style="box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);">
+				<nav class="navbar navbar-expand-sm p-0">
+					<button class="navbar-toggler vpp-bd-btn m-2 hvr-grow"
+						type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapsibleNavbar">
+						<i class="fas fa-bars vpp-text-pink"></i>
+					</button>
+
+					<div class="collapse navbar-collapse justify-content-center "
+						id="collapsibleNavbar">
+
+						<ul class="navbar-nav">
+							<li class="nav-item"><a
+								class="nav-link vpp-link fs-5 hvr-underline-from-center"
+								href="${pageContext.request.contextPath}/">Trang chủ</a></li>
+							<li class="nav-item vpp-dropdown "><a
+								class="nav-link vpp-link fs-5 hvr-underline-from-center "
+								href="${pageContext.request.contextPath}/sanpham/">Sản phẩm</a>
+								<ul class="dropdown-menu">
+
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP1}"> <i class="fas fa-file me-2 hvr-icon"></i>
+											Giấy in
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float "
+										href="${urlLoaiSP2}"> <i
+											class="fas fa-pen-alt me-2 hvr-icon"></i> Bút viết
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP3}"> <i class="fas fa-book me-2 hvr-icon"></i>Sách,
+											sách tham khảo
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP4}"> <i
+											class="fas fa-calculator me-2 hvr-icon"></i> Máy tính
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP5}"> <i
+											class="fas fa-paperclip me-2 hvr-icon"></i> Kẹp giấy các loại
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP6}"> <i
+											class="fas fa-envelope me-2 hvr-icon"></i> Bao thư
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP7}"> <i class="fas fa-tape me-2 hvr-icon"></i>
+											Keo, băng keo
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP8}"> <i
+											class="fas fa-drafting-compass me-2 hvr-icon"></i> Đồ dùng
+											học sinh
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP9}"> <i
+											class="fas fa-book-open me-2 hvr-icon"></i>Vở - Sổ
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP10}"> <i
+											class="fas fa-gift me-2 hvr-icon"></i> Quà lưu niệm
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP11}"> <i
+											class="fas fa-plus-circle me-2 hvr-icon"></i> Các loại khác
+									</a></li>
+
+
+								</ul></li>
+							<li class="nav-item"><a
+								class="nav-link vpp-link fs-5 hvr-underline-from-center"
+								href="${pageContext.request.contextPath}/gioithieu">Giới
+									thiệu</a></li>
+							<li class="nav-item"><a
+								class="nav-link vpp-link fs-5 hvr-underline-from-center"
+								href="${pageContext.request.contextPath}/lienhe">Liên hệ</a></li>
+							<security:authorize access="hasAnyRole('EMPLOYEE','ADMIN')">
+								<li class="nav-item"><a
+									class="nav-link vpp-link fs-5 hvr-underline-from-center"
+									href="${pageContext.request.contextPath}/admin/">Quản
+										lý</a></li>
+
+							</security:authorize>
+
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+         <c:url var="updateLink" value="/admin/chiTietTaiKhoan/update">
+          </c:url>
         <div class="container vpp-bd-btn ps-5 pe-5 mb-4">
+         <form:form action="${ updateLink}" modelAttribute="thongtinNV" method="POST" cssClass="needs-validation"  name="myform">
             <div class="row text-center mt-4"><h3>Thông tin khách hàng</h3></div>
             <p></p>
-            <form action="#" method="#" class="text-start">
+           
                 <div class="row m-0">
                   <div class="col-6 pe-5">
                     <div class="row">
@@ -169,7 +251,7 @@
                             <label for="name" class="form-label ">Tên đăng nhập: </label>
                         </div>
                         <div class="col-8">
-                            <input type="text" class=" form-control vpp-bd-btn" placeholder="Tên đăng nhập" name="name">
+                            <input type="text" class=" form-control vpp-bd-btn" placeholder="Tên đăng nhập" name="email">
                         </div>
                        
                         
@@ -181,7 +263,7 @@
                             <label for="password" class="form-label ">Mật khẩu: </label>
                         </div>
                         <div class="col-8">
-                            <input type="password" class=" form-control vpp-bd-btn" placeholder="Mật khẩu" name="password">
+                            <input type="password" class=" form-control vpp-bd-btn" placeholder="Mật khẩu" name="trangThai">
                             <a href="#">Thay đổi mật khẩu</a>
                         </div>
                     </div>
@@ -196,7 +278,7 @@
                               <label for="hoten" class="form-label">Họ tên: </label>
                           </div>
                           <div class="col-8">
-                              <input type="text" class=" form-control vpp-bd-btn" placeholder="Họ tên khách hàng" name="hoten">
+                              <input type="text" class=" form-control vpp-bd-btn" placeholder="Họ tên khách hàng" name="tenKH">
                           </div>
                          
                           
@@ -208,7 +290,7 @@
                               <label for="gioitinh" class="form-label ">Giới tính: </label>
                           </div>
                           <div class="col-8">
-                             <select name="gioitinh " id="" class="form-select vpp-bd-btn">
+                             <select name="gioiTinh" id="" class="form-select vpp-bd-btn">
                                 <option value="nam">Nam</option>
                                 <option value="nu">Nữ</option>
                              </select>
@@ -251,7 +333,7 @@
                               <label for="ngaysinh" class="form-label ">Ngày sinh: </label>
                           </div>
                           <div class="col-8">
-                              <input type="date" class=" form-control vpp-bd-btn" placeholder="Ngày sinh" name="ngaysinh">
+                              <input type="date" class=" form-control vpp-bd-btn" placeholder="Ngày sinh" name="ngaySinh">
                           </div>
                           
                       </div>
@@ -262,7 +344,7 @@
                                 <label for="diachi" class="form-label ">Địa chỉ: </label>
                             </div>
                             <div class="col-8">
-                                <input type="text" class=" form-control vpp-bd-btn" placeholder="Địa chỉ" name="diachi">
+                                <input type="text" class=" form-control vpp-bd-btn" placeholder="Địa chỉ" name="diaChi">
                             </div>
                             
                         </div>
@@ -274,15 +356,15 @@
                   
                   <div class="row m-0 mt-4">
                       <div class="col-6 text-end">
-                        <button class="btn vpp-btn fs-5  hvr-shutter-out-horizontal ">Hủy bỏ</button>
+                        <button type="button" class="btn vpp-btn fs-5  hvr-shutter-out-horizontal">Hủy bỏ</button>
                       </div>
                       <div class="col-6 text-start vpp-bd-radius">
-                        <button class="btn fs-5  btn-info">Lưu thông tin</button>
+                        <button type="submit" class="btn fs-5  btn-info">Lưu thông tin</button>
                       </div>
                    
                   </div>
                   <p></p>
-              </form>
+              </form:form>
 
         </div>
     </div>

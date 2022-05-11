@@ -24,136 +24,217 @@
 </head>
 
 <body>
+<c:url var="urlLoaiSP1" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="1"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP2" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="2"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP3" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="3"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP4" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="4"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP5" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="5"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP6" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="6"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP7" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="7"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP8" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="8"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP9" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="9"></c:param>
+	</c:url>
+	
+	<c:url var="urlLoaiSP10" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="10"></c:param>
+	</c:url>
+	<c:url var="urlLoaiSP11" value="/sanpham/loaisanpham">
+		<c:param name="tenLoai" value="11"></c:param>
+	</c:url>
     <div class="container-fluid p-0 ">
         <div id="header">
-            <div class="row p-3  vpp-bg-header  d-flex align-items-center"
-                style="border-bottom: 1px solid rgb(253, 185, 188);">
+			<div class="row p-3  vpp-bg-header  d-flex align-items-center"
+				style="border-bottom: 1px solid rgb(253, 185, 188);">
 
-                <a href="./index.html" class="col-2 text-center">
+				<a href="${pageContext.request.contextPath}/"
+					class="col-2 text-center"> <img
+					src="../resources/assets/img/Logo.png" alt="logo" width="100">
+				</a>
 
-                    <img src="../assets/img/Logo.png" alt="logo" width="100">
-                </a>
-                <div class="col-6 d-flex justify-content-center h-75">
-                    <div class="input-group w-75 vpp-bd-btn ">
-                        <input type="text" class="form-control vpp-bd-radius " placeholder="Nhập sản phẩm cần tìm">
-                        <button type="button"
-                            class="input-group-text vpp-text-dark vpp-bg-btn vpp-bd-radius vpp-btn-hover hvr-bounce-to-right "><i
-                                class="fas fa-search"></i>Tìm</button>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="row">
-                        <div class="col-3 pe-0 d-flex align-items-center  vpp-text-pink">
-                            <i class="fas fa-user-circle fs-1 vpp-bd-circle "></i>
-                        </div>
-                        <div class="col-9 ps-0">
-                            <a href="#" class="fw-bold vpp-link vpp-text-dark hvr-underline-from-left">Đăng nhập</a><br>
-                            <a href="#" class="vpp-link vpp-text-dark hvr-underline-from-left"> Đăng ký</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2 d-flex justify-content-around">
-                    <button type="button" class="btn vpp-btn hvr-grow hvr-shutter-out-horizontal">
-                        <i class="fas fa-shopping-cart"></i>
-                        Giỏ hàng: <span>0</span>
+				<form action="${pageContext.request.contextPath}/timkiem/"
+					class="col-6 d-flex justify-content-center h-75">
+					<div class="input-group w-75 vpp-bd-btn ">
+						<input type="text" name="tenSP"
+							class="form-control vpp-bd-radius "
+							placeholder="Nhập sản phẩm cần tìm">
+						<button type="submit"
+							class="input-group-text vpp-text-dark vpp-bg-btn vpp-bd-radius vpp-btn-hover hvr-bounce-to-right ">
+							<i class="fas fa-search"></i>Tìm
+						</button>
+					</div>
+				</form>
 
-                    </button>
-                </div>
-
+				<div class="col-2">
+					<div class="row">
+						<c:choose>
+							<c:when test="${pageContext.request.userPrincipal.name != null}">
+								<div class="col-3 pe-0 d-flex align-items-center  vpp-text-pink">
+									<a href="${pageContext.request.contextPath}/chiTietTaiKhoan/"
+										class="vpp-text-pink"> <i
+										class="fas fa-user-circle fs-1 vpp-bd-circle "></i>
+									</a> <input type="hidden" name="emailloggin"
+										value="<security:authentication
+						property="principal.username" />">
 
 
-            </div>
-            <div class="row vpp-bg-header " style="box-shadow: 0px 1px 5px rgba(0, 0, 0,0.2);">
-                <nav class="navbar navbar-expand-sm p-0">
-                    <button class="navbar-toggler vpp-bd-btn m-2 hvr-grow" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapsibleNavbar">
-                        <i class="fas fa-bars vpp-text-pink"></i>
-                    </button>
+								</div>
+							</c:when>
+						</c:choose>
 
-                    <div class="collapse navbar-collapse justify-content-center " id="collapsibleNavbar">
-
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link vpp-link fs-5 hvr-underline-from-center" href="./index.html">Trang
-                                    chủ</a>
-                            </li>
-                            <li class="nav-item vpp-dropdown ">
-                                <a class="nav-link vpp-link fs-5 hvr-underline-from-center " href="#">Sản phẩm</a>
-                                <ul class="dropdown-menu">
-
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-file me-2 hvr-icon"></i> Giấy in
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float " href="#">
-                                            <i class="fas fa-pen-alt me-2 hvr-icon"></i> Bút viết
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-book me-2 hvr-icon"></i>Sách, sách tham khảo
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-calculator me-2 hvr-icon"></i> Máy tính
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-paperclip me-2 hvr-icon"></i> Kẹp giấy các loại
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-envelope me-2 hvr-icon"></i> Bao thư
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-tape me-2 hvr-icon"></i> Keo, băng keo
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-drafting-compass me-2 hvr-icon"></i> Đồ dùng học sinh
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-book-open me-2 hvr-icon"></i>Vở - Sổ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-gift me-2 hvr-icon"></i> Quà lưu niệm
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item hvr-underline-from-left hvr-icon-float" href="#">
-                                            <i class="fas fa-plus-circle me-2 hvr-icon"></i> Các loại khác
-                                        </a>
-                                    </li>
+						<div class="col-9 ps-0  ">
+							<c:choose>
+								<c:when test="${pageContext.request.userPrincipal.name != null}">
 
 
-                                </ul>
+									<form:form action="${pageContext.request.contextPath}/logout"
+										method="POST">
+										<input type="submit" class="btn  btn-danger" value="Đăng xuất">
+									</form:form>
+								</c:when>
+								<c:otherwise>
+									<a href="${pageContext.request.contextPath}/login"
+										class="fw-bold vpp-link vpp-text-dark hvr-underline-from-left">Đăng
+										nhập</a>
+									<br>
+									<a href="${pageContext.request.contextPath}/dangky/"
+										class="vpp-link vpp-text-dark hvr-underline-from-left">
+										Đăng ký</a>
 
 
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link vpp-link fs-5 hvr-underline-from-center" href="#">Giới thiệu</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link vpp-link fs-5 hvr-underline-from-center" href="#">Liên hệ</a>
-                            </li>
+								</c:otherwise>
+							</c:choose>
 
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
+						</div>
+					</div>
+				</div>
+				<div class="col-2 d-flex justify-content-around">
+					<a href="${pageContext.request.contextPath}/giohang/"
+						class="btn vpp-btn hvr-grow hvr-shutter-out-horizontal"> <i
+						class="fas fa-shopping-cart"></i> Giỏ hàng: <span>0</span>
+
+					</a>
+				</div>
+
+
+
+			</div>
+			<div class="row vpp-bg-header "
+				style="box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);">
+				<nav class="navbar navbar-expand-sm p-0">
+					<button class="navbar-toggler vpp-bd-btn m-2 hvr-grow"
+						type="button" data-bs-toggle="collapse"
+						data-bs-target="#collapsibleNavbar">
+						<i class="fas fa-bars vpp-text-pink"></i>
+					</button>
+
+					<div class="collapse navbar-collapse justify-content-center "
+						id="collapsibleNavbar">
+
+						<ul class="navbar-nav">
+							<li class="nav-item"><a
+								class="nav-link vpp-link fs-5 hvr-underline-from-center"
+								href="${pageContext.request.contextPath}/">Trang chủ</a></li>
+							<li class="nav-item vpp-dropdown "><a
+								class="nav-link vpp-link fs-5 hvr-underline-from-center "
+								href="${pageContext.request.contextPath}/sanpham/">Sản phẩm</a>
+								<ul class="dropdown-menu">
+
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP1}"> <i class="fas fa-file me-2 hvr-icon"></i>
+											Giấy in
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float "
+										href="${urlLoaiSP2}"> <i
+											class="fas fa-pen-alt me-2 hvr-icon"></i> Bút viết
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP3}"> <i class="fas fa-book me-2 hvr-icon"></i>Sách,
+											sách tham khảo
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP4}"> <i
+											class="fas fa-calculator me-2 hvr-icon"></i> Máy tính
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP5}"> <i
+											class="fas fa-paperclip me-2 hvr-icon"></i> Kẹp giấy các loại
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP6}"> <i
+											class="fas fa-envelope me-2 hvr-icon"></i> Bao thư
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP7}"> <i class="fas fa-tape me-2 hvr-icon"></i>
+											Keo, băng keo
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP8}"> <i
+											class="fas fa-drafting-compass me-2 hvr-icon"></i> Đồ dùng
+											học sinh
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP9}"> <i
+											class="fas fa-book-open me-2 hvr-icon"></i>Vở - Sổ
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP10}"> <i
+											class="fas fa-gift me-2 hvr-icon"></i> Quà lưu niệm
+									</a></li>
+									<li><a
+										class="dropdown-item hvr-underline-from-left hvr-icon-float"
+										href="${urlLoaiSP11}"> <i
+											class="fas fa-plus-circle me-2 hvr-icon"></i> Các loại khác
+									</a></li>
+
+
+								</ul></li>
+							<li class="nav-item"><a
+								class="nav-link vpp-link fs-5 hvr-underline-from-center"
+								href="${pageContext.request.contextPath}/gioithieu">Giới
+									thiệu</a></li>
+							<li class="nav-item"><a
+								class="nav-link vpp-link fs-5 hvr-underline-from-center"
+								href="${pageContext.request.contextPath}/lienhe">Liên hệ</a></li>
+							<security:authorize access="hasAnyRole('EMPLOYEE','ADMIN')">
+								<li class="nav-item"><a
+									class="nav-link vpp-link fs-5 hvr-underline-from-center"
+									href="${pageContext.request.contextPath}/admin/">Quản
+										lý</a></li>
+
+							</security:authorize>
+
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
         <div class="  vpp-bg-light-dark ps-2 ">
             <a href="#" class="vpp-link">Trang chủ</a>/Giới thiệu
 

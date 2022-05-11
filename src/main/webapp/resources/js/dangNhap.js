@@ -9,7 +9,7 @@ function kiemTraValEmail(){
    let email = emailUser.value;
     if(email == ''||!email.match('^[0-9a-zA-Z\.]{1,}\@gmail\.com$')){
         emailUser.classList.remove('is-valid');
-        emailUser.classList.add('is-invalid');
+        emailUser.classList.add('is-valid');
         return false;
     }
     else {
