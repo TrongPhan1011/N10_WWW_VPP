@@ -59,6 +59,22 @@ public class NhanVienServiceImpl implements NhanVienService {
 		// TODO Auto-generated method stub
 		return nhanVienDAO.getNVEmail(email);
 	}
+
+	@Override
+	@Transactional
+	public void updatePass(int id, String pass) {
+		// TODO Auto-generated method stub
+		nhanVienDAO.updatePass(id, pass);
+		
+	}
+
+	@Override
+	@Transactional
+	public void updateNVadmin(NhanVien thongtinNV2, int id, String email) {
+		// TODO Auto-generated method stub
+		nhanVienDAO.updateNVadmin(thongtinNV2, id, email);
+		
+	}
 	
 	
 }

@@ -52,6 +52,7 @@ public class NhanVienController {
 	@PostMapping("/saveNV")
 	public String saveNV(@Valid @ModelAttribute("nhanvien") NhanVien nhanVien, Model model) {
 		List<NhanVien> nhanViens = nhanVienService.getAllNV();
+		System.out.println(nhanVien.getChucVu());
 		String gioitinh = null;
 		String chucvu = null;
 		int check = 0;
@@ -72,21 +73,21 @@ public class NhanVienController {
 				LocalDate.now(), "Đang làm việc");
 		List<GrantedAuthority> admin = AuthorityUtils.createAuthorityList("ROLE_ADMIN");
 		List<GrantedAuthority> employee = AuthorityUtils.createAuthorityList("ROLE_EMPLOYEE");
-		System.out.println(check);
+	
 		for (int i = 0; i < nhanViens.size(); i++) {
 			if (nhanVien.getId() == nhanViens.get(i).getId()) {
 				check++;
 			}
 
 		}
-		System.out.println(check);
+		
 		if (check > 0) {
 			for (int i = 0; i < nhanViens.size(); i++) {
 				if (nhanVien.getId() == nhanViens.get(i).getId()) {
 					NhanVien thongtinNV2 = new NhanVien(nhanViens.get(i).getId(), nhanVien.getTenNV(),
 							nhanVien.getEmail(), nhanVien.getSdt(), gioitinh, nhanVien.getNgaySinh(),
 							nhanVien.getDiaChi(), null, chucvu, null, "Đang làm việc");
-					nhanVienService.updateNV(thongtinNV2, nhanViens.get(i).getId(), nhanViens.get(i).getEmail());
+					nhanVienService.updateNVadmin(thongtinNV2, nhanViens.get(i).getId(), nhanViens.get(i).getEmail());
 				}
 
 			}
