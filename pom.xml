@@ -46,10 +46,15 @@
 			<version>1.2.1</version> <!-- makesure correct version here -->
 		</dependency>
 		<!-- Apache Commons IO -->
-<dependency>
+<!-- <dependency>
     <groupId>commons-io</groupId>
     <artifactId>commons-io</artifactId>
     <version>2.4</version>
+</dependency> -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.5</version>
 </dependency>
 
 		<dependency>

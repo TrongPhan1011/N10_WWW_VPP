@@ -462,7 +462,7 @@
 										style="width: 80%;">
 										<div class="img-sp">
 											<img class="card-img-top vpp-bd-radius-top"
-											src="../../resources/assets/img/sp/${sp.urlAnhSP}"
+											src="./resources/assets/img/sp/${sp.urlAnhSP}"
 												alt="Card image" style="width: 100%; height: 9vw;">
 										</div>
 										<div class="card-body p-0">
@@ -502,7 +502,7 @@
 										style="width: 80%;">
 										<div class="img-sp">
 											<img class="card-img-top vpp-bd-radius-top"
-												src=""
+												src="./resources/assets/img/sp/${sp.urlAnhSP}"
 												alt="Card image" style="width: 100%; height: 9vw;">
 										</div>
 										<div class="card-body p-0">
