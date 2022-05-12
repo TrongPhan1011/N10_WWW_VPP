@@ -19,4 +19,12 @@ public class GioHangServiceImpl implements GioHangService {
 	public GioHang getGioHangTheoKhachHang(int id) {
 		return gioHangDAO.getGioHangTheoKhachHang(id);
 	}
+
+	@Override
+	@Transactional
+	public void saveGiohang(GioHang giohang) {
+		// TODO Auto-generated method stub
+		gioHangDAO.saveGiohang(giohang);
+		
+	}
 }	

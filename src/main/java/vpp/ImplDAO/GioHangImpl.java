@@ -24,6 +24,14 @@ public class GioHangImpl implements GioHangDAO {
 
 		return gioHang;
 	}
+
+	@Override
+	public void saveGiohang(GioHang giohang) {
+		// TODO Auto-generated method stub
+		Session currentSession = sessionFactory.getCurrentSession();
+		currentSession.save(giohang);
+		
+	}
 	
 	
 }
