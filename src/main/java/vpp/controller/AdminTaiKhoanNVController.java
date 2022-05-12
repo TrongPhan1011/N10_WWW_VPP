@@ -1,5 +1,6 @@
 package vpp.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -52,7 +53,7 @@ public class AdminTaiKhoanNVController {
 	@PostMapping("/update")
 
 	public String update(@Valid @ModelAttribute("thongtinNV") NhanVien nhanVien, Model model,@RequestParam("matkhaumoi") String matkhaumoi) {
-		
+		converUTF8(nhanVien);
 		String gioitinh = null;
 		String chucvu = "";
 		int check = 0;
@@ -68,7 +69,7 @@ public class AdminTaiKhoanNVController {
 		NhanVien thongtinNV = new NhanVien(nhanVien.getId(), nhanVien.getTenNV(), nhanVien.getEmail(),
 				nhanVien.getSdt(), gioitinh, nhanVien.getNgaySinh(), nhanVien.getDiaChi(), null, null,
 				"Đang làm việc");
-System.out.println("id1:"+nhanVien.getId());
+
 
 		nhanVienService.updateNV(thongtinNV, thongtinNV.getId(), thongtinNV.getEmail());
 		String passmoi=passwordEncoder.encode(matkhaumoi);
@@ -76,6 +77,21 @@ System.out.println("id1:"+nhanVien.getId());
 		nhanVienService.updatePass(nhanVien.getId(), passmoi2);
 
 		return "redirect:/admin/chiTietTaiKhoan/";
+	}
+	private NhanVien converUTF8(NhanVien nhanVien) {
+		// TODO Auto-generated method stub
+		String ten = nhanVien.getTenNV();
+		String diaChi= nhanVien.getDiaChi();
+		try {
+			String tenUTF8 = new String(ten.getBytes("ISO-8859-1"), "UTF8");
+			String diaChiUTF8 = new String(diaChi.getBytes("ISO-8859-1"), "UTF8");
+			nhanVien.setTenNV(tenUTF8);
+			nhanVien.setDiaChi(diaChiUTF8);
+		}catch (UnsupportedEncodingException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return nhanVien;
 	}
 
 }

@@ -1,6 +1,7 @@
 package vpp.controller;
 
 import java.util.Date;
+import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -51,8 +52,8 @@ public class AdminNhanVienController {
 
 	@PostMapping("/saveNV")
 	public String saveNV(@Valid @ModelAttribute("nhanvien") NhanVien nhanVien, Model model) {
+		converUTF8(nhanVien);
 		List<NhanVien> nhanViens = nhanVienService.getAllNV();
-		System.out.println(nhanVien.getChucVu());
 		String gioitinh = null;
 		String chucvu = null;
 		int check = 0;
@@ -132,6 +133,21 @@ public class AdminNhanVienController {
 		List<NhanVien> nhanViens3 = nhanVienService.getAllNV();
 		model.addAttribute("dsNV", nhanViens3);
 		return "redirect:/admin/nhanvien/";
+	}
+	private NhanVien converUTF8(NhanVien nhanVien) {
+		// TODO Auto-generated method stub
+		String ten = nhanVien.getTenNV();
+		String diaChi= nhanVien.getDiaChi();
+		try {
+			String tenUTF8 = new String(ten.getBytes("ISO-8859-1"), "UTF8");
+			String diaChiUTF8 = new String(diaChi.getBytes("ISO-8859-1"), "UTF8");
+			nhanVien.setTenNV(tenUTF8);
+			nhanVien.setDiaChi(diaChiUTF8);
+		}catch (UnsupportedEncodingException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return nhanVien;
 	}
 
 }
