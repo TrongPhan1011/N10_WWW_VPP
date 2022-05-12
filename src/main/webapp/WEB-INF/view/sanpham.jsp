@@ -388,7 +388,7 @@
                                     <div class="card pb-2 vpp-bd-hover-pink vpp-bd-btn hvr-grow-shadow" style="width:90%;">
                                         <div class="img-sp">
                                             <img class="card-img-top vpp-bd-radius-top"
-                                                src="../resources/assets/img/Slider/slide4.jpg" alt="Card image"
+                                                src="../resources/assets/img/sp/${tempKhachHang.urlAnhSP}" alt="Card image"
                                                 style="width:100%; height: 9vw;">
                                         </div>
 

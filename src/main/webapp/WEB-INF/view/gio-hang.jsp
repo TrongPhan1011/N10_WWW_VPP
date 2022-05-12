@@ -132,7 +132,7 @@
 				<div class="col-2 d-flex justify-content-around">
 					<a href="${pageContext.request.contextPath}/giohang/"
 						class="btn vpp-btn hvr-grow hvr-shutter-out-horizontal"> <i
-						class="fas fa-shopping-cart"></i> Giỏ hàng: <span>0</span>
+						class="fas fa-shopping-cart"></i> Giỏ hàng: <span value="${soluongcuagio }">${soluongcuagio }</span>
 
 					</a>
 				</div>
@@ -257,9 +257,9 @@
                     <tbody>
                     
                     
-                    <c:forEach var ="tempSP" items="${dsSanPham }">
+                    <c:forEach var ="tempCT" items="${dsCtGioHang }">
                     	   <tr>
-                            <th scope="row">${tempSP.tenSP } </th>
+                            <th scope="row">${tempCT.sp.tenSP } </th>
                             <td class="text-center d-flex justify-content-center">
                                 <form action="#" class="w-25">
                                     <div class="input-group ">
@@ -267,7 +267,7 @@
                                             <i class="fas fa-minus"></i>
                                         </button>
                                         
-                                        <input type="text" class="form-control text-center " value="${tempSP.soLuongTon }">
+                                        <input type="text" class="form-control text-center " value="${tempCT.soLuong }">
                                         <button type="button" class="btn btn-success ms-2 vpp-btn-sp ">
                                             <i class="fas fa-plus"></i>
                                         </button>
@@ -275,7 +275,7 @@
 
                                 </form>
                             </td>
-                            <td>${tempSP.giaBan }</td>
+                            <td>${tempCT.sp.giaBan * tempCT.soLuong }</td>
                             <td>
                                 <button type="button" class="btn bg-white vpp-bd-1   hvr-grow vpp-bd-color-red"><i
                                         class="fas fa-times fs-5  text-danger"></i></button>

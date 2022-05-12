@@ -7,11 +7,17 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import vpp.entity.CTGioHang;
 import vpp.entity.GioHang;
 import vpp.entity.KhachHang;
+import vpp.entity.NhanVien;
 import vpp.entity.SanPham;
 import vpp.service.CTGioHangService;
 import vpp.service.GioHangService;
@@ -31,8 +37,8 @@ public class GioHangController {
 	@Autowired
 	private SanPhamService sanPhamService;
 	
-		//requestMapping
-	@RequestMapping("/")
+	
+	@GetMapping("/")
 	public String chiTietGioHang(Model theModel) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String email = authentication.getName();
@@ -41,18 +47,49 @@ public class GioHangController {
 		else {
 			
 			KhachHang khachHang = khachHangService.getKhachHangTheoEmail(email);
-			
+			int soLuong =0;
 			GioHang gioHang = gioHangService.getGioHangTheoKhachHang(khachHang.getId());
-			List<CTGioHang> ctGioHang = ctGioHangService.getCtGioHang(gioHang.getId());
-			List<SanPham> sanPhams = sanPhamService.getSanPhamTheoGioHang(gioHang.getId());
-			int soLuong = ctGioHangService.soLuongSanPham(gioHang.getId());
-			theModel.addAttribute("khachhang", khachHang);
-			theModel.addAttribute("soluongcuagio", soLuong);
-			theModel.addAttribute("giohang", gioHang);
-			theModel.addAttribute("dsCtGioHang", ctGioHang);
-			theModel.addAttribute("dsSanPham", sanPhams);
 			
-			return "gio-hang";
-		}
+			soLuong = ctGioHangService.soLuongSanPham(gioHang.getId());
+			if(soLuong == 0) {
+				theModel.addAttribute("soluongcuagio", soLuong);
+				return "gio-hang";
+			}
+			else {
+				List<CTGioHang> ctGioHang = ctGioHangService.getCtGioHang(gioHang.getId());
+				List<SanPham> sanPhams = sanPhamService.getSanPhamTheoGioHang(gioHang.getId());
+
+				theModel.addAttribute("khachhang", khachHang);
+				theModel.addAttribute("soluongcuagio", soLuong);
+				theModel.addAttribute("giohang", gioHang);
+				theModel.addAttribute("dsCtGioHang", ctGioHang);
+				theModel.addAttribute("dsSanPham", sanPhams);
+				
+				return "gio-hang";
+			
+			}
+			}
 	}
+	
+	@RequestMapping(value="/addCart",method = RequestMethod.POST)
+	public String addCart(@RequestParam("idSP")int id, Model model, @ModelAttribute("ChiTiet") CTGioHang ctGH) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String email = authentication.getName();
+		KhachHang khachHang = khachHangService.getKhachHangTheoEmail(email);
+		GioHang gioHang = gioHangService.getGioHangTheoKhachHang(khachHang.getId());
+		List<CTGioHang> ctGioHang = ctGioHangService.getCtGioHang(gioHang.getId());
+		for(CTGioHang ct : ctGioHang) {
+			if(ct.getSp().getId() == ctGH.getSp().getId()) {
+				int soLuong=0;
+				soLuong = ctGH.getSoLuong() + ct.getSoLuong();
+				ctGH.setSoLuong(soLuong); 
+			}
+		}
+     	CTGioHang ctGioHangMoi = new CTGioHang(ctGH.getGioHang(), ctGH.getSp(), ctGH.getSoLuong());
+		ctGioHangService.addCart(ctGioHangMoi);
+		return "redirect:/giohang/";
+	}
+	
+	
+	
 }
