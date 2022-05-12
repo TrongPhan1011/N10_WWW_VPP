@@ -110,12 +110,7 @@ public class AdminNhanVienController {
 			//
 			
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd ");
-			try {
-				ngaysinh = (Date) new SimpleDateFormat("yyyy-MM-dd").parse(nhanVien.getNgaySinh().toString());
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			ngaysinh = nhanVien.getNgaySinh();
 			Date date = new Date(System.currentTimeMillis());
 			KhachHang khachHang = new KhachHang(thongtinNV.getTenNV(), thongtinNV.getEmail(), thongtinNV.getSdt(),
 					thongtinNV.getGioiTinh(), ngaysinh, thongtinNV.getDiaChi(), "Bình thường", date);
