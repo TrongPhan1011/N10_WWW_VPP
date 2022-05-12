@@ -1,4 +1,4 @@
-	package vpp.ImplDAO;
+package vpp.ImplDAO;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -25,6 +25,7 @@ public class GioHangImpl implements GioHangDAO {
 		return gioHang;
 	}
 
+
 	@Override
 	public void saveGiohang(GioHang giohang) {
 		// TODO Auto-generated method stub
@@ -32,6 +33,10 @@ public class GioHangImpl implements GioHangDAO {
 		currentSession.save(giohang);
 		
 	}
+
+	
+	
+
 	
 	
 }

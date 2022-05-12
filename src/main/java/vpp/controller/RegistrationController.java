@@ -39,11 +39,12 @@ public class RegistrationController {
 	
 	private KhachHangService khachHangService;
 	@Autowired
+	private GioHangService gioHangService;
+	@Autowired
 	private UserDetailsManager userDetailsManager;
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	private Logger logger = Logger.getLogger(getClass().getName());
-	@Autowired
-	private GioHangService gioHangService;
+	
 	
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
@@ -146,11 +147,13 @@ public class RegistrationController {
 				
 		        	
 			khachHangService.saveKhachHang(kh);
+
 KhachHang khachHang2= khachHangService.getKHEmail(kh.getEmail());
 			
 			GioHang giohang=new GioHang (khachHang2.getId(), date, "Binh thuong", khachHang2);
 		
 			gioHangService.saveGiohang(giohang);
+
 			return "login";
 		}
 
