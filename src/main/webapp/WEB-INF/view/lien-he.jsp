@@ -16,12 +16,12 @@
     <title>Liên hệ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../css/lib/hover.css">
-    <link rel="stylesheet" href="../assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
-    <link rel="stylesheet" href="../assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
+    <link rel="stylesheet" href="./resources/css/lib/hover.css">
+    <link rel="stylesheet" href="./resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
+    <link rel="stylesheet" href="./resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
 
-    <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="./resources/css/general.css">
+    <link rel="stylesheet" href="./resources/css/index.css">
 </head>
 <body>
     <div class="container-fluid ">
@@ -31,8 +31,8 @@
 				style="border-bottom: 1px solid rgb(253, 185, 188);">
 
 				<a href="${pageContext.request.contextPath}/"
-					class="col-2 text-center"> <img
-					src="../resources/assets/img/Logo.png" alt="logo" width="100">
+					class="col-2 text-center"> 
+					<img src="./resources/assets/img/Logo.png" alt="logo" width="100">
 				</a>
 
 				<form action="${pageContext.request.contextPath}/timkiem/"
@@ -208,7 +208,7 @@
                 <div class="col-12">
                     <div class="carousel-item active vpp-bd-btn">
                         <a href="https://www.google.com/maps/place/12+Nguy%E1%BB%85n+V%C4%83n+B%E1%BA%A3o,+Ph%C6%B0%E1%BB%9Dng+4,+H%E1%BB%93+Ch%C3%AD+Minh,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vietnam/@10.8222053,106.6853107,17z/data=!4m13!1m7!3m6!1s0x317528e5496d03cf:0xa5b8e7395ec636b9!2zMTIgTmd1eeG7hW4gVsSDbiBC4bqjbywgUGjGsOG7nW5nIDQsIEjhu5MgQ2jDrSBNaW5oLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!3b1!8m2!3d10.8222053!4d106.6874994!3m4!1s0x317528e5496d03cf:0xa5b8e7395ec636b9!8m2!3d10.8222053!4d106.6874994https://www.google.com/maps/place/12+Nguy%E1%BB%85n+V%C4%83n+B%E1%BA%A3o,+Ph%C6%B0%E1%BB%9Dng+4,+H%E1%BB%93+Ch%C3%AD+Minh,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vietnam/@10.8222053,106.6853107,17z/data=!3m1!4b1!4m5!3m4!1s0x317528e5496d03cf:0xa5b8e7395ec636b9!8m2!3d10.8222053!4d106.6874994">
-                        <img src="../assets/img/map.png" alt="imgmap" class="d-block w-100" style="height: 60vh;">
+                        <img src="./resources/assets/img/map.png" alt="imgmap" class="d-block w-100" style="height: 80vh;">
                         </a>
                     </div>
                 </div>
@@ -305,7 +305,7 @@
                     <div class="row  mb-3">
                         <div class="col-3">
                             <a href="#">
-                                <img src="../assets/img/Logo.png" alt="logo" width="100%">
+                                <img src="./resources/assets/img/Logo.png" alt="logo" width="100%">
                             </a>
                         </div>
                     </div>
@@ -368,15 +368,15 @@
                         <div class="  vpp-text-dark mt-3">
                             <div class="row text-center " style="font-size: 12px;">
                                 <div class="col-4">
-                                    <img src="../assets/img/thanhtoan1.png" alt="tienmat" width="80%">
+                                    <img src="./resources/assets/img/thanhtoan1.png" alt="tienmat" width="80%">
                                     <p class="vpp-text-dark">Tiền mặt</p>
                                 </div>
                                 <div class="col-4">
-                                    <img src="../assets/img/thanhtoan2.png" alt="tienmat" width="80%">
+                                    <img src="./resources/assets/img/thanhtoan2.png" alt="tienmat" width="80%">
                                     <p class="vpp-text-dark">Banking</p>
                                 </div>
                                 <div class="col-4">
-                                    <img src="../assets/img/thanhtoan3.png" alt="tienmat" width="80%">
+                                    <img src="./resources/assets/img/thanhtoan3.png" alt="tienmat" width="80%">
                                     <p class="vpp-text-dark">Tại cửa hàng</p>
                                 </div>
                             </div>
