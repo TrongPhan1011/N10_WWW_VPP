@@ -306,10 +306,9 @@
 														<i class="fas fa-minus"></i>
 													</button>
 
-													<input type="hidden" name="gioHang.id" value="${gioHang.id }">
-													<input type="hidden" name="sp.id" value="${tempKhachHang.id}">
+					
 													<input type="text" id="so-luong-mua" name="soLuong"
-														class="form-control text-center p-0" value="3">
+														class="form-control text-center p-0" value="1">
 													<button type="button" id="btn-plus"
 														class="btn btn-success ms-2 vpp-btn-sp ">
 														<i class="fas fa-plus"></i>

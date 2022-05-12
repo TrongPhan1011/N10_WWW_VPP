@@ -75,20 +75,27 @@ public class GioHangController {
 	public String addCart(@RequestParam("idSP")int id, Model model, @ModelAttribute("ChiTiet") CTGioHang ctGH) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String email = authentication.getName();
-		KhachHang khachHang = khachHangService.getKhachHangTheoEmail(email);
-		GioHang gioHang = gioHangService.getGioHangTheoKhachHang(khachHang.getId());
-		List<CTGioHang> ctGioHang = ctGioHangService.getCtGioHang(gioHang.getId());
+		if(email.equals("anonymousUser"))
+			return "redirect:/login";
+		else {
+			
+			KhachHang khachHang = khachHangService.getKhachHangTheoEmail(email);
+			GioHang gioHang = gioHangService.getGioHangTheoKhachHang(khachHang.getId());
+			
+			SanPham sp = sanPhamService.getSanPhamTheoID(id);
+				List<CTGioHang> ctGioHang = ctGioHangService.getCtGioHang(gioHang.getId());
 		for(CTGioHang ct : ctGioHang) {
-			if(ct.getSp().getId() == ctGH.getSp().getId()) {
+			if(ct.getSp().getId() == sp.getId()) {
 				int soLuong=0;
 				soLuong = ctGH.getSoLuong() + ct.getSoLuong();
 				ctGH.setSoLuong(soLuong); 
 			}
 		}
-     	CTGioHang ctGioHangMoi = new CTGioHang(ctGH.getGioHang(), ctGH.getSp(), ctGH.getSoLuong());
+     	CTGioHang ctGioHangMoi = new CTGioHang(gioHang, sp, ctGH.getSoLuong());
 		ctGioHangService.addCart(ctGioHangMoi);
 		return "redirect:/giohang/";
-	}
+	}}
+	
 	
 	
 	
