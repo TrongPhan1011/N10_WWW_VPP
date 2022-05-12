@@ -46,4 +46,9 @@ public class CTGioHangImpl implements CTGioHangDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		currentSession.saveOrUpdate(ctGioHang);
 	}
+	
+	public void deleteCart(CTGioHang  ctGH) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		currentSession.delete(ctGH);
+	}
 }

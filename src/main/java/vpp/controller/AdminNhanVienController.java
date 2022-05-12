@@ -1,7 +1,8 @@
 package vpp.controller;
 
-import java.util.Date;
+
 import java.io.UnsupportedEncodingException;
+import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -107,14 +108,9 @@ public class AdminNhanVienController {
 			}
 			nhanVienService.saveNV(thongtinNV);
 			//
-			Date inDate = new Date();
+			
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd ");
-			try {
-				ngaysinh = new SimpleDateFormat("yyyy-MM-dd").parse(nhanVien.getNgaySinh().toString());
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			ngaysinh = nhanVien.getNgaySinh();
 			Date date = new Date(System.currentTimeMillis());
 			KhachHang khachHang = new KhachHang(thongtinNV.getTenNV(), thongtinNV.getEmail(), thongtinNV.getSdt(),
 					thongtinNV.getGioiTinh(), ngaysinh, thongtinNV.getDiaChi(), "Bình thường", date);

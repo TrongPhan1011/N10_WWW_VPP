@@ -16,6 +16,7 @@ import vpp.entity.SanPham;
 import vpp.service.CTGioHangService;
 import vpp.service.GioHangService;
 import vpp.service.KhachHangService;
+import vpp.service.NSXService;
 import vpp.service.SanPhamService;
 
 @Controller
@@ -25,11 +26,7 @@ public class ChiTietSanPhamController {
 	@Autowired
 	private SanPhamService sanPhamService;
 	@Autowired
-	private KhachHangService khachHangService;
-	@Autowired
-	private GioHangService gioHangService;
-	@Autowired
-	private CTGioHangService ctGioHangService;
+	private NSXService nsxService;
 	
 	
 	@RequestMapping("/")

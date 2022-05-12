@@ -83,6 +83,7 @@ public class GioHangController {
 			GioHang gioHang = gioHangService.getGioHangTheoKhachHang(khachHang.getId());
 			
 			SanPham sp = sanPhamService.getSanPhamTheoID(id);
+			System.out.println(sp);
 				List<CTGioHang> ctGioHang = ctGioHangService.getCtGioHang(gioHang.getId());
 		for(CTGioHang ct : ctGioHang) {
 			if(ct.getSp().getId() == sp.getId()) {
@@ -95,6 +96,14 @@ public class GioHangController {
 		ctGioHangService.addCart(ctGioHangMoi);
 		return "redirect:/giohang/";
 	}}
+	
+	@RequestMapping(value="/deleteCart",method = RequestMethod.POST)
+	public String deleteCustomer(@ModelAttribute("ChiTiet") CTGioHang ctGH) {
+		System.out.println(ctGH);
+		ctGioHangService.deleteCart(ctGH);
+		
+		return "redirect:/giohang/";
+	}
 	
 	
 	

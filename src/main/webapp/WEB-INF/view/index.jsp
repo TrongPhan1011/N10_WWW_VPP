@@ -235,7 +235,7 @@
 							<security:authorize access="hasAnyRole('EMPLOYEE','ADMIN')">
 								<li class="nav-item"><a
 									class="nav-link vpp-link fs-5 hvr-underline-from-center"
-									href="${pageContext.request.contextPath}/admin/">Quản
+									href="${pageContext.request.contextPath}/admin/nhanvien/">Quản
 										lý</a></li>
 
 							</security:authorize>

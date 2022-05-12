@@ -83,7 +83,7 @@ function validateDiachi() {
 }
 
 function validatEemail() {
-	alert(1);
+	
     var email=document.getElementById('id-admin-email')
     var x = document.myform.email.value;
     var atposition = x.indexOf("@");

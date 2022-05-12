@@ -61,6 +61,8 @@
 					<c:url var="urlLoaiSP11" value="/sanpham/loaisanpham">
 						<c:param name="tenLoai" value="11"></c:param>
 					</c:url>
+					
+					
 
 					<div class="container-fluid p-0 ">
 						<div id="header">
@@ -248,7 +250,7 @@
 									</thead>
 									<tbody>
 
-
+					
 										<c:forEach var="tempCT" items="${dsCtGioHang }">
 											<tr>
 												<th scope="row">${tempCT.sp.tenSP } </th>
@@ -273,9 +275,13 @@
 												</td>
 												<td id="giaBan">${tempCT.sp.giaBan * tempCT.soLuong }</td>
 												<td>
-													<button type="button"
-														class="btn bg-white vpp-bd-1   hvr-grow vpp-bd-color-red"><i
-															class="fas fa-times fs-5  text-danger"></i></button>
+												
+													<form:form action="${pageContext.request.contextPath}/giohang/deleteCart" modelAttribute="ChiTiet"
+														method="POST">
+														<input type="hidden" name = "idSP" value = ${tempCT.sp.id }>
+														<input type="submit" class="btn bg-white vpp-bd-1   hvr-grow vpp-bd-color-red" value="Xóa">
+															
+													</form:form>
 												</td>
 											</tr>
 

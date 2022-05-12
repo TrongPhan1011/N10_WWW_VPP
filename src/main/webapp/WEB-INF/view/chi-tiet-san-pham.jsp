@@ -247,19 +247,19 @@
 
 											<div class="carousel-inner ">
 												<div class="carousel-item active ">
-													<img src="..//assets/img/Slider/slide1.png" alt="img"
+													<img src="../resources/assets/img/sp/${tempKhachHang.urlAnhSP}" alt="img"
 														class="d-block" style="width: 100%; height: 350px">
 												</div>
 												<div class="carousel-item ">
-													<img src="..//assets/img/Slider/slide2.jpg" alt="img"
+													<img src="../resources/assets/img/sp/${tempKhachHang.urlAnhSP}" alt="img"
 														class="d-block" style="width: 100%; height: 350px">
 												</div>
 												<div class="carousel-item">
-													<img src="..//assets/img/Slider/slide3.jpg" alt="img"
+													<img src="../resources/assets/img/sp/${tempKhachHang.urlAnhSP}" alt="img"
 														class="d-block" style="width: 100%; height: 350px">
 												</div>
 												<div class="carousel-item">
-													<img src="..//assets/img/Slider/slide4.jpg" alt="img"
+													<img src="../resources/assets/img/sp/${tempKhachHang.urlAnhSP}" alt="img"
 														class="d-block" style="width: 100%; height: 350px">
 												</div>
 											</div>
@@ -277,13 +277,13 @@
 										</div>
 										<div class="row d-flex justify-content-between mt-2 ">
 
-											<img src="..//assets/img/Slider/slide1.png" alt="img" style="width: 24%"
+											<img src="../resources/assets/img/sp/${tempKhachHang.urlAnhSP}" alt="img" style="width: 24%"
 												data-bs-target="#chiTietSP" data-bs-slide-to="0" class="active bd-img ">
-											<img src="..//assets/img/Slider/slide2.jpg" alt="img" style="width: 24%"
+											<img src="../resources/assets/img/sp/${tempKhachHang.urlAnhSP}" alt="img" style="width: 24%"
 												data-bs-target="#chiTietSP" data-bs-slide-to="1" class="bd-img"> <img
-												src="..//assets/img/Slider/slide3.jpg" alt="img" style="width: 24%"
+												src="../resources/assets/img/sp/${tempKhachHang.urlAnhSP}" alt="img" style="width: 24%"
 												data-bs-target="#chiTietSP" data-bs-slide-to="2" class="bd-img "> <img
-												src="..//assets/img/Slider/slide4.jpg" alt="img" style="width: 24%"
+												src="../resources/assets/img/sp/${tempKhachHang.urlAnhSP}" alt="img" style="width: 24%"
 												data-bs-target="#chiTietSP" data-bs-slide-to="3" class="bd-img  ">
 
 										</div>
@@ -296,7 +296,6 @@
 											đ</h3>
 										<p class="text-justify LT-heigh-120"></p>
 										<div class="col-3 ">
-											<c:set scope="request" var="greeting" value="2" />
 											<h5>Số lượng:</h5>
 											<form:form action="${pageContext.request.contextPath}/giohang/addCart"
 												modelAttribute="ChiTiet" method="POST">
@@ -366,7 +365,7 @@
 													</tr>
 													<tr>
 														<td>Nhà sản xuất:</td>
-														<td>dasdas</td>
+														<td>${tempKhachHang.nsx.tenNSX }</td>
 													</tr>
 
 												</tbody>
@@ -383,7 +382,7 @@
 								<div class="col-5 ">
 									<div class="row  mb-3">
 										<div class="col-3">
-											<a href="#"> <img src="./resources/assets/img/Logo.png" alt="logo"
+											<a href="#"> <img src="../resources/assets/img/Logo.png" alt="logo"
 													width="100%">
 											</a>
 										</div>
@@ -455,17 +454,17 @@
 										<div class="  vpp-text-dark mt-3">
 											<div class="row text-center " style="font-size: 12px;">
 												<div class="col-4">
-													<img src="./resources/assets/img/thanhtoan1.png" alt="tienmat"
+													<img src="../resources/assets/img/thanhtoan1.png" alt="tienmat"
 														width="80%">
 													<p class="vpp-text-dark">Tiền mặt</p>
 												</div>
 												<div class="col-4">
-													<img src="./resources/assets/img/thanhtoan2.png" alt="tienmat"
+													<img src="../resources/assets/img/thanhtoan2.png" alt="tienmat"
 														width="80%">
 													<p class="vpp-text-dark">Banking</p>
 												</div>
 												<div class="col-4">
-													<img src="./resources/assets/img/thanhtoan3.png" alt="tienmat"
+													<img src="../resources/assets/img/thanhtoan3.png" alt="tienmat"
 														width="80%">
 													<p class="vpp-text-dark">Tại cửa hàng</p>
 												</div>

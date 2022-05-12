@@ -35,5 +35,11 @@ public class CTGioHangServiceImpl implements CTGioHangService {
 	public void addCart(CTGioHang ctGioHang) {
 		ctGioHangDAO.addCart(ctGioHang);
 	}
+	
+	@Override
+	@Transactional
+	public void deleteCart(CTGioHang ctGH) {
+		ctGioHangDAO.deleteCart(ctGH);
+	}
 
 }
