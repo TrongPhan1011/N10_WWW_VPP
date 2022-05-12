@@ -26,7 +26,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import vpp.dao.KhachHangDAO;
+import vpp.entity.GioHang;
 import vpp.entity.KhachHang;
+import vpp.service.GioHangService;
 import vpp.service.KhachHangService;
 import vpp.user.VPPUser;
 
@@ -36,6 +38,8 @@ public class RegistrationController {
 	@Autowired
 	
 	private KhachHangService khachHangService;
+	@Autowired
+	private GioHangService gioHangService;
 	@Autowired
 	private UserDetailsManager userDetailsManager;
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -142,6 +146,11 @@ public class RegistrationController {
 				
 		        	
 			khachHangService.saveKhachHang(kh);
+			
+			
+			
+			
+			
 			return "login";
 		}
 

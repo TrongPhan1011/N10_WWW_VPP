@@ -108,6 +108,7 @@ public class KhachHang implements Serializable {
 		this.trangThai = trangThai;
 		this.ngayThamGia = ngayThamGia;
 	}
+	
 	public KhachHang() {
 		super();
 	}

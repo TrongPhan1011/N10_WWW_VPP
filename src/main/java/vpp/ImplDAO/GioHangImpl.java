@@ -1,4 +1,4 @@
-	package vpp.ImplDAO;
+package vpp.ImplDAO;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -24,10 +24,10 @@ public class GioHangImpl implements GioHangDAO {
 
 		return gioHang;
 	}
+
 	
-	public GioHang addGioHang(int id) {
-		GioHang gioHang = new GioHang();
-		
-		return gioHang;
-	}
+	
+	
+	
+	
 }
