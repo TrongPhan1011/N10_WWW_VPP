@@ -285,7 +285,7 @@
 																			<option value="1">Hết hàng hàng</option>
 																		</select>
 																		<h5 class="mt-3">
-																			Đã bán: <span id="spDaBan">0</span>
+																			Đã bán: <span id="spDaBan" class="d-none"></span>
 																		</h5>
 																	</div>
 																</div>
