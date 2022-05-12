@@ -381,6 +381,8 @@
 																<security:authorize access="hasAnyRole('ADMIN')">
 																	<div class="col-2 p-0 me-1 ">
 																		<a href="${deleteUrl}"
+																		onclick=" if (!(confirm('Bạn có chắc muốn xóa sản phẩm này không?'))) return false;
+																		 window.location.href='${deleteUrl}';"
 																			class="btn bg-white vpp-bd-1 form-control hvr-grow vpp-bd-color-red"
 																			title="Chi tiết sản phẩm"> <i
 																			class="fas fa-times fs-5  vpp-text-red"></i>
