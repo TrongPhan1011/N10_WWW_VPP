@@ -17,7 +17,6 @@ import vpp.service.DonHangSerivce;
 public class CTGioHangServiceImpl implements CTGioHangService {
 	@Autowired
 	private CTGioHangDAO ctGioHangDAO;
-	private List<SanPham> lsSP = new ArrayList<SanPham>();
 	@Override
 	@Transactional
 	public List<CTGioHang> getCtGioHang(int id) {
@@ -31,33 +30,10 @@ public class CTGioHangServiceImpl implements CTGioHangService {
 		return ctGioHangDAO.soLuongSanPham(id);
 	}
 	
-	
-	@Transactional	
-	public void themGioHang(SanPham sanPham) {
-		lsSP.add(sanPham);
+	@Override
+	@Transactional
+	public void addCart(CTGioHang ctGioHang) {
+		ctGioHangDAO.addCart(ctGioHang);
 	}
 
-	@Override
-	@Transactional	
-	public void xoaSanPhamTrongGio(int idSP) {
-		lsSP.removeIf(item->item.getId() == idSP);
-	}
-	
-	@Override
-	@Transactional	
-	public List<SanPham> danhSachGioHang() {
-		return lsSP;
-	}
-	
-	@Override
-	@Transactional	
-	public void suaSanPham(SanPham sanPham) {
-		for(int i = 0; i < lsSP.size(); i++) {
-			SanPham sp = lsSP.get(i);
-			if(sp.getId() == sanPham.getId()) {
-				lsSP.set(i,sanPham);
-				break;
-			}
-		}
-	}
 }

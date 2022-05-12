@@ -25,9 +25,5 @@ public class GioHangImpl implements GioHangDAO {
 		return gioHang;
 	}
 	
-	public GioHang addGioHang(int id) {
-		GioHang gioHang = new GioHang();
-		
-		return gioHang;
-	}
+	
 }

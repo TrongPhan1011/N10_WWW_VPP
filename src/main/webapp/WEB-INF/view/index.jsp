@@ -93,6 +93,7 @@
 					<div class="row">
 						<c:choose>
 							<c:when test="${pageContext.request.userPrincipal.name != null}">
+							<security:authorize access="hasAnyRole('CUSTOMER')">
 								<div class="col-3 pe-0 d-flex align-items-center  vpp-text-pink">
 									<a href="${pageContext.request.contextPath}/chiTietTaiKhoan/"
 										class="vpp-text-pink"> <i
@@ -103,6 +104,7 @@
 
 
 								</div>
+								</security:authorize>
 							</c:when>
 						</c:choose>
 

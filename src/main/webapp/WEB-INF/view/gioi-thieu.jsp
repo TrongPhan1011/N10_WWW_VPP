@@ -14,13 +14,13 @@
     <title>Văn phòng phẩm</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="resources/css/lib/hover.css">
-    <link rel="stylesheet" href="resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
-    <link rel="stylesheet" href="resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
+    <link rel="stylesheet" href="./resources/css/lib/hover.css">
+    <link rel="stylesheet" href="./resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
+    <link rel="stylesheet" href="./resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
 
-    <link rel="stylesheet" href="resources/css/general.css">
-    <link rel="stylesheet" href="resources/css/index.css">
-    <link rel="stylesheet" href="resources/css/chi-tiet-sp.css">
+    <link rel="stylesheet" href="./resources/css/general.css">
+    <link rel="stylesheet" href="./resources/css/index.css">
+    <link rel="stylesheet" href="./resources/css/chi-tiet-sp.css">
 </head>
 
 <body>
@@ -65,7 +65,7 @@
 
 				<a href="${pageContext.request.contextPath}/"
 					class="col-2 text-center"> <img
-					src="../resources/assets/img/Logo.png" alt="logo" width="100">
+					src="./resources/assets/img/Logo.png" alt="logo" width="100">
 				</a>
 
 				<form action="${pageContext.request.contextPath}/timkiem/"
@@ -242,11 +242,11 @@
         <div id="container">
             <div id="container-content" class="row p-3 ps-5 pe-5 text-center">
                 <div class="col-12">
-                    <img src="../assets/img/thanhtoan1.png" width="100%" height="200px">
+                    <img src="./resources/assets/img/vpp.png" width="100%" height="300px">
                     <br>
                 </div>
                 <div class="col-12">
-                    <img src="../assets/img/Logo.png" width="10%" height="50%"><br>
+                    <img src="./resources/assets/img/Logo.png" width="10%" height="30%"><br>
                     <i>VPP, Cung cấp các sản phẩm văn phòng phẩm chất lượng từ các thương hiệu hàng đầu.</i> <br>
                     <p class="text-center ps-5 p-5 pe-5">Lorem Ipsum is simply dummy text of the printing and
                         typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
@@ -264,44 +264,44 @@
                 <div id="list-thanhvien" class="col-12">
                     <div class="row justify-content-center mb-5">
                         <div class="card col-2"  >
-                            <img src="..\assets\img\thanhtoan1.png" class="card-img-top" width="100%">
+                            <img src="./resources/assets/img/avt.png" class="card-img-top" width="100%">
                             <div class="card-body">
-                                <h5 class="card-title">Nhom truong</h5>
-                                <p class="card-text">Phan Huu Trong</p>
+                                <h5 class="card-title">Nhóm trưởng</h5>
+                                <p class="card-text">Phan Hữu Trọng</p>
                               
                             </div>
                         </div>
                     </div>
                     <div class="row  justify-content-around">
                         <div class="card col-3" style="width: 15%;">
-                            <img src="..\assets\img\thanhtoan1.png" class="card-img-top" width="">
+                            <img src="./resources/assets/img/avt.png" class="card-img-top" width="">
                             <div class="card-body">
-                                <h5 class="card-title">Thanh Vien</h5>
-                                <p class="card-text">Le Tuan Tai</p>
+                                <h5 class="card-title">Thành viên</h5>
+                                <p class="card-text">Lê Tuấn Tài</p>
                                 
                             </div>
                         </div>
                         <div class="card col-3" style="width: 15%;">
-                            <img src="..\assets\img\thanhtoan1.png" class="card-img-top" width="">
+                            <img src="./resources/assets/img/avt.png" class="card-img-top" width="">
                             <div class="card-body">
-                                <h5 class="card-title">Thanh Vien</h5>
-                                <p class="card-text">Nguyen Tuan Thanh</p>
+                                <h5 class="card-title">Thành viên</h5>
+                                <p class="card-text">Nguyễn Tuấn Thanh</p>
                                 
                             </div>
                         </div>
                         <div class="card col-3" style="width: 15%;">
-                            <img src="..\assets\img\thanhtoan1.png" class="card-img-top" width="">
+                            <img src="./resources/assets/img/avt.png" class="card-img-top" width="">
                             <div class="card-body">
-                                <h5 class="card-title">Thanh Vien</h5>
-                                <p class="card-text">Nguyen Thanh Toan</p>
+                                <h5 class="card-title">Thành viên</h5>
+                                <p class="card-text">Nguyễn Thanh Toàn</p>
                                
                             </div>
                         </div>
                         <div class="card col-3" style="width: 15%;">
-                            <img src="..\assets\img\thanhtoan1.png" class="card-img-top" width="">
+                            <img src="./resources/assets/img/avt.png" class="card-img-top" width="">
                             <div class="card-body">
-                                <h5 class="card-title">Thanh Vien</h5>
-                                <p class="card-text">Phan Van Dung</p>
+                                <h5 class="card-title">Thành viên</h5>
+                                <p class="card-text">Phan Văn Đúng</p>
                            
                             </div>
                         </div>
@@ -318,7 +318,7 @@
                     <div class="row  mb-3">
                         <div class="col-3">
                             <a href="#">
-                                <img src="../assets/img/Logo.png" alt="logo" width="100%">
+                                <img src="./resources/assets/img/Logo.png" alt="logo" width="100%">
                             </a>
                         </div>
                     </div>
@@ -381,15 +381,15 @@
                         <div class="  vpp-text-dark mt-3">
                             <div class="row text-center " style="font-size: 12px;">
                                 <div class="col-4">
-                                    <img src="../assets/img/thanhtoan1.png" alt="tienmat" width="80%">
+                                    <img src="./resources/assets/img/thanhtoan1.png" alt="tienmat" width="80%">
                                     <p class="vpp-text-dark">Tiền mặt</p>
                                 </div>
                                 <div class="col-4">
-                                    <img src="../assets/img/thanhtoan2.png" alt="tienmat" width="80%">
+                                    <img src="./resources/assets/img/thanhtoan2.png" alt="tienmat" width="80%">
                                     <p class="vpp-text-dark">Banking</p>
                                 </div>
                                 <div class="col-4">
-                                    <img src="../assets/img/thanhtoan3.png" alt="tienmat" width="80%">
+                                   <img src="./resources/assets/img/thanhtoan3.png" alt="tienmat" width="90%">
                                     <p class="vpp-text-dark">Tại cửa hàng</p>
                                 </div>
                             </div>
@@ -400,8 +400,8 @@
         </div>
     </div>
     </div>
-    <script src="../js/index.js"></script>
+    <script src="./resources/js/index.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="../js/scrollAnimation.js"></script>
+    <script src="./resources/js/scrollAnimation.js"></script>
 </body>
 </html>

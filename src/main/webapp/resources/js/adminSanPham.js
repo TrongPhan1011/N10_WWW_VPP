@@ -17,16 +17,12 @@ function clickUpdate(id,tenSP,soLuongTon,soLuongBan,moTaSP,giaBan,
 
     $('#spDaBan').html(soLuongBan);
 
-
+    $('#spDaBan').removeClass('d-none');
 
 
     }
 
-    $(".modal").on("hidden.bs.modal", function(){
-        $('#formSP').trigger('reset');
-        $('#spDaBan').html(0);
-        
-});
+   
 
 function showInfoSP(id,tenSP,soLuongTon,soLuongBan,moTaSP,giaBan,
     giaGoc,chatLieu,trangThai,urlAnhSP,loaiSP, nsx) {
@@ -59,6 +55,7 @@ function showInfoSP(id,tenSP,soLuongTon,soLuongBan,moTaSP,giaBan,
 
     $('#adminBtnLuu').addClass('d-none');
 
+    $('#spDaBan').removeClass('d-none');
 
 
 
@@ -76,7 +73,7 @@ function resetModal(){
 
     $(".modal").on("hidden.bs.modal", function(){
         $('#formSP').trigger('reset');
-        $('#spDaBan').html(0);
+        
 
         $('select[name="fileImage"]').removeClass('d-none');
 
@@ -87,6 +84,8 @@ function resetModal(){
         $('#adminBtnLuu').removeClass('d-none');
 
         $('input[name="id"]').val('-1');
+        $('#spDaBan').addClass('d-none');
+
     });
 }
 resetModal();
