@@ -1,9 +1,10 @@
 package vpp.controller;
 
+import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
+import java.time.ZoneId;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import vpp.entity.KhachHang;
 import vpp.entity.NhanVien;
@@ -103,17 +105,18 @@ public class AdminNhanVienController {
 				userDetailsManager.createUser(user);
 			}
 			nhanVienService.saveNV(thongtinNV);
-			
+			//
+			Date inDate = new Date();
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd ");
 			try {
 				ngaysinh = new SimpleDateFormat("yyyy-MM-dd").parse(nhanVien.getNgaySinh().toString());
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
-			java.sql.Date date1=new java.sql.Date(System.currentTimeMillis());
+			Date date = new Date(System.currentTimeMillis());
 			KhachHang khachHang = new KhachHang(thongtinNV.getTenNV(), thongtinNV.getEmail(), thongtinNV.getSdt(),
-					thongtinNV.getGioiTinh(), thongtinNV.getNgaySinh(), thongtinNV.getDiaChi(), "Bình thường",date1);
+					thongtinNV.getGioiTinh(), ngaysinh, thongtinNV.getDiaChi(), "Bình thường", date);
 			khachhang.themHoacCapNhatKhachHang(khachHang);
 
 		}

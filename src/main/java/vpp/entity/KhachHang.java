@@ -1,7 +1,7 @@
 package vpp.entity;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -108,6 +108,7 @@ public class KhachHang implements Serializable {
 		this.trangThai = trangThai;
 		this.ngayThamGia = ngayThamGia;
 	}
+	
 	public KhachHang() {
 		super();
 	}

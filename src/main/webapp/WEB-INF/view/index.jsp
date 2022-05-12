@@ -93,6 +93,7 @@
 					<div class="row">
 						<c:choose>
 							<c:when test="${pageContext.request.userPrincipal.name != null}">
+							<security:authorize access="hasAnyRole('CUSTOMER')">
 								<div class="col-3 pe-0 d-flex align-items-center  vpp-text-pink">
 									<a href="${pageContext.request.contextPath}/chiTietTaiKhoan/"
 										class="vpp-text-pink"> <i
@@ -103,6 +104,7 @@
 
 
 								</div>
+								</security:authorize>
 							</c:when>
 						</c:choose>
 
@@ -419,7 +421,7 @@
 										style="width: 80%;">
 										<div class="img-sp">
 											<img class="card-img-top vpp-bd-radius-top"
-												src="${pageContext.request.contextPath}/resources/assets/img/sp/${sp.urlAnhSP}"
+												src="./resources/assets/img/sp/${spNoiBac.urlAnhSP}"
 												alt="Card image" style="width: 100%; height: 9vw;">
 										</div>
 										<div class="card-body p-0">
@@ -460,7 +462,7 @@
 										style="width: 80%;">
 										<div class="img-sp">
 											<img class="card-img-top vpp-bd-radius-top"
-												src="../resources/assets/img/sp/${sp.urlAnhSP} "
+											src="../../resources/assets/img/sp/${sp.urlAnhSP}"
 												alt="Card image" style="width: 100%; height: 9vw;">
 										</div>
 										<div class="card-body p-0">
@@ -500,7 +502,7 @@
 										style="width: 80%;">
 										<div class="img-sp">
 											<img class="card-img-top vpp-bd-radius-top"
-												src="./resources/assets/img/sp-${sp.id}/1.png"
+												src=""
 												alt="Card image" style="width: 100%; height: 9vw;">
 										</div>
 										<div class="card-body p-0">

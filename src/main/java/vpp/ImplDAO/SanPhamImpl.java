@@ -139,4 +139,13 @@ public class SanPhamImpl implements SanPhamDAO {
 		return ls;
 	}
 
+	@Override
+	public List<SanPham> getSPTheoLoaiID(int id) {
+		Session session = sessionFactory.getCurrentSession();
+		
+
+		List<SanPham> ls = session.createNativeQuery("SELECT sanPham.* FROM sanPham   where idLoai = "+id+"",SanPham.class).getResultList();
+		return ls;
+	}
+
 }

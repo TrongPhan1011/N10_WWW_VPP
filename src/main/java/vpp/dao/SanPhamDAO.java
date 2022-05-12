@@ -23,5 +23,6 @@ public interface SanPhamDAO {
 	public List<SanPham> getSPTheoGiaTangDan();
 	public List<SanPham> getSPTheoGiaGiamDan();
 	public List<SanPham> getSPMoi();
+	public List<SanPham> getSPTheoLoaiID(int id);
 
 }
