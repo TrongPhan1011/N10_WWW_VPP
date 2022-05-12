@@ -26,7 +26,7 @@ public class GioHang implements Serializable {
 	private Date ngayThem;
 	private String trangThai;
 	
-	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="idKH")
 	private KhachHang kh;
 

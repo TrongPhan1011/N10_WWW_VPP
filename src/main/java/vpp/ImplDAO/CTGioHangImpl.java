@@ -41,4 +41,9 @@ public class CTGioHangImpl implements CTGioHangDAO {
 		
 		return demSanPham;
 	}
+	
+	public void addCart(CTGioHang ctGioHang) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		currentSession.saveOrUpdate(ctGioHang);
+	}
 }
