@@ -98,9 +98,20 @@ public class GioHangController {
 	}}
 	
 	@RequestMapping(value="/deleteCart",method = RequestMethod.POST)
-	public String deleteCustomer(@ModelAttribute("ChiTiet") CTGioHang ctGH) {
-		System.out.println(ctGH);
-		ctGioHangService.deleteCart(ctGH);
+	public String deleteCustomer(@RequestParam("idSP")int id) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String email = authentication.getName();
+		if(email.equals("anonymousUser"))
+			return "redirect:/login";
+		else {
+			
+			KhachHang khachHang = khachHangService.getKhachHangTheoEmail(email);
+			GioHang gioHang = gioHangService.getGioHangTheoKhachHang(khachHang.getId());
+		SanPham sp = sanPhamService.getSanPhamTheoID(id);
+		System.out.println(id);
+		
+		CTGioHang ct = new CTGioHang(gioHang, sp, 0);
+		ctGioHangService.deleteCart(ct);
 		
 		return "redirect:/giohang/";
 	}
@@ -108,4 +119,4 @@ public class GioHangController {
 	
 	
 	
-}
+}}
