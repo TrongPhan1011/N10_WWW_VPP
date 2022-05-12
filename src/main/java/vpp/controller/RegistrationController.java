@@ -147,10 +147,6 @@ public class RegistrationController {
 		        	
 			khachHangService.saveKhachHang(kh);
 			
-			
-			
-			
-			
 			return "login";
 		}
 

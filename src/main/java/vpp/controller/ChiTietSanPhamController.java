@@ -34,17 +34,17 @@ public class ChiTietSanPhamController {
 	
 	@RequestMapping("/")
 	public String getChiTietSanPham(Model theModel,@RequestParam("idSP") int id) {
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		String email = authentication.getName();
-		KhachHang khachHang = khachHangService.getKhachHangTheoEmail(email);
-		int soLuong =0;
-		GioHang gioHang = gioHangService.getGioHangTheoKhachHang(khachHang.getId());
+		//Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		//String email = authentication.getName();
+		//KhachHang khachHang = khachHangService.getKhachHangTheoEmail(email);
+		//int soLuong =0;
+		//GioHang gioHang = gioHangService.getGioHangTheoKhachHang(khachHang.getId());
 		
-		soLuong = ctGioHangService.soLuongSanPham(gioHang.getId());
+		//soLuong = ctGioHangService.soLuongSanPham(gioHang.getId());
 		
 		SanPham sanPham=sanPhamService.getSanPhamTheoID(id);
 		theModel.addAttribute("tempKhachHang", sanPham);
-		theModel.addAttribute("gioHang", gioHang);
+		//theModel.addAttribute("gioHang", gioHang);
 		return "chi-tiet-san-pham";
 	}
 	
