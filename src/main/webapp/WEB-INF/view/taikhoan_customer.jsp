@@ -15,13 +15,13 @@
     <title>Tài khoản</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/resources/css/lib/hover.css">
-    <link rel="stylesheet" href="/resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
-    <link rel="stylesheet" href="/resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
+    <link rel="stylesheet" href="../resources/css/lib/hover.css">
+    <link rel="stylesheet" href="../resources/assets/fontIcon/fontawesome-free-5.15.4/css/all.css">
+    <link rel="stylesheet" href="../resources/assets/fontIcon/fontawesome-free-5.15.4/css/solid.css">
 
-    <link rel="stylesheet" href="/resources/css/general.css">
-    <link rel="stylesheet" href="/resources/css/admin/admin.css">
-    <link rel="stylesheet" href="/resources/css/index.css">
+    <link rel="stylesheet" href="../resources/css/general.css">
+    <link rel="stylesheet" href="../resources/css/admin/admin.css">
+    <link rel="stylesheet" href="../resources/css/index.css">
 </head>
 
 <body>
@@ -235,23 +235,33 @@
 						</ul>
 					</div>
 				</nav>
-			</div>
-		</div>
-         <c:url var="updateLink" value="/admin/chiTietTaiKhoan/update">
+			 </div>
+            <div class=" row vpp-bg-light-dark ">
+                <div class="col-12">
+                    <a href="#" class="vpp-link">Tài khoản</a>
+                </div>
+                
+            </div>
+            <p></p>
+        </div>
+         <c:url var="updateLink" value="/chiTietTaiKhoan/updateKH">
           </c:url>
         <div class="container vpp-bd-btn ps-5 pe-5 mb-4">
-         <form:form action="${ updateLink}" modelAttribute="thongtinNV" method="POST" cssClass="needs-validation"  name="myform">
+         <form:form action="${updateLink}" modelAttribute="thongtinKH" method="POST" cssClass="needs-validation"  name="myform" >
             <div class="row text-center mt-4"><h3>Thông tin khách hàng</h3></div>
             <p></p>
-           
+           <input type="hidden" name="id" value="${update.id}" >
                 <div class="row m-0">
                   <div class="col-6 pe-5">
                     <div class="row">
                         <div class="col-4">
-                            <label for="name" class="form-label ">Tên đăng nhập: </label>
+                            <label for="name" class="form-label ">Tên đăng nhập (email): </label>
                         </div>
                         <div class="col-8">
-                            <input type="text" class=" form-control vpp-bd-btn" placeholder="Tên đăng nhập" name="email">
+                            <input type="text" id="id-taikhoan-emailKH" class=" form-control vpp-bd-btn" placeholder="Tên đăng nhập" name="email" value="${update.email}" readonly>
+                            <div class=" invalid-feedback text-danger">* Email không được trống và phải có
+                                            dạng xxx@gmail.com</div>
+                            
                         </div>
                        
                         
@@ -263,8 +273,9 @@
                             <label for="password" class="form-label ">Mật khẩu: </label>
                         </div>
                         <div class="col-8">
-                            <input type="password" class=" form-control vpp-bd-btn" placeholder="Mật khẩu" name="trangThai">
+                            <input type="password" id="id-taikhoan-matkhauKH" class=" form-control vpp-bd-btn" placeholder="Mật khẩu" name="trangThai">
                             <a href="#">Thay đổi mật khẩu</a>
+                            <div class=" invalid-feedback text-danger">* Mật khẩu không được trống </div>
                         </div>
                     </div>
                   </div>
@@ -278,7 +289,9 @@
                               <label for="hoten" class="form-label">Họ tên: </label>
                           </div>
                           <div class="col-8">
-                              <input type="text" class=" form-control vpp-bd-btn" placeholder="Họ tên khách hàng" name="tenKH">
+                              <input type="text" id="id-taikhoan-hotenKH" class=" form-control vpp-bd-btn" placeholder="Họ tên khách hàng" name="tenKH" value="${update.tenKH}">
+                              <div class=" invalid-feedback text-danger">* Tên không
+									được trống và chỉ nhập chữ</div>
                           </div>
                          
                           
@@ -290,7 +303,7 @@
                               <label for="gioitinh" class="form-label ">Giới tính: </label>
                           </div>
                           <div class="col-8">
-                             <select name="gioiTinh" id="" class="form-select vpp-bd-btn">
+                             <select name="gioiTinh" id="" class="form-select vpp-bd-btn" value="${update.gioiTinh}">
                                 <option value="nam">Nam</option>
                                 <option value="nu">Nữ</option>
                              </select>
@@ -303,11 +316,12 @@
                   <div class="row m-0">
                     <div class="col-6 pe-5">
                       <div class="row">
-                          <div class="col-4">
-                              <label for="sdt" class="form-label ">Số điện thoại: </label>
+                          <div class="col-4 mt-4">
+                              <label for="sdt" class="form-label ">Số  điện thoại: </label>
                           </div>
-                          <div class="col-8">
-                              <input type="text" class=" form-control vpp-bd-btn" placeholder="Số điện thoại" name="sdt">
+                          <div class="col-8 mt-4">
+                              <input type="text" id="id-taikhoan-sdtKH" class=" form-control vpp-bd-btn" placeholder="Số điện thoại" name="sdt" value="${update.sdt}">
+                              <div class=" invalid-feedback text-danger">* Số điện thoại không được để trống và chứa 10 số bắt đầu bằng số 0</div>
                           </div>
                          
                           
@@ -315,13 +329,15 @@
                     </div>
                     <div class="col-6 ps-5">
                       <div class="row">
-                          <div class="col-4">
-                              <label for="email" class="form-label ">Email: </label>
-                          </div>
-                          <div class="col-8">
-                              <input type="email" class=" form-control vpp-bd-btn" placeholder="Email" name="email">
-                          </div>
-                      </div>
+                            <div class="col-4 mt-4">
+                                <label for="diachi" class="form-label ">Địa chỉ: </label>
+                            </div>
+                            <div class="col-8 mt-4">
+                                <input type="text" id="id-taikhoan-diachiKH" class=" form-control vpp-bd-btn" placeholder="Địa chỉ" name="diaChi" value="${update.diaChi}">
+                                <div class=" invalid-feedback text-danger">* Không được để trống</div>
+                            </div>
+                            
+                        </div>
                     </div>
                     
                   </div>
@@ -329,25 +345,18 @@
                   <div class="row m-0">
                     <div class="col-6 pe-5">
                       <div class="row">
-                          <div class="col-4">
+                          <div class="col-4 mt-4">
                               <label for="ngaysinh" class="form-label ">Ngày sinh: </label>
                           </div>
-                          <div class="col-8">
-                              <input type="date" class=" form-control vpp-bd-btn" placeholder="Ngày sinh" name="ngaySinh">
+                          <div class="col-8 mt-4">
+                              <input type="date" id="id-taikhoan-ngaysinhKH" class=" form-control vpp-bd-btn" placeholder="Ngày sinh" name="ngaySinh" value="${update.ngaySinh}">
+                              <div class=" invalid-feedback text-danger">* Ngày sinh chưa chọn</div>
                           </div>
                           
                       </div>
                     </div>
                     <div class="col-6 ps-5">
-                        <div class="row">
-                            <div class="col-4">
-                                <label for="diachi" class="form-label ">Địa chỉ: </label>
-                            </div>
-                            <div class="col-8">
-                                <input type="text" class=" form-control vpp-bd-btn" placeholder="Địa chỉ" name="diaChi">
-                            </div>
-                            
-                        </div>
+                        
                       </div>
                     
                     
@@ -356,10 +365,14 @@
                   
                   <div class="row m-0 mt-4">
                       <div class="col-6 text-end">
+                      <a href="${pageContext.request.contextPath}/">
                         <button type="button" class="btn vpp-btn fs-5  hvr-shutter-out-horizontal">Hủy bỏ</button>
+                        </a>
                       </div>
                       <div class="col-6 text-start vpp-bd-radius">
-                        <button type="submit" class="btn fs-5  btn-info">Lưu thông tin</button>
+                      <a href="${pageContext.request.contextPath}/" class="vpp-text-pink" >
+                        <button id="id-btnluu" type="submit" class="btn fs-5  btn-info">Lưu thông tin</button>
+                        </a>
                       </div>
                    
                   </div>
@@ -367,6 +380,7 @@
               </form:form>
 
         </div>
+       
     </div>
 
 
@@ -376,7 +390,7 @@
                 <div class="row  mb-3">
                     <div class="col-3">
                         <a href="#">
-                            <img src="../assets/img/Logo.png" alt="logo" width="100%">
+                            <img src="../resources/assets/img/Logo.png" alt="logo" width="100%">
                         </a>
                     </div>
                 </div>
@@ -439,15 +453,15 @@
                     <div class="  vpp-text-dark mt-3">
                         <div class="row text-center " style="font-size: 12px;">
                             <div class="col-4">
-                                <img src="../assets/img/thanhtoan1.png" alt="tienmat" width="90%">
+                                <img src="../resources/assets/img/thanhtoan1.png" alt="tienmat" width="90%">
                                 <p class="vpp-text-dark">Tiền mặt</p>
                             </div>
                             <div class="col-4">
-                                <img src="../assets/img/thanhtoan2.png" alt="tienmat" width="90%">
+                                <img src="../resources/assets/img/thanhtoan2.png" alt="tienmat" width="90%">
                                 <p class="vpp-text-dark">Banking</p>
                             </div>
                             <div class="col-4">
-                                <img src="../assets/img/thanhtoan3.png" alt="tienmat" width="90%">
+                                <img src="../resources/assets/img/thanhtoan3.png" alt="tienmat" width="90%">
                                 <p class="vpp-text-dark">Tại cửa hàng</p>
                             </div>
                         </div>
@@ -458,9 +472,10 @@
     </div>
     </div>
     </div>
-    <script src="../js/index.js"></script>
+    <script src="../resources/js/index.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="../js/scrollAnimation.js"></script>
+    <script src="../resources/js/scrollAnimation.js"></script>
+     <script src="../resources/js/taiKhoanKhachHang.js"></script> 
 </body>
 
 </html>

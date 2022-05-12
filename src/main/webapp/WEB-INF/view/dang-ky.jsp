@@ -283,27 +283,35 @@
 								<input name="email" type="text"
 									class="form-control vpp-bd-radius-text mt-1 mb-4"
 									placeholder="Nhập email" id="id-dangly-email" />
+									<div class=" invalid-feedback text-danger">* Email không được trống và phải có
+                                            dạng xxx@gmail.com</div>
 
 								<label for="id-dangly-matkhau">Mật khẩu:</label>
 								<input name="trangThai" type="password" 
 									class="form-control vpp-bd-radius-text mt-1 mb-4"
 									placeholder="Nhập mật khẩu" id="id-dangly-matkhau" />
-
+									<div class=" invalid-feedback text-danger">* Mật khẩu không được trống </div>
+									
 								<label for="id-dangly-nhaplaimatkhau">Nhập lại mật khẩu:</label>
 								<input type="password"
 									class="form-control vpp-bd-radius-text mt-1 mb-4"
 									placeholder="Nhập lại mật khẩu" id="id-dangly-nhaplaimatkhau" />
+										<div class=" invalid-feedback text-danger">*Không được trống và phải trùng với mật khẩu</div>
+									
 
 
 								<label for="id-dangly-tenkhachhang">Tên khách hàng:</label>
 								<input type="text" name="tenKH"
 									class="form-control vpp-bd-radius-text mt-1 mb-4"
 									placeholder="Nhập tên khách hàng" id="id-dangly-tenkhachhang" />
+									<div class=" invalid-feedback text-danger">* Tên không
+									được trống và chỉ nhập chữ</div>
 
 								<label for="id-dangly-sdt">Số điện thoại:</label>
 								<input type="text" name="sdt"
 									class="form-control vpp-bd-radius-text mt-1 mb-4"
 									placeholder="Nhập số điện thoại" id="id-dangly-sdt" />
+									<div class=" invalid-feedback text-danger">* Số điện thoại không được để trống và chứa 10 số bắt đầu bằng số 0</div>
 
 								<label >Giới tính:</label>
 								<input type="radio" class="vpp-bd-radius mt-1"
@@ -319,6 +327,7 @@
 									<input type="date" name=ngaySinh
 										class="form-control vpp-bd-radius-text mt-1 mb-4"
 										placeholder="Nhập ngày sinh" id="id-dangly-ngaysinh" />
+										<div class=" invalid-feedback text-danger">* Ngày sinh chưa chọn</div>
 								</div>
 
 								<label for="id-dangly-diachi">Địa chỉ:</label>
@@ -330,6 +339,7 @@
 									<button id="id-btn-dangky" type="submit" 
 										class="btn vpp-btn hvr-grow hvr-shutter-out-horizontal form-control">
 										Đăng ký</button>
+										<div class=" invalid-feedback text-danger">* Không được để trống</div>
 								</a>
 
 							</form:form>

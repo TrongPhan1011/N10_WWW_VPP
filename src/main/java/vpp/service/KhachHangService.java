@@ -18,5 +18,6 @@ public interface KhachHangService {
 
 	public void saveKhachHang(KhachHang khachHang);
 	public KhachHang getKHEmail(String email);
+	public void updateKH(KhachHang khachHang);
 
 }
