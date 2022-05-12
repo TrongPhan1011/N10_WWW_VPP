@@ -27,8 +27,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import vpp.entity.GioHang;
 import vpp.entity.KhachHang;
 import vpp.entity.NhanVien;
+import vpp.service.GioHangService;
 import vpp.service.KhachHangService;
 import vpp.service.NhanVienService;
 
@@ -41,6 +43,8 @@ public class AdminNhanVienController {
 	private NhanVienService nhanVienService;
 	@Autowired
 	private KhachHangService khachhang;
+	@Autowired
+	private GioHangService gioHangService;
 	private Date ngaysinh;
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -110,11 +114,38 @@ public class AdminNhanVienController {
 			//
 			
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd ");
+
+//			try {
+//				ngaysinh = (Date) new SimpleDateFormat("yyyy-MM-dd").parse(nhanVien.getNgaySinh().toString());
+//			} catch (ParseException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+
+
 			ngaysinh = nhanVien.getNgaySinh();
 			Date date = new Date(System.currentTimeMillis());
+
 			KhachHang khachHang = new KhachHang(thongtinNV.getTenNV(), thongtinNV.getEmail(), thongtinNV.getSdt(),
 					thongtinNV.getGioiTinh(), ngaysinh, thongtinNV.getDiaChi(), "Bình thường", date);
+
+			converUTF82(khachHang);
+			
+			khachhang.saveKhachHang(khachHang);
+			
+			KhachHang khachHang2= khachhang.getKHEmail(khachHang.getEmail());
+			
+			GioHang giohang=new GioHang (khachHang2.getId(), date, "Binh thuong", khachHang2);
+		
+			gioHangService.saveGiohang(giohang);
+			
+			
+		
+
+			khachhang.saveKhachHang(khachHang);
 			khachhang.themHoacCapNhatKhachHang(khachHang);
+			
+
 
 		}
 
@@ -144,6 +175,21 @@ public class AdminNhanVienController {
 			e.printStackTrace();
 		}
 		return nhanVien;
+	}
+	private KhachHang converUTF82(KhachHang khachHang) {
+		// TODO Auto-generated method stub
+		String ten = khachHang.getTenKH();
+		String diaChi= khachHang.getDiaChi();
+		try {
+			String tenUTF8 = new String(ten.getBytes("ISO-8859-1"), "UTF8");
+			String diaChiUTF8 = new String(diaChi.getBytes("ISO-8859-1"), "UTF8");
+			khachHang.setTenKH(tenUTF8);
+			khachHang.setDiaChi(diaChiUTF8);
+		}catch (UnsupportedEncodingException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return khachHang;
 	}
 
 }
